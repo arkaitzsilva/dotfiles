@@ -31,6 +31,7 @@ in {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    extraSpecialArgs = {inherit inputs;};
     users.${username} = {
       home.username = username;
       home.homeDirectory = "/home/${username}";

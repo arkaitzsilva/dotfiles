@@ -13,13 +13,11 @@
 
   iconTheme = {
     name = "Luv-Dark";
-    #package = pkgs.fluent-icon-theme;
   };
 
   cursorTheme = {
-    name = "Adwaita";
+    name = "Luv-Dark";
     size = 24;
-    package = pkgs.adwaita-icon-theme;
   };
 
   font = {
@@ -36,8 +34,7 @@ in {
       meslo-lgs-nf
 
       # Icons
-      #iconTheme.package
-      cursorTheme.package
+      adwaita-icon-theme
       
       # GTK
       theme.package
@@ -47,12 +44,6 @@ in {
       XCURSOR_THEME = cursorTheme.name;
       XCURSOR_SIZE = "${toString cursorTheme.size}";
     };
-
-    pointerCursor =
-      cursorTheme
-      // {
-        gtk.enable = true;
-      };
   };
 
   gtk = {

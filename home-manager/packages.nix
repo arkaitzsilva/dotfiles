@@ -5,6 +5,8 @@
     neofetch
     cryfs
     cmatrix
+    unzip
+    unrar
     
     # Other
     firefox

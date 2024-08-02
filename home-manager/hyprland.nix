@@ -3,7 +3,7 @@
     enable = true;
 
     plugins = [
-      #inputs.hyprland-hyprfocus.packages.${pkgs.system}.default
+
     ];
 
     settings = {
@@ -22,7 +22,6 @@
       # Autostart necessary processes (like notifications daemons, status bars, etc.)
       # Or execute your favorite apps at launch like this:
       exec-once = [
-        #"hyprpm reload -n"
         "swww-daemon -f xrgb & swww img $HOME/.local/share/backgrounds/animated_zelda_1.gif"
         "hyprctl setcursor Luv-Dark 24"
         "wl-paste --type text --watch cliphist store"
@@ -149,43 +148,6 @@
         ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
         ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ];
-
-      #plugin = {
-      #  hyprfocus = {
-      #    enabled = "yes";
-      #    animate_floating = "no";
-      #    animate_workspacechange = "no";
-      #    focus_animation = "flash";
-
-      #    # Beziers for focus animations
-      #    bezier = [
-      #      "bezIn, 0.5,0.0,1.0,0.5"
-      #      "bezOut, 0.0,0.5,0.5,1.0"
-      #      "overshot, 0.05, 0.9, 0.1, 1.05"
-      #      "smoothOut, 0.36, 0, 0.66, -0.56"
-      #      "smoothIn, 0.25, 1, 0.5, 1"
-      #      "realsmooth, 0.28,0.29,.69,1.08"
-      #    ];
-          
-      #    # Flash settings
-      #    flash = {
-      #      flash_opacity = 0.90;
-      #      in_bezier = "realsmooth";
-      #      in_speed = 0.5;
-      #      out_bezier = "realsmooth";
-      #      out_speed = 3;
-      #    };
-          
-      #    # Shrink settings
-      #    shrink = {
-      #      shrink_percentage = 0.95;
-      #      in_bezier = "realsmooth";
-      #      in_speed = 1;
-      #      out_bezier = "realsmooth";
-      #      out_speed = 2;
-      #    };
-      #  };
-      #};
     };
   };
 }

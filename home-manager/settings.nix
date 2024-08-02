@@ -1,4 +1,10 @@
-{ config, ... }: {
+{ config, ... }: 
+let 
+  backgroundsDir = ./backgrounds;
+  backgrounds = builtins.readDir backgroundsDir;
+in {
+  home.file.".local/share/backgrounds/".source = backgroundsDir;
+
   xdg.userDirs = {
     enable = true;
     createDirectories = true;

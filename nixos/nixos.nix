@@ -43,6 +43,7 @@ in {
         ../home-manager/dconf.nix
         ../home-manager/settings.nix
         ../home-manager/hyprland.nix
+        ../home-manager/hypridle.nix
         ../home-manager/wofi.nix
         ../home-manager/wlogout.nix
         ../home-manager/git.nix

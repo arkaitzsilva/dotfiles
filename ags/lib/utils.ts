@@ -1,0 +1,17 @@
+import Gdk from "gi://Gdk"
+
+export async function sh(cmd: string | string[]) {
+  return Utils.execAsync(cmd).catch(err => {
+      console.error(typeof cmd === "string" ? cmd : cmd.join(" "), err)
+      return ""
+  })
+}
+
+export function range(length: number, start = 1) {
+  return Array.from({ length }, (_, i) => i + start)
+}
+
+export function forMonitors(widget: (monitor: number) => Gtk.Window) {
+  const n = Gdk.Display.get_default()?.get_n_monitors() || 1
+  return range(n, 0).flatMap(widget)
+}

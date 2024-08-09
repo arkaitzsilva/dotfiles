@@ -1,4 +1,14 @@
 { pkgs, inputs, ...}: {
+  imports = [
+    ../home-manager/hypridle.nix
+    ../home-manager/ags.nix
+    ../home-manager/settings.nix
+    ../home-manager/theme.nix
+    ../home-manager/wofi.nix
+    ../home-manager/wlogout.nix
+    ../home-manager/foot.nix
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -23,6 +33,7 @@
       # Or execute your favorite apps at launch like this:
       exec-once = [
         "swww-daemon -f xrgb & swww img $HOME/.local/share/backgrounds/animated_zelda_1.gif"
+        "ags -b hypr"
         "hyprctl setcursor Luv-Dark 24"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"

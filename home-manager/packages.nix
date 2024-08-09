@@ -8,12 +8,14 @@
     unzip
     unrar
     
-    # Other
+    # GTK
     firefox
-    google-chrome
+    brave
     vscode
     gedit
     gimp
     inkscape
+    amule
+    deluge
   ];
 }

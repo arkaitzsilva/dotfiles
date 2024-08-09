@@ -31,7 +31,6 @@ in {
     packages = with pkgs; [
       # Fonts
       font.package
-      meslo-lgs-nf
 
       # Icons
       adwaita-icon-theme

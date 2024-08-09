@@ -13,6 +13,7 @@
     LC_PAPER = "es_ES.UTF-8";
     LC_TELEPHONE = "es_ES.UTF-8";
     LC_TIME = "es_ES.UTF-8";
+    LC_ALL = "es_ES.UTF-8";
   };
 
   console.useXkbConfig = true;

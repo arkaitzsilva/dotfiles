@@ -1,5 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: let
+  aliases = {
+    "crfs" = "cryfs ~/.vault ~/Vault";
+  };
+in {
   programs.zsh = {
+    shellAliases = aliases;
     enable = true;
     initExtra = "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh";
     plugins = [

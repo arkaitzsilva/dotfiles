@@ -1,6 +1,7 @@
 { pkgs, inputs, ...}: {
   imports = [
     ../home-manager/hypridle.nix
+    ../home-manager/hyprlock.nix
     ../home-manager/ags.nix
     ../home-manager/settings.nix
     ../home-manager/theme.nix
@@ -88,9 +89,11 @@
 
         # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
+        #bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
 
         animation = [
+          #"windows, 1, 7, myBezier"
           "windows, 1, 4, myBezier, slide"
           "windowsOut, 1, 7, default, popin 80%"
               
@@ -158,6 +161,21 @@
       binde = [
         ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
         ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ];
+
+      windowrule = let
+        f = regex: "float, ^(${regex})$";
+        s = regex: "size 800 600, ^(${regex})$";
+      in [
+        (f "xdg-desktop-portal")
+        (f "xdg-desktop-portal-gtk")
+        (s "xdg-desktop-portal")
+        (s "xdg-desktop-portal-gtk")
+      ];
+
+      windowrulev2  = [
+        "suppressevent maximize, class:.*"
+        "noanim, class:^(com.github.Aylur.ags)$"
       ];
     };
   };

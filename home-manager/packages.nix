@@ -17,5 +17,12 @@
     inkscape
     amule
     deluge
+
+    # Fonts
+    noto-fonts
+    noto-fonts-color-emoji
+    noto-fonts-monochrome-emoji
+    google-fonts
+    font-awesome
   ];
 }

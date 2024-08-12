@@ -33,7 +33,7 @@
       # Autostart necessary processes (like notifications daemons, status bars, etc.)
       # Or execute your favorite apps at launch like this:
       exec-once = [
-        "swww-daemon -f xrgb & swww img $HOME/.local/share/backgrounds/animated_zelda_1.gif"
+        "swww-daemon -f xrgb & swww img $HOME/.local/share/backgrounds/static_waneella_cell_1.png & swww img $HOME/.local/share/backgrounds/animated_waneella_cell_1.gif"
         "ags -b hypr"
         "hyprctl setcursor Luv-Dark 24"
         "wl-paste --type text --watch cliphist store"
@@ -163,17 +163,9 @@
         ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ];
 
-      windowrule = let
-        f = regex: "float, ^(${regex})$";
-        s = regex: "size 800 600, ^(${regex})$";
-      in [
-        (f "xdg-desktop-portal")
-        (f "xdg-desktop-portal-gtk")
-        (s "xdg-desktop-portal")
-        (s "xdg-desktop-portal-gtk")
-      ];
-
       windowrulev2  = [
+        "float,regex,class:^(xdg-desktop-portal-gtk)$"
+        "size 800 600,regex,class:^(xdg-desktop-portal-gtk)$"
         "suppressevent maximize, class:.*"
         "noanim, class:^(com.github.Aylur.ags)$"
       ];

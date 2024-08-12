@@ -12,6 +12,8 @@
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     ags.url = "github:Aylur/ags";
+
+    swww.url = "github:LGFae/swww";
   };
 
   outputs = inputs @ {

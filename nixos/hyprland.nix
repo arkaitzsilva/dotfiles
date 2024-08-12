@@ -30,10 +30,13 @@
     };
 
     environment.systemPackages = with pkgs; [
-      swww
+      inputs.swww.packages.${pkgs.system}.swww
       hyprpicker
       cliphist
       brightnessctl
+      viewnior
+      zathura
+      mpv
     ];
 
     programs.thunar = {

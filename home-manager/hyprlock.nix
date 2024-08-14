@@ -46,7 +46,7 @@
         # USER
         {
           monitor = "";
-          text = "Hola, $USER";
+          text = "$DESC";
           color = "rgba(216, 222, 233, 1)";
           font_size = 25;
           font_family = "Homenaje";
@@ -85,7 +85,7 @@
         font_color = "rgb(200, 200, 200)";
         fade_on_empty = false;
         font_family = "Homenaje";
-        placeholder_text = "<i><span foreground=\"##ffffff99\">  Contraseña</span></i>";
+        placeholder_text = "<i><span foreground=\"##ffffff99\">  $USER</span></i>";
         hide_input = false;
         position = "0, -225";
         halign = "center";

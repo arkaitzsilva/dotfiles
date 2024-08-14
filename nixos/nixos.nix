@@ -1,5 +1,6 @@
 { pkgs, inputs, ... }: let
   username = "alienware";
+  description = "Alienware";
 in {
   imports = [
     /etc/nixos/hardware-configuration.nix
@@ -14,6 +15,7 @@ in {
   hyprland.enable = true;
 
   users.users.${username} = {
+    description = description;
     isNormalUser = true;
     initialPassword = username;
     shell = pkgs.zsh;

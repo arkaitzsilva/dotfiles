@@ -12,6 +12,8 @@
   ];
 
   services = {
+    #xserver.enable = true;
+    printing.enable = true;
     openssh.enable = true;
   };
 

@@ -1,6 +1,7 @@
 { pkgs, ... }: let
   aliases = {
     "crfs" = "cryfs ~/.vault ~/Vault";
+    "nx-switch" = "sudo nixos-rebuild switch --flake ~/Projects/dotfiles/ --impure";
   };
 in {
   programs.zsh = {

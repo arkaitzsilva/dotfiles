@@ -3,7 +3,7 @@ let
   backgroundsDir = ./backgrounds;
   backgrounds = builtins.readDir backgroundsDir;
 in {
-  home.file.".local/share/backgrounds/".source = backgroundsDir;
+  home.file."${config.xdg.dataHome}/backgrounds/".source = backgroundsDir;
 
   xdg.userDirs = {
     enable = true;

@@ -6,13 +6,13 @@
   home.packages = with pkgs; [
     bun
     esbuild
+    sass
+    fd
   ];
 
   programs.ags = {
     enable = true;
     configDir = ../ags;
-    extraPackages = with pkgs; [
-      
-    ];
+    extraPackages = with pkgs; [ ];
   };
 }

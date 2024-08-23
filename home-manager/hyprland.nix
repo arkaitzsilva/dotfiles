@@ -13,9 +13,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    plugins = [
-
-    ];
+    plugins = [ ];
 
     settings = {
       # See https://wiki.hyprland.org/Configuring/Monitors/
@@ -33,7 +31,7 @@
       # Autostart necessary processes (like notifications daemons, status bars, etc.)
       # Or execute your favorite apps at launch like this:
       exec-once = [
-        "swww-daemon -f xrgb & swww img $HOME/.local/share/backgrounds/static_waneella_cell_1.png & swww img $HOME/.local/share/backgrounds/animated_waneella_cell_1.gif"
+        "swww-daemon -f xrgb & swww img $HOME/.local/share/backgrounds/animated_zelda_1.gif"
         "ags -b hypr"
         "hyprctl setcursor Luv-Dark 24"
         "wl-paste --type text --watch cliphist store"
@@ -156,6 +154,8 @@
         ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 
         "$mainMod CONTROL, Q, exec, wlogout"
+
+        "CTRL SHIFT, R, exec, ags -b hypr quit; ags -b hypr"
       ];
 
       binde = [

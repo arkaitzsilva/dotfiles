@@ -17,5 +17,9 @@
   };
 
   console.useXkbConfig = true;
-  services.xserver.xkb.layout = "es";
+
+  services.xserver = {
+    xkb.layout = "es";
+    xkb.variant = "";
+  };
 }

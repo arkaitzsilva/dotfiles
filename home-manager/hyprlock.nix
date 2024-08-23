@@ -1,4 +1,10 @@
-{
+{ config, ... }: 
+let 
+  hyprlockDir = ./hyprlock;
+  hyprlockFiles = builtins.readDir hyprlockDir;
+in {
+  home.file."${config.xdg.configHome}/hypr/hyprlock/".source = hyprlockDir;
+
   programs.hyprlock = {
     enable = true;
 
@@ -10,7 +16,7 @@
 
       background = {
         monitor = "";
-        path = "$HOME/.local/share/backgrounds/static_waneella_1.png";   # supports png, jpg, webp (no animations, though)
+        path = "$XDG_CONFIG_HOME/hypr/hyprlock/static_nx_dark_1_1366_768.png";   # supports png, jpg, webp (no animations, though)
         color = "$base";
         blur_passes = 0;
         contrast = 0.8916;
@@ -39,7 +45,7 @@
           color = "rgba(216, 222, 233, 1)";
           font_size = 30;
           font_family = "Homenaje";
-          position = "0, 105";
+          position = "0, 135";
           halign = "center";
           valign = "center";
         }
@@ -59,11 +65,11 @@
       # USER AVATAR
       image = {
         monitor = "";
-        path = "$HOME/.face";
-        border_color = "0xffdddddd";
+        path = "$XDG_CONFIG_HOME/hypr/hyprlock/face";
+        border_color = "0x2979ffff";
         border_size = 2;
         size = 120;
-        rounding = -1;
+        rounding = 10;
         rotate = 0;
         reload_time = -1;
         reload_cmd = "";

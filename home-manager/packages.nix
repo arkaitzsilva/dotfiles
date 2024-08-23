@@ -18,6 +18,9 @@
     amule
     deluge
 
+    #GNOME
+    gnome-secrets
+
     # Fonts
     noto-fonts
     noto-fonts-color-emoji

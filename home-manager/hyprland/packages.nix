@@ -7,6 +7,7 @@
     cmatrix
     unzip
     unrar
+    jq
     
     # GTK
     firefox
@@ -17,9 +18,6 @@
     inkscape
     amule
     deluge
-
-    #GNOME
-    gnome-secrets
 
     # Fonts
     noto-fonts

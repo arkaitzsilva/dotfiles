@@ -14,20 +14,28 @@ const date = Variable("", {
 const dispatch = ws => hyprland.messageAsync(`dispatch workspace ${ws}`);
 
 function Workspaces() { 
-  return Widget.EventBox({
-    onScrollUp: () => dispatch('+1'),
-    onScrollDown: () => dispatch('-1'),
+  return Widget.Box({
     child: Widget.Box({
       class_name: "workspaces",
-      children: Array.from({ length: 20 }, (_, i) => i + 1).map(i => Widget.Button({
-          attribute: i,
-          label: `${i}`,
-          onClicked: () => dispatch(i),
+      children: Array.from({ length: 9 }, (_, i) => i + 1).map(i => Widget.Button({
+        attribute: i,
+        label: `${i}`,
+        onClicked: () => dispatch(i),
+        setup: self => self.hook(hyprland, () => {
+          self.toggleClassName("active", hyprland.active.workspace.id === i)
+          self.toggleClassName("occupied", (hyprland.getWorkspace(i)?.windows || 0) > 0)          
+        })
       })),
 
-      setup: self => self.hook(hyprland, () => self.children.forEach(btn => {
-          btn.visible = hyprland.workspaces.some(ws => ws.id === btn.attribute)
-      })),
+      setup: self => self.hook(hyprland, () => {
+        self.children.forEach(btn => {
+          if (btn.attribute <= 6) {
+            btn.visible = true;
+          } else {
+            btn.visible = hyprland.workspaces.some(ws => ws.id === btn.attribute);
+          }
+        });
+      }),
     }),
   })
 }

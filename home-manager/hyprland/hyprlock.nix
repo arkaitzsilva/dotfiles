@@ -1,10 +1,4 @@
-{ config, ... }: 
-let 
-  hyprlockDir = ./hyprlock;
-  hyprlockFiles = builtins.readDir hyprlockDir;
-in {
-  home.file."${config.xdg.configHome}/hypr/hyprlock/".source = hyprlockDir;
-
+{ config, ... }: {
   programs.hyprlock = {
     enable = true;
 
@@ -16,7 +10,7 @@ in {
 
       background = {
         monitor = "";
-        path = "$XDG_CONFIG_HOME/hypr/hyprlock/static_nx_dark_1_1366_768.png";   # supports png, jpg, webp (no animations, though)
+        path = "$HOME/.local/share/backgrounds/static_gaming_setup_2.png";   # supports png, jpg, webp (no animations, though)
         color = "$base";
         blur_passes = 0;
         contrast = 0.8916;
@@ -63,20 +57,20 @@ in {
       ];
 
       # USER AVATAR
-      image = {
-        monitor = "";
-        path = "$XDG_CONFIG_HOME/hypr/hyprlock/face";
-        border_color = "0x2979ffff";
-        border_size = 2;
-        size = 120;
-        rounding = 10;
-        rotate = 0;
-        reload_time = -1;
-        reload_cmd = "";
-        position = "0, -20";
-        halign = "center";
-        valign = "center";
-      };
+      #image = {
+      #  monitor = "";
+      #  path = "$XDG_CONFIG_HOME/hypr/hyprlock/face";
+      #  border_color = "0x2979ffff";
+      #  border_size = 2;
+      #  size = 120;
+      #  rounding = 10;
+      #  rotate = 0;
+      #  reload_time = -1;
+      #  reload_cmd = "";
+      #  position = "0, -20";
+      #  halign = "center";
+      #  valign = "center";
+      #};
 
       # INPUT FIELD
       input-field = {

@@ -7,12 +7,10 @@ in {
     ./system.nix
     ./audio.nix
     ./locale.nix
-    ./hyprland.nix
+    ./desktop/hyprland
   ];
 
   programs.zsh.enable = true;
-
-  hyprland.enable = true;
 
   users.users.${username} = {
     description = description;

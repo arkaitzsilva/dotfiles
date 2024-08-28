@@ -1,15 +1,4 @@
 { pkgs, inputs, ...}: {
-  imports = [
-    ../home-manager/hypridle.nix
-    ../home-manager/hyprlock.nix
-    ../home-manager/ags.nix
-    ../home-manager/settings.nix
-    ../home-manager/theme.nix
-    ../home-manager/wofi.nix
-    ../home-manager/wlogout.nix
-    ../home-manager/foot.nix
-  ];
-
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -36,6 +25,13 @@
         "hyprctl setcursor Luv-Dark 24"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+      ];
+
+      # See https://wiki.hyprland.org/Configuring/Environment-variables/
+      env = [
+        "NIXOS_OZONE_WL,1"
+        "AGS_BUNDLER,esbuild"        
+        "WWW_TRANSITION,none"
       ];
 
       # https://wiki.hyprland.org/Configuring/Variables/#general
@@ -122,6 +118,7 @@
       # https://wiki.hyprland.org/Configuring/Variables/#input
       input = {
         kb_layout = "es";
+        kb_variant = "";
         follow_mouse = 1;
         touchpad.natural_scroll = false;
       };
@@ -155,7 +152,7 @@
 
         "$mainMod CONTROL, Q, exec, wlogout"
 
-        "CTRL SHIFT, R, exec, ags -b hypr quit; ags -b hypr"
+        "CTRL SHIFT, R, exec, echo $AGS_BUNDLER; ags -b hypr quit; ags -b hypr"
       ];
 
       binde = [
@@ -167,7 +164,6 @@
         "float,regex,class:^(xdg-desktop-portal-gtk)$"
         "size 800 600,regex,class:^(xdg-desktop-portal-gtk)$"
         "suppressevent maximize, class:.*"
-        "noanim, class:^(com.github.Aylur.ags)$"
       ];
     };
   };

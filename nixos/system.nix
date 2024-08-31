@@ -12,7 +12,6 @@
   ];
 
   services = {
-    #xserver.enable = true;
     printing.enable = true;
     openssh.enable = true;
   };
@@ -25,6 +24,8 @@
     enable = true;
     device = "/dev/sda"; 
   };
+
+  virtualisation.docker.enable = true;
 
   system.stateVersion = "24.11";
 }

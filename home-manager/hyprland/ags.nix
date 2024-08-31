@@ -6,7 +6,7 @@
   home.packages = with pkgs; [
     bun
     esbuild
-    sass
+    dart-sass
     fd
   ];
 

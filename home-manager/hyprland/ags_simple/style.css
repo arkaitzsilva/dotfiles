@@ -23,8 +23,8 @@ label {
 
 }
 
-.workspaces.text-button {
-  font-size: small;
+.workspaces .text-button {
+  font-size: 10px;
   margin: 1px;
 }
 

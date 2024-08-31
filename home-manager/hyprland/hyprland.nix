@@ -32,6 +32,7 @@
         "NIXOS_OZONE_WL,1"
         "AGS_BUNDLER,esbuild"        
         "WWW_TRANSITION,none"
+        "XDG_CONFIG_HOME,$HOME/.config"
       ];
 
       # https://wiki.hyprland.org/Configuring/Variables/#general
@@ -152,7 +153,9 @@
 
         "$mainMod CONTROL, Q, exec, wlogout"
 
-        "CTRL SHIFT, R, exec, echo $AGS_BUNDLER; ags -b hypr quit; ags -b hypr"
+        "CTRL SHIFT, R, exec, ags -b hypr quit; ags -b hypr > /tmp/ags.log 2>&1"
+
+        "CTRL SHIFT, A, exec, bash -c 'whoami > /tmp/user_info.txt'"
       ];
 
       binde = [
@@ -164,6 +167,10 @@
         "float,regex,class:^(xdg-desktop-portal-gtk)$"
         "size 800 600,regex,class:^(xdg-desktop-portal-gtk)$"
         "suppressevent maximize, class:.*"
+      ];
+
+      layerrule = [
+        "noanim,^bar[0-9]+"
       ];
     };
   };

@@ -8,6 +8,7 @@ const $ = (name: string, value: string | Opt<any>) => `$${name}: ${value};`
 const variables = () => [
   $("primary-bg", "#2C2C2C"),
   $("primary-fg", "#6D6D6D"),
+  $("border", "#474341"),
 ]
 
 async function resetCss() {

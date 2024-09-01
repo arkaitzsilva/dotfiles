@@ -10,8 +10,6 @@
     jq
     
     # GTK
-    firefox
-    brave
     vscode
     gedit
     gimp

@@ -10,7 +10,7 @@
 
       background = {
         monitor = "";
-        path = "$HOME/.local/share/backgrounds/static_gaming_setup_2.png";   # supports png, jpg, webp (no animations, though)
+        path = "$HOME/.local/share/backgrounds/static_alien_1.png";   # supports png, jpg, webp (no animations, though)
         color = "$base";
         blur_passes = 0;
         contrast = 0.8916;

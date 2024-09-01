@@ -18,7 +18,7 @@ const options = mkOptions(OPTIONS, {
         ]),
     },
     date: {
-      format: opt("%H:%M - %A %e."),
+      format: opt("%A %d %b - %H:%M"),
       /*action: opt(() => App.toggleWindow("datemenu")),*/
     },
   },

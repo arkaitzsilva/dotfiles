@@ -149,6 +149,9 @@
         "$mainMod, next, workspace, +1"
         "$mainMod, prior, workspace, -1"
 
+        "$mainMod ALT, next, movetoworkspace, +1"
+        "$mainMod ALT, prior, movetoworkspace, -1"
+
         ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 
         "$mainMod CONTROL, Q, exec, wlogout"

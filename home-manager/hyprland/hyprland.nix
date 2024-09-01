@@ -20,7 +20,7 @@
       # Autostart necessary processes (like notifications daemons, status bars, etc.)
       # Or execute your favorite apps at launch like this:
       exec-once = [
-        "swww-daemon -f xrgb & swww img $HOME/.local/share/backgrounds/animated_zelda_1.gif"
+        "swww-daemon -f xrgb & swww img $HOME/.local/share/backgrounds/animated_alien_1.gif"
         "ags -b hypr"
         "hyprctl setcursor Luv-Dark 24"
         "wl-paste --type text --watch cliphist store"

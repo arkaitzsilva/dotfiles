@@ -1,12 +1,39 @@
-window.bar {
-  color: $primary-fg;
-}
+.bar {
+  label {
+    font-family: $bar-font;
+    color: $bar-fg;
+  }
 
-.panel-section {
-  min-height: 32px;
-  margin: 4px 4px 0 4px;
-  /*padding: 2px;*/
-  border-radius: 6px;
-  background-color: $primary-bg;
-  border: 1px solid $border;
+  button {
+    border-radius: 20px;
+  }
+
+  .bar-section {
+    min-height: 32px;
+    margin: 4px 4px 0 4px;
+    /*padding: 0 4px;*/
+    border-radius: 20px;
+    background-color: $bar-bg;
+    border: 1px solid $bar-border;
+
+    .workspaces {
+      .indicator {
+        margin: $element-spacer;
+      }
+    }
+
+    .datetime {
+      .time {
+        font-size: 1.2727rem;
+        margin: $element-spacer;
+      }
+      .spacer {
+        font-size: 1.2727rem;
+      }
+      .date {
+        font-size: 1rem;
+        margin: $element-spacer;
+      }
+    }
+  }
 }

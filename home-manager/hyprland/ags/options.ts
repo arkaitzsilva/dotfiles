@@ -8,7 +8,7 @@ const options = mkOptions(OPTIONS, {
     transparent: opt(false),
     layout: {
         start: opt<Array<import("widget/bar/Bar").BarWidget>>([
-            
+          "workspaces",
         ]),
         center: opt<Array<import("widget/bar/Bar").BarWidget>>([
           "date",
@@ -17,9 +17,13 @@ const options = mkOptions(OPTIONS, {
 
         ]),
     },
-    date: {
-      format: opt("%A %d %b - %H:%M"),
+    dateTime: {
+      timeFormat: opt("%H:%M"),
+      dateFormat: opt("%A, %d/%m"),
       /*action: opt(() => App.toggleWindow("datemenu")),*/
+    },
+    workspaces: {
+      workspaces: opt(8),
     },
   },
 })

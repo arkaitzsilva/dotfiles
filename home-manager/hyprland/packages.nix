@@ -8,6 +8,8 @@
     unzip
     unrar
     jq
+    gifsicle
+    pass
     
     # GTK
     vscode

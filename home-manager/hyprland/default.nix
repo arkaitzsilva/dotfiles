@@ -11,6 +11,6 @@
     ./wofi.nix
     ./wlogout.nix
     ./foot.nix
-    ../apps/gtk
+    ../apps
   ];
 }

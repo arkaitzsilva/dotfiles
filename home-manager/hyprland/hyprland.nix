@@ -84,11 +84,9 @@
 
         # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
-        #bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
 
         animation = [
-          #"windows, 1, 7, myBezier"
           "windows, 1, 4, myBezier, slide"
           "windowsOut, 1, 7, default, popin 80%"
               
@@ -152,7 +150,15 @@
         "$mainMod ALT, next, movetoworkspace, +1"
         "$mainMod ALT, prior, movetoworkspace, -1"
 
+        "$mainMod ALT, left, movewindow, l"
+        "$mainMod ALT, right, movewindow, r"
+        "$mainMod ALT, up, movewindow, u"
+        "$mainMod ALT, down, movewindow, d"
+
         ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86AudioPlay, exec, playerctl play-pause"
+        ",XF86AudioPrev, exec, playerctl previous"
+        ",XF86AudioNext, exec, playerctl next"
 
         "$mainMod CONTROL, Q, exec, wlogout"
 

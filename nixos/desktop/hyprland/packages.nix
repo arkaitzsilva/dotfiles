@@ -11,6 +11,7 @@ in {
     adwaita-icon-theme
     cantarell-fonts
     
+    libdbusmenu-gtk3
     inputs.swww.packages.${pkgs.system}.swww
     hyprpicker
     cliphist

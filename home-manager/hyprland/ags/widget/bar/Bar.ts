@@ -1,6 +1,7 @@
 import DateTime from "./buttons/DateTime"
 import Workspaces from "./buttons/Workspaces"
 import SystemIndicators from "./buttons/SystemIndicators"
+import SysTray from "./buttons/SysTray"
 import options from "options"
 
 const { start, center, end } = options.bar.layout
@@ -10,6 +11,7 @@ const widget = {
   datetime: DateTime,
   workspaces: Workspaces,
   systemindicators: SystemIndicators,
+  systray: SysTray,
   expander: () => Widget.Box({ expand: true }),
 }
 

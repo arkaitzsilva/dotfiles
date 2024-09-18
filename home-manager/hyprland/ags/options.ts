@@ -15,6 +15,7 @@ const options = mkOptions(OPTIONS, {
         ]),
         end: opt<Array<import("widget/bar/Bar").BarWidget>>([
           "systemindicators",
+          "systray",
         ]),
     },
     dateTime: {
@@ -24,6 +25,12 @@ const options = mkOptions(OPTIONS, {
     },
     workspaces: {
       workspaces: opt(8),
+    },
+    systray: {
+      ignore: opt([
+          "KDE Connect Indicator",
+          "spotify-client",
+      ]),
     },
   },
 })

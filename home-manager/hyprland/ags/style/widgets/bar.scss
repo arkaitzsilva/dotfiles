@@ -1,4 +1,7 @@
 .bar {
+  min-height: 32px;
+  background-color: transparent;
+
   label {
     font-family: $bar-font;
     color: $bar-fg;
@@ -8,31 +11,43 @@
     border-radius: 20px;
   }
 
-  .bar-section {
-    min-height: 32px;
+  .bar-section {    
     margin: 4px 4px 0 4px;
-    /*padding: 0 4px;*/
     border-radius: 20px;
     background-color: $bar-bg;
     border: 1px solid $bar-border;
 
     .workspaces {
-      .indicator {
-        margin: $element-spacer;
+      margin: $spacer;
+
+      &.button {
+        min-width: 0;
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        border-radius: 50%;
+        background-color: transparent;
       }
     }
 
     .datetime {
       .time {
         font-size: 1.2727rem;
-        margin: $element-spacer;
+        margin: $spacer;
       }
       .spacer {
         font-size: 1.2727rem;
       }
       .date {
         font-size: 1rem;
-        margin: $element-spacer;
+        margin: $spacer;
+      }
+    }
+
+    .sysindicators {
+      image {
+        color: $bar-fg;
+        margin: $spacer;
       }
     }
   }

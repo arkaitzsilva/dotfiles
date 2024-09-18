@@ -7,6 +7,7 @@ in {
     ./system.nix
     ./audio.nix
     ./locale.nix
+    ./ai.nix
     ./desktop/hyprland
   ];
 

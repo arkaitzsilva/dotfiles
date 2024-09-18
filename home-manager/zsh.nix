@@ -2,6 +2,7 @@
   aliases = {
     "crfs" = "cryfs ~/.vault ~/Vault";
     "nx-switch" = "sudo nixos-rebuild switch --flake ~/Projects/dotfiles/ --impure";
+    "llama" = "ollama run llama3.1:8b ";
   };
 in {
   programs.zsh = {

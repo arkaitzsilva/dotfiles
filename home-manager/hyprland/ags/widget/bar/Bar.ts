@@ -1,13 +1,15 @@
 import DateTime from "./buttons/DateTime"
 import Workspaces from "./buttons/Workspaces"
+import SystemIndicators from "./buttons/SystemIndicators"
 import options from "options"
 
 const { start, center, end } = options.bar.layout
 const { transparent, position } = options.bar
 
 const widget = {
-  date: DateTime,
+  datetime: DateTime,
   workspaces: Workspaces,
+  systemindicators: SystemIndicators,
   expander: () => Widget.Box({ expand: true }),
 }
 
@@ -30,6 +32,7 @@ export default (monitor: number) => Widget.Window({
         children: center.bind().as(c => c.map(w => widget[w]())),
       }),
       endWidget: Widget.Box({
+        class_name: "bar-section",
         hpack: "end",
         children: end.bind().as(e => e.map(w => widget[w]())),
       }),

@@ -11,10 +11,10 @@ const options = mkOptions(OPTIONS, {
           "workspaces",
         ]),
         center: opt<Array<import("widget/bar/Bar").BarWidget>>([
-          "date",
+          "datetime",
         ]),
         end: opt<Array<import("widget/bar/Bar").BarWidget>>([
-
+          "systemindicators",
         ]),
     },
     dateTime: {

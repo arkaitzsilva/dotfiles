@@ -11,7 +11,7 @@ const variables = () => [
   $("bar-fg", "#F5F5F5"),
   $("bar-border", "#52565C"), // #0E0E10
 
-  $("element-spacer", "0 6px"),
+  $("spacer", "0 4px"),
 ]
 
 async function resetCss() {

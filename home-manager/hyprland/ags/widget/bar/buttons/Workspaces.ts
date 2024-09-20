@@ -37,7 +37,6 @@ const Workspaces = (ws: number) => Widget.Box({
 });
 
 
-
 export default () => Widget.EventBox({
   class_name: "workspaces",
   on_scroll_up: () => dispatch("+1"),

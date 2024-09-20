@@ -10,8 +10,11 @@ const variables = () => [
   $("bar-bg", "#2B2C31"),
   $("bar-fg", "#F5F5F5"),
   $("bar-border", "#52565C"), // #0E0E10
+  $("bar-border-radius", "20px"),
 
-  $("spacer", "0 4px"),
+  $("spacer-small", "0 2px"),
+  $("spacer-medium", "0 4px"),
+  $("spacer-big", "0 6px"),
 ]
 
 async function resetCss() {

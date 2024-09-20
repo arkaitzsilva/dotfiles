@@ -1,10 +1,12 @@
 import { clock } from "lib/variables"
 import PanelButton from "../PanelButton"
+import Spacer from "../Spacer"
 import options from "options"
 
 const { timeFormat, dateFormat } = options.bar.dateTime
 const date = Utils.derive([clock, dateFormat], (c, f) => c.format(f) || "")
 const time = Utils.derive([clock, timeFormat], (c, f) => c.format(f) || "")
+
 
 export default () => PanelButton({
     /*window: "datemenu",
@@ -18,11 +20,7 @@ export default () => PanelButton({
                 justification: "center",
                 label: time.bind(),
             }),
-            Widget.Label({
-                class_name: "spacer",
-                justification: "center",
-                label: "•",
-            }),
+            Spacer("•"),
             Widget.Label({
                 class_name: "date",
                 justification: "center",

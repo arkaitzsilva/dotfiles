@@ -11,8 +11,8 @@ in {
     adwaita-icon-theme
     cantarell-fonts
     
-    libdbusmenu-gtk3
     inputs.swww.packages.${pkgs.system}.swww
+    libdbusmenu-gtk3
     hyprpicker
     cliphist
     brightnessctl

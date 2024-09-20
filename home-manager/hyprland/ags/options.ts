@@ -14,8 +14,8 @@ const options = mkOptions(OPTIONS, {
           "datetime",
         ]),
         end: opt<Array<import("widget/bar/Bar").BarWidget>>([
-          "systemindicators",
           "systray",
+          "systemindicators",
         ]),
     },
     dateTime: {
@@ -24,7 +24,7 @@ const options = mkOptions(OPTIONS, {
       /*action: opt(() => App.toggleWindow("datemenu")),*/
     },
     workspaces: {
-      workspaces: opt(8),
+      workspaces: opt(9),
     },
     systray: {
       ignore: opt([

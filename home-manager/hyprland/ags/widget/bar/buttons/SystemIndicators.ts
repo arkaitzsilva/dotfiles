@@ -1,4 +1,5 @@
 import PanelButton from "../PanelButton"
+import Spacer from "../Spacer"
 import icons from "lib/icons"
 
 const network = await Service.import("network")
@@ -28,15 +29,20 @@ const BatteryIndicator = () => Widget.Icon()
     self.size = 22
   })
 
+
 export default () => PanelButton({
   /*window: "quicksettings",
   on_clicked: () => App.toggleWindow("quicksettings"),*/
   on_scroll_up: () => audio.speaker.volume += 0.02,
   on_scroll_down: () => audio.speaker.volume -= 0.02,
   class_name: "sysindicators",
-  child: Widget.Box([
-    NetworkIndicator(),
-    AudioIndicator(),
-    BatteryIndicator(),
-  ]),
+  child: Widget.Box({
+    children: [
+      NetworkIndicator(),
+      Spacer(),
+      AudioIndicator(),
+      Spacer(),
+      BatteryIndicator(),
+    ],
+  }),
 })

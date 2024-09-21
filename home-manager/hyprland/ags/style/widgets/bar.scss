@@ -13,7 +13,8 @@
     }
 
     .panel-button {
-      padding: 4px 8px;
+      min-width: 22px;
+      padding: 4px 6px;
       border-radius: $bar-border-radius;
     }
 

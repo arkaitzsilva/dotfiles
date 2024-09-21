@@ -1,11 +1,13 @@
+import Gdk from "gi://Gdk"
 import options from "options"
+import PanelButton from "../PanelButton"
 
 const systemtray = await Service.import("systemtray")
 const { ignore } = options.bar.systray
 
 const SysTrayItem = (item: TrayItem) => PanelButton({
   class_name: "tray-item",
-  child: Widget.Icon({ icon: item.bind("icon") }),
+  child: Widget.Icon({ icon: item.bind("icon"), size: 22 }),
   tooltip_markup: item.bind("tooltip_markup"),
   setup: self => {
     const { menu } = item

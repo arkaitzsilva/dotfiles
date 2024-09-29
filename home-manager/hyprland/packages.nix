@@ -10,6 +10,7 @@
     jq
     gifsicle
     pass
+    gettext
     
     # GTK
     vscode

@@ -9,6 +9,7 @@
       };
 
       colors = {
+        alpha = 0.9;
         foreground = "26C6DA";
         background = "2B2C31"; 
 

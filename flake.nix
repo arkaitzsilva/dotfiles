@@ -11,6 +11,11 @@
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
+    hyprfocus = {
+      url = "github:pyt0xic/hyprfocus";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     ags.url = "github:Aylur/ags";
 
     swww.url = "github:LGFae/swww";

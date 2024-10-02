@@ -4,8 +4,8 @@
 
     settings = {
       main = {
-          font = "MesloLGS NF:size=10";
-          pad = "10x10";
+        font = "MesloLGS NF:size=10";
+        pad = "10x10";
       };
 
       colors = {

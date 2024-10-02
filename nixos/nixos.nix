@@ -5,19 +5,14 @@ in {
   imports = [
     /etc/nixos/hardware-configuration.nix
     ./system.nix
-    ./audio.nix
     ./locale.nix
-    ./ai.nix
     ./desktop/hyprland
   ];
-
-  programs.zsh.enable = true;
 
   users.users.${username} = {
     description = description;
     isNormalUser = true;
     initialPassword = username;
-    shell = pkgs.zsh;
     extraGroups = [
       "wheel"
       "networkmanager"

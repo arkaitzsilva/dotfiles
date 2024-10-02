@@ -6,5 +6,11 @@
 
   home.packages = with pkgs; [
     libreoffice-still
+    vscode
+    gedit
+    gimp
+    inkscape
+    amule
+    deluge
   ];
 }

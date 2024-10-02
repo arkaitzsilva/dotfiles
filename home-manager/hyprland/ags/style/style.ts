@@ -7,10 +7,10 @@ const $ = (name: string, value: string | Opt<any>) => `$${name}: ${value};`
 
 const variables = () => [
   $("bar-font", "\"Gabarito\", \"Popins\", \"Readex Pro\", \"Lexend\", sans-serif"),
-  $("bar-bg", "#2B2C31CC"),
+  $("bar-bg", "rgba(14, 14, 16, 0.7)"), // Bright: #2B2C31; dark: #0E0E10
   $("bar-fg", "#F5F5F5"),
   $("bar-border", "#52565C"), // Bright: #52565C; Dark: #0E0E10
-  $("bar-border-radius", "20px"),
+  $("bar-border-radius", "10px"),
 
   $("spacer-small", "0 2px"),
   $("spacer-medium", "0 4px"),

@@ -1,5 +1,5 @@
 {
   imports = [
-    ./greetd.nix
+    ./pantheon.nix
   ];
 }

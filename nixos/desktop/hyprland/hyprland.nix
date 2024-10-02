@@ -6,10 +6,15 @@
     ];
   };
 
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    xwayland.enable = true;
+  programs = {
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      xwayland.enable = true;
+    };
+    dconf.enable = true;
+    virt-manager.enable = true;
+    gnupg.agent.enable = true;
   };
 
   xdg.portal = {
@@ -49,5 +54,12 @@
     gvfs.enable = true;
     tumbler.enable = true;
     upower.enable = true;
+    printing.enable = true;
+    openssh.enable = true;
+  };
+
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
   };
 }

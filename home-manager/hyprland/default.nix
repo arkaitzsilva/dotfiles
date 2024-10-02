@@ -6,7 +6,6 @@
     ./settings.nix
     ./theme.nix
     ./dconf.nix
-    ./packages.nix
     ./ags.nix
     ./wofi.nix
     ./wlogout.nix

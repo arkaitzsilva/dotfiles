@@ -1,8 +1,9 @@
 {
   imports = [
-    ./packages.nix
-    ./hyprland.nix
-    ./thunar.nix
     ./greetd
+    ./hyprland.nix
+    ./audio.nix
+    ./thunar.nix
+    ./packages.nix  
   ];
 }

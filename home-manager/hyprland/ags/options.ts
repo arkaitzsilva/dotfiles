@@ -24,7 +24,7 @@ const options = mkOptions(OPTIONS, {
       /*action: opt(() => App.toggleWindow("datemenu")),*/
     },
     workspaces: {
-      workspaces: opt(9),
+      workspaces: opt(8),
     },
     systray: {
       ignore: opt([

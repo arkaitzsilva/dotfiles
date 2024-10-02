@@ -85,7 +85,7 @@
         font_color = "rgb(200, 200, 200)";
         fade_on_empty = false;
         font_family = "Homenaje";
-        placeholder_text = "<i><span foreground=\"##ffffff99\">  $USER</span></i>";
+        placeholder_text = "<i>Sesión iniciada con </i><span foreground=\"##ffffff99\">$USER</span>";
         hide_input = false;
         position = "0, -225";
         halign = "center";

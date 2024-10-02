@@ -1,9 +1,13 @@
 { config, ... }: 
 let 
-  backgroundsDir = ./backgrounds;
-  backgrounds = builtins.readDir backgroundsDir;
+  backgroundDir = ./backgrounds;
+  scriptDir = ./scripts;
+
+  backgrounds = builtins.readDir backgroundDir;
+  scripts = builtins.readDir scriptDir;
 in {
-  home.file."${config.xdg.dataHome}/backgrounds/".source = backgroundsDir;
+  home.file."${config.xdg.dataHome}/backgrounds/".source = backgroundDir;
+  home.file."${config.xdg.configHome}/hypr/scripts/".source = scriptDir;
 
   xdg.userDirs = {
     enable = true;

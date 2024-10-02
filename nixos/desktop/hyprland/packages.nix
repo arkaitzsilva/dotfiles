@@ -17,8 +17,5 @@ in {
     cliphist
     brightnessctl
     playerctl
-    viewnior
-    zathura
-    mpv
   ];
 }

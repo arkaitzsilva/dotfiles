@@ -1,9 +1,14 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: let
+  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+  hyprland-session = "${pkgs.hyprland}/share/wayland-sessions";
+in {
   services.greetd = {
     enable = true;
-    #settings.default_session.command = pkgs.writeShellScript "greeter" ''
-    #  export XKB_DEFAULT_LAYOUT=${config.services.xserver.xkb.layout}
-    #  export XCURSOR_THEME=Luv-Dark
-    #'';
+    settings = {
+      default_session = {
+        command = "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session}";
+        user = "greeter";
+      };
+    };
   };
 }

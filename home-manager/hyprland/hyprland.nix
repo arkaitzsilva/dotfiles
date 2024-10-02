@@ -87,11 +87,9 @@
         # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-
         animation = [
           "windows, 1, 4, myBezier, slide"
           "windowsOut, 1, 7, default, popin 80%"
-              
           "border, 1, 10, default"
           "borderangle, 1, 8, default"
           "fade, 1, 7, default"
@@ -166,7 +164,7 @@
 
         "CTRL SHIFT, R, exec, ags -b hypr quit; ags -b hypr > /tmp/ags.log 2>&1"
 
-        "CTRL SHIFT, A, exec, bash -c 'whoami > /tmp/user_info.txt'"
+        "$mainMod, SPACE, animatefocused"
       ];
 
       binde = [
@@ -188,21 +186,21 @@
       plugin = {
         hyprfocus = {
           enabled = "yes";
-          animate_floating = "yes";
-          animate_workspacechange = "yes";
-          focus_animation = "flash";
+          animate_floating = "no";
+          animate_workspacechange = "no";
+          focus_animation = "shrink";
 
           bezier = [
-            "bezIn, 0.5,0.0,1.0,0.5"
-            "bezOut, 0.0,0.5,0.5,1.0"
+            "bezIn, 0.5, 0.0, 1.0, 0.5"
+            "bezOut, 0.0, 0.5, 0.5, 1.0"
             "overshot, 0.05, 0.9, 0.1, 1.05"
             "smoothOut, 0.36, 0, 0.66, -0.56"
             "smoothIn, 0.25, 1, 0.5, 1"
-            "realsmooth, 0.28,0.29,.69,1.08"
+            "realsmooth, 0.28, 0.29, 0.69, 1.08"
           ];
 
           flash = {
-            flash_opacity = 0.95;
+            flash_opacity = 0.8;
             in_bezier = "realsmooth";
             in_speed = 0.5;
             out_bezier = "realsmooth";
@@ -210,7 +208,7 @@
           };
 
           shrink = {
-            shrink_percentage = 0.95;
+            shrink_percentage = 0.98;
             in_bezier = "realsmooth";
             in_speed = 1;
             out_bezier = "realsmooth";

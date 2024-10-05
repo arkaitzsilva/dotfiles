@@ -10,5 +10,6 @@
     gifsicle
     pass
     gettext
+    libnotify
   ];
 }

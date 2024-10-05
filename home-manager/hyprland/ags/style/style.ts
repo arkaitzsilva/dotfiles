@@ -15,6 +15,20 @@ const variables = () => [
   $("spacer-small", "0 2px"),
   $("spacer-medium", "0 4px"),
   $("spacer-big", "0 6px"),
+
+  $("radius", "10px"),
+  $("spacing", "4px"),
+  $("padding", "4px"),
+  $("bg", "#2B2C31"),
+  $("fg", "#F5F5F5"),
+  $("error-bg", "red"),
+  $("border", "1px solid green"),
+  $("shadow-color", "#000000"),
+  $("popover-border-color", "#0E0E10"),
+  $("popover-radius", "10px"),
+  $("popover-padding", "10px"),
+  $("shadows", "true"),
+  $("border-width", "1px"),
 ]
 
 async function resetCss() {

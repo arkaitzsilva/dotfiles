@@ -1,6 +1,7 @@
 import { opt, mkOptions } from "lib/option"
 
 const options = mkOptions(OPTIONS, {
+  transition: opt(200),
   bar: {
     flatButtons: opt(true),
     position: opt<"top" | "bottom">("top"),
@@ -32,6 +33,11 @@ const options = mkOptions(OPTIONS, {
           "spotify-client",
       ]),
     },
+  },
+  notifications: {
+    position: opt<Array<"top" | "bottom" | "left" | "right">>(["top", "right"]),
+    blacklist: opt(["Spotify"]),
+    width: opt(440),
   },
 })
 

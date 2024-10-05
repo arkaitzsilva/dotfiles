@@ -155,12 +155,18 @@
         "$mainMod ALT, up, movewindow, u"
         "$mainMod ALT, down, movewindow, d"
 
+        "$mainMod, M, fullscreen"
+
         ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ",XF86AudioPlay, exec, playerctl play-pause"
         ",XF86AudioPrev, exec, playerctl previous"
         ",XF86AudioNext, exec, playerctl next"
 
-        "$mainMod CONTROL, Q, exec, wlogout"
+        "$mainMod CONTROL, L, exec, hyprlock"
+        "$mainMod CONTROL, P, exec, systemctl poweroff"
+        "$mainMod CONTROL, Q, exec, loginctl terminate-user $USER"
+        "$mainMod CONTROL, R, exec, systemctl reboot"
+        "$mainMod CONTROL, S, exec, systemctl suspend"
 
         "CTRL SHIFT, R, exec, ags -b hypr quit; ags -b hypr > /tmp/ags.log 2>&1"
 

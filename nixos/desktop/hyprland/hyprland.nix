@@ -25,6 +25,12 @@
   };
 
   security = {
+    sudo = {
+      enable = true;
+      extraConfig = ''
+        Defaults pwfeedback
+      '';
+    };
     polkit.enable = true;
     pam.services.ags = {};
   };

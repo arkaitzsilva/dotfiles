@@ -1,4 +1,3 @@
-import PanelButton from "../PanelButton"
 import options from "options"
 import { sh, range } from "lib/utils"
 

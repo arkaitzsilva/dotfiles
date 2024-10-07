@@ -12,5 +12,6 @@
     inkscape
     amule
     deluge
+    qalculate-gtk
   ];
 }

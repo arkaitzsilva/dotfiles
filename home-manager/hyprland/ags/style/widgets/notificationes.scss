@@ -1,7 +1,7 @@
 @mixin notification() {
-  &.critical {
+  /*&.critical {
     box-shadow: inset 0 0 .5em 0 $error-bg;
-  }
+  }*/
 
   .content {
     .title {
@@ -24,9 +24,9 @@
       border-radius: $radius*0.8;
       margin-right: $spacing;
 
-      &.img {
+      /*&.img {
         border: $border;
-      }
+      }*/
     }
   }
 

@@ -17,6 +17,7 @@ in {
       "wheel"
       "networkmanager"
       "docker"
+      "libvirtd"
     ];
   };
 

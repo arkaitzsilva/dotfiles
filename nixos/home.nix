@@ -5,6 +5,11 @@
     ../home-manager/git.nix    
   ];
 
+  nix.settings = {
+    experimental-features = ["nix-command" "flakes"];
+    warn-dirty = false;
+  };
+
   home = {
     sessionVariables = {
       NIXPKGS_ALLOW_UNFREE = "1";

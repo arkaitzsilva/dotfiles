@@ -11,4 +11,8 @@ in {
       };
     };
   };
+
+  systemd.services.greetd = {
+    serviceConfig.Type = "idle";
+  };
 }

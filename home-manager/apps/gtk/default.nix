@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    ./firefox.nix
-    ./brave.nix    
+    ./firefox.nix 
   ];
 
   home.packages = with pkgs; [
@@ -13,5 +12,6 @@
     amule
     deluge
     qalculate-gtk
+    brave
   ];
 }

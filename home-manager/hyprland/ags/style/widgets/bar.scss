@@ -1,11 +1,13 @@
-.bar {  
-  background-color: $bar-bg;
+.bar {
+  transition: $transition;
+  /*background-color: $bar-bg;*/
 
   .bar-section {
-    margin: 2px;
-    /*margin: 4px 4px 0 4px;
+    /*margin: 2px;*/
+    margin: 4px 4px 0 4px;
+    border: 1px solid $bar-border;
     border-radius: $bar-border-radius;
-    background-color: $bar-bg;*/
+    background-color: $bar-bg;
 
     label {
       font-family: $bar-font;

@@ -7,9 +7,9 @@ const $ = (name: string, value: string | Opt<any>) => `$${name}: ${value};`
 
 const variables = () => [
   $("bar-font", "\"Gabarito\", \"Popins\", \"Readex Pro\", \"Lexend\", sans-serif"),
-  $("bar-bg", "rgba(14, 14, 16, 1)"), // Bright: #2B2C31; dark: #0E0E10
+  $("bar-bg", "#1C1C1C"), // Bright: #2B2C31; dark: #0E0E10
   $("bar-fg", "#F5F5F5"),
-  $("bar-border", "#52565C"), // Bright: #52565C; Dark: #0E0E10
+  $("bar-border", "#404040"), // Bright: #52565C; Dark: #0E0E10
   $("bar-border-radius", "20px"),
 
   $("spacer-small", "0 2px"),
@@ -29,6 +29,7 @@ const variables = () => [
   $("popover-padding", "10px"),
   $("shadows", "true"),
   $("border-width", "1px"),
+  $("transition", "200ms"),
 ]
 
 async function resetCss() {

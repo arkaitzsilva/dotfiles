@@ -1,0 +1,3 @@
+# gif ixel art
+gifsicle --optimize=3 --resize-method sample --colors 128 --resize 1366x768 input.gif -o output.gif
+

@@ -1,8 +1,8 @@
 { ... }: let
   aliases = {
+    "cls" = "clear";
     "crfs" = "cryfs ~/.vault ~/Vault";
     "nx-switch" = "sudo nixos-rebuild switch --flake ~/Projects/dotfiles/ --impure";
-    "cls" = "clear";
   };
 in {
   programs = {
@@ -15,6 +15,7 @@ in {
       enable = true;
       enableBashIntegration = true;
       useTheme = "tokyonight_storm";
+      #settings = {};
     };
   };
 }

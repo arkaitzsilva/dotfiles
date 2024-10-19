@@ -9,16 +9,16 @@
 
       listener = [
         {
-          timeout = 150;                               # 2.5min.
+          timeout = 300;                               # 5min.
           on-timeout = "brightnessctl -s set 1";       # set monitor backlight to minimum, avoid 0 on OLED monitor.
           on-resume = "brightnessctl -r";              # monitor backlight restore.
         }
         {
-          timeout = 300;                               # 5 minutes
+          timeout = 600;                               # 10 minutes
           on-timeout = "hyprlock";                     # command to run when timeout has passed
         }
         {
-          timeout = 600;                               # 10 minutes
+          timeout = 900;                               # 15 minutes
           on-timeout = "systemctl suspend";            # command to run when timeout has passed
         }
       ];

@@ -17,5 +17,9 @@ in {
     cliphist
     brightnessctl
     playerctl
+    slurp
+    wayshot
+    swappy
+    wl-clipboard
   ];
 }

@@ -12,6 +12,8 @@
     amule
     deluge
     qalculate-gtk
+    google-chrome
     brave
+    opera
   ];
 }

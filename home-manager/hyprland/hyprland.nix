@@ -1,4 +1,6 @@
-{ pkgs, inputs, ...}: {
+{ pkgs, inputs, ...}: let
+  screenshot = import ../scripts/screenshot.nix pkgs;
+in {
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -175,6 +177,9 @@
         "CTRL SHIFT, R, exec, ags -b hypr quit; ags -b hypr > /tmp/ags.log 2>&1"
 
         "$mainMod, SPACE, animatefocused"
+
+        ",Print, exec, ${screenshot}"
+        "SHIFT, Print, exec, ${screenshot} --full"
       ];
 
       binde = [

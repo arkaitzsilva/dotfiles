@@ -9,6 +9,9 @@ in {
     ./desktop/hyprland
   ];
 
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
   users.users.${username} = {
     description = description;
     isNormalUser = true;

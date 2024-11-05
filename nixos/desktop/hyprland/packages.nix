@@ -12,6 +12,7 @@ in {
     cantarell-fonts
     
     inputs.swww.packages.${pkgs.system}.swww
+    inputs.matugen.packages.${system}.default
     libdbusmenu-gtk3
     hyprpicker
     cliphist

@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ../home-manager/hyprland
-    ../home-manager/bash.nix
+    ../home-manager/zsh.nix
     ../home-manager/git.nix    
   ];
 

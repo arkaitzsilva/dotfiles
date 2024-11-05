@@ -1,6 +1,6 @@
 { config, ... }: 
 let 
-  backgroundDir = ./backgrounds;
+  backgroundDir = ./backgrounds/768p;
   scriptDir = ./scripts;
 
   backgrounds = builtins.readDir backgroundDir;

@@ -10,6 +10,7 @@
     ./wofi.nix
     ./wlogout.nix
     ./foot.nix
+    ./matugen
     ../apps
   ];
 }

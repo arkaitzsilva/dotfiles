@@ -10,7 +10,7 @@ in {
       enable = true;
       enableCompletion = true;
       autosuggestion.enable = true;
-      syntaxHighlighting.enable = true;
+      #syntaxHighlighting.enable = true;
       shellAliases = aliases;
     };
 
@@ -68,6 +68,7 @@ in {
                 background = "transparent";
                 template = " {{ .FormattedMs }} ";
                 properties = {
+                  style = "round";
                   threshold = 5000;
                 };
               }
@@ -84,7 +85,7 @@ in {
                 style = "plain";
                 foreground_templates = [
                   "{{if gt .Code 0}}p:red{{end}}"
-                  "{{if eq .Code 0}}p:purple{{end}}"
+                  "{{if eq .Code 0}}p:green{{end}}"
                 ];
                 background = "transparent";
                 template = "❯ ";
@@ -96,24 +97,25 @@ in {
         transient_prompt = {
           foreground_templates = [
             "{{if gt .Code 0}}p:red{{end}}"
-            "{{if eq .Code 0}}p:purple{{end}}"
+            "{{if eq .Code 0}}p:green{{end}}"
           ];
           background = "transparent";
           template = "❯ ";
         };
 
         secondary_prompt = {
-          foreground = "p:purple";
+          foreground = "p:green";
           background = "transparent";
           template = "❯❯ ";
         };
 
         palette = {
-          purple = "#AB47BC";
-          red = "#E53935";
-          yellow = "#FBC02D";
-          blue = "#3c84f7";
-          gray = "#727272";
+          purple = "#FF54FF";
+          red = "#FF5454";
+          yellow = "#FFFF54";
+          blue = "#5CA7FB";
+          grey = "#B2B2B2";
+          green = "#54FF54";
         };
       };
     };

@@ -28,7 +28,7 @@ in {
       # Autostart necessary processes (like notifications daemons, status bars, etc.)
       # Or execute your favorite apps at launch like this:
       exec-once = [
-        "swww-daemon -f xrgb & swww img $HOME/.local/share/backgrounds/animated_alien_1_768p.gif"
+        "swww-daemon -f xrgb & swww img $HOME/.local/share/backgrounds/animated_silent_hill_1_768p.gif"
         "ags -b hypr"
         "hyprctl setcursor Luv-Dark 24"
         "wl-paste --type text --watch cliphist store"
@@ -51,7 +51,7 @@ in {
         border_size = 2;
 
         # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-        "col.active_border" = "rgba(4dd0e1ee)"; # "rgba(4dd0e1ee) rgba(aed581ee) 45deg";
+        "col.active_border" = "rgba(54ffffee)"; # "rgba(4dd0e1ee) rgba(aed581ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 
         # Set to true enable resizing windows by clicking and dragging on borders and gaps
@@ -78,7 +78,7 @@ in {
 
         # https://wiki.hyprland.org/Configuring/Variables/#blur
         blur = {
-          enabled = true;
+          enabled = false;
           size = 8;
           passes = 2;
           

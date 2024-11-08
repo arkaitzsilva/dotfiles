@@ -17,7 +17,7 @@
     };
 
     ags.url = "github:Aylur/ags";
-    matugen.url = "github:InioX/matugen?ref=v2.3.0";
+    matugen.url = "github:InioX/matugen";
     swww.url = "github:LGFae/swww";
   };
 

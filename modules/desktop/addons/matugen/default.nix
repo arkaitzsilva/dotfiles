@@ -35,9 +35,15 @@ in {
           input_path = "${default.templateFolder}/gtk.css";
           output_path = "~/.config/gtk-3.0/gtk.css";
         };
+        "Hyprland-colors" = {
+          input_path = "${default.templateFolder}/hyprland-colors.conf";
+          output_path = "~/.config/hypr/colors.conf";
+          #post_hook = "hyprctl reload";
+        };
       };
     };
 
     shelf.home.configFile."gtk-3.0/gtk.css".source = "${config.programs.matugen.theme.files}/.config/gtk-3.0/gtk.css";
+    shelf.home.configFile."hypr/colors.conf".source = "${config.programs.matugen.theme.files}/.config/hypr/colors.conf";
   };
 }

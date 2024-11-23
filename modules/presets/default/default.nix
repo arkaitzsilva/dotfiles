@@ -26,11 +26,6 @@ in {
       type = "scheme-neutral";
     };
 
-    shelf.cli.git = {
-      email = "arkaitz.develop@gmail.com";
-      name = "arkaitzsilva";
-    };
-
     shelf.desktop = {
       hyprland = enabled;
     };

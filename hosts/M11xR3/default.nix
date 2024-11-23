@@ -16,6 +16,11 @@ with lib.shelf; {
 
   shelf.system.networking.bluetooth = true;
 
+  shelf.cli.git = {
+    email = "arkaitz.develop@gmail.com";
+    name = "arkaitzsilva";
+  };
+
   shelf.presets = {
     default = enabled;
     dev = enabled;

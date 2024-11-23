@@ -56,7 +56,7 @@ in {
 
     shelf.home.configFile."hypr/hyprland.conf".source = default.configFolder + /hypr/hyprland.conf;
     shelf.home.configFile."hypr/keybindings.conf".source = default.configFolder + /hypr/keybindings.conf;
-    shelf.home.configFile."hypr/wallpapers".source = default.configFolder + /hypr/wallpapers/768p;
+    shelf.home.configFile."hypr/wallpapers".source = default.configFolder + /hypr/wallpapers/${default.wallpaperResolution};
   };
   
 }

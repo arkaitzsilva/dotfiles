@@ -21,18 +21,18 @@ in {
       sound = enabled;
     };
 
-    shelf.system.hosts.M11xR3 = {
+    shelf.system.hosts.${default.host} = {
       variant = "dark";
       type = "scheme-neutral";
-    };
-
-    shelf.desktop = {
-      hyprland = enabled;
     };
 
     shelf.cli.git = {
       email = "arkaitz.develop@gmail.com";
       name = "arkaitzsilva";
+    };
+
+    shelf.desktop = {
+      hyprland = enabled;
     };
   };
 }

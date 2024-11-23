@@ -16,5 +16,8 @@ with lib.shelf; {
 
   shelf.system.networking.bluetooth = true;
 
-  shelf.presets.default = enabled;
+  shelf.presets = {
+    default = enabled;
+    dev = enabled;
+  };
 }

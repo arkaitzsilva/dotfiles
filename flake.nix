@@ -14,6 +14,7 @@
 
       system = "x86_64-linux";
       username = "alienware";
+      host = "M11xR3";
     };
 
     mkLib = nixpkgs:
@@ -45,7 +46,7 @@
   in {
     nixosConfigurations = {
       # USAGE: addNewHost <hostname>
-      M11xR3 = addNewHost "M11xR3";
+      M11xR3 = addNewHost default.host;
     };
   };
 

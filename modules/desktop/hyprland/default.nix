@@ -42,8 +42,6 @@ in {
     };
 
     shelf.cli = {
-      git = enabled;
-      oh-my-posh = enabled;
       utils = enabled;      
     };
 

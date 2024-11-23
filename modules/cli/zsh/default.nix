@@ -23,6 +23,7 @@ in {
       enable = true;
       shellAliases = {
         cls = "clear";
+        crfs = "cryfs ~/.vault ~/Vault";
       };
       enableCompletion = true;
       syntaxHighlighting = enabled;

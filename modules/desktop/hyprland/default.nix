@@ -5,12 +5,12 @@
   inputs,
   options,
   default,
-  hostName,
   ...
 }:
 with lib;
 with lib.shelf; let
   cfg = config.shelf.desktop.hyprland;
+  matugenEnabled = config.shelf.desktop.addons.matugen.enable;
 in {
   options.shelf.desktop.hyprland = {
     enable = mkBoolOpt false "Whether to enable Hyprland, with other desktop addons.";
@@ -26,8 +26,6 @@ in {
       wayshot
       swappy
       wl-clipboard
-      wofi      
-      inputs.hyprfocus.packages.${pkgs.system}.hyprfocus
       inputs.swww.packages.${pkgs.system}.swww
     ];
 
@@ -37,6 +35,7 @@ in {
       greetd = enabled;
       foot = enabled;
       gtk = enabled;
+      wofi = enabled;
       thunar = enabled;
       matugen = enabled;      
     };
@@ -54,9 +53,24 @@ in {
       gtk = enabled;
     };
 
-    shelf.home.configFile."hypr/hyprland.conf".source = default.configFolder + /hypr/hyprland.conf;
-    shelf.home.configFile."hypr/keybindings.conf".source = default.configFolder + /hypr/keybindings.conf;
-    shelf.home.configFile."hypr/wallpapers".source = default.configFolder + /hypr/wallpapers/${default.wallpaperResolution};
+    shelf.home.configFile."hypr/colors.conf".source =
+    if matugenEnabled then
+      "${config.programs.matugen.theme.files}/.config/hypr/colors.conf"
+    else
+      "${default.configFolder}/hypr/colors.conf";
+
+    shelf.home.configFile."hypr/keybindings.conf".source = "${default.configFolder}/hypr/keybindings.conf";
+    shelf.home.configFile."hypr/wallpapers".source = "${default.configFolder}/hypr/wallpapers/${default.wallpaperResolution}";
+    shelf.home.configFile."hypr/scripts".source = "${default.configFolder}/hypr/scripts";
+
+    shelf.home.extraOptions.wayland.windowManager.hyprland = {
+      enable = true;
+      plugins = [
+        inputs.hyprfocus.packages.${pkgs.system}.hyprfocus
+      ];
+      extraConfig = ''
+        ${builtins.readFile "${default.configFolder}/hypr/hyprland.conf"}
+      '';
+    };
   };
-  
 }

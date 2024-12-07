@@ -11,10 +11,11 @@
       templateFolder = ./dotfiles/templates;
 
       wallpaperResolution = "768p";
+      colorScheme = "dark";
 
       system = "x86_64-linux";
+      hostName = "M11xR3";
       username = "alienware";
-      host = "M11xR3";
     };
 
     mkLib = nixpkgs:
@@ -46,7 +47,7 @@
   in {
     nixosConfigurations = {
       # USAGE: addNewHost <hostname>
-      M11xR3 = addNewHost default.host;
+      M11xR3 = addNewHost default.hostName;
     };
   };
 

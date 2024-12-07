@@ -16,16 +16,7 @@ with lib.shelf; let
 
   cfg = config.shelf.desktop.addons.gtk;
 
-  schema = pkgs.gsettings-desktop-schemas;
-  datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-
-  reload-theme = pkgs.writeShellScriptBin "reload-theme" ''
-    export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
-
-    gsettings set org.gnome.desktop.interface gtk-theme ""
-    sleep 0.1
-    gsettings set org.gnome.desktop.interface gtk-theme colloid-gtk-theme
-  '';
+  matugenEnabled = config.shelf.desktop.addons.matugen.enable;
 in {
   options.shelf.desktop.addons.gtk = {
     enable = mkBoolOpt false "Whether to enable gtk theme.";
@@ -50,17 +41,27 @@ in {
       iconTheme = {
         name = "Luv-Dark";
       };
-
       cursorTheme = {
         name = "Luv-Dark";
         size = 24;
       };
-
       font = {
         name = "Noto Sans";
         size = 10;
       };
     };
 
+    shelf.home.extraOptions.dconf = {
+      enable = true;
+      settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+        };
+      };
+    };
+
+    shelf.home.configFile."gtk-3.0/gtk.css" = mkIf matugenEnabled {
+      source = "${config.programs.matugen.theme.files}/.config/gtk-3.0/gtk.css";
+    };
   };
 }

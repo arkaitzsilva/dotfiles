@@ -9,7 +9,7 @@ with lib.shelf; let
   cfg = config.shelf.apps.standalone;
 in {
   options.shelf.apps.standalone = {
-    enable = mkBoolOpt false "Whether to enable window manager apps.";
+    enable = mkBoolOpt false "Whether to enable standalone apps.";
   };
 
   config = mkIf cfg.enable {

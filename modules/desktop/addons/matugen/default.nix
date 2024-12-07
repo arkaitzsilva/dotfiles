@@ -31,19 +31,28 @@ in {
       #inherit wallpaper;
 
       templates = {
-        "GTK3" = {
-          input_path = "${default.templateFolder}/gtk.css";
+        "gtk3" = {
+          input_path = "${default.templateFolder}/gtk3-colors.css";
           output_path = "~/.config/gtk-3.0/gtk.css";
         };
-        "Hyprland-colors" = {
+        "hyprland" = {
           input_path = "${default.templateFolder}/hyprland-colors.conf";
           output_path = "~/.config/hypr/colors.conf";
           #post_hook = "hyprctl reload";
         };
+        "kitty" = {
+          input_path = "${default.templateFolder}/kitty-colors.conf";
+          output_path = "~/.config/kitty/colors.conf";
+        };
+        "wofi" = {
+          input_path = shelf.mergeFiles [ "${default.configFolder}/wofi/style.css" "${default.templateFolder}/wofi-colors.css" ];
+          output_path = "~/.config/wofi/style.css";
+        };
+        "foot" = {
+          input_path = shelf.mergeFiles [ "${default.configFolder}/foot/foot.ini" "${default.templateFolder}/foot-colors.ini" ];
+          output_path = "~/.config/foot/foot.ini";
+        };
       };
     };
-
-    shelf.home.configFile."gtk-3.0/gtk.css".source = "${config.programs.matugen.theme.files}/.config/gtk-3.0/gtk.css";
-    shelf.home.configFile."hypr/colors.conf".source = "${config.programs.matugen.theme.files}/.config/hypr/colors.conf";
   };
 }

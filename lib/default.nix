@@ -92,4 +92,15 @@ with lib; rec {
       name = "wallpaper-${sha256}.${ext}";
       inherit url sha256;
     };
+
+  ## Merge two files into a single file
+  mergeFiles = files: let
+    # Subfunción local para crear un archivo temporal
+    writeText = name: content: builtins.toFile name content;
+
+    # Concatenar el contenido de los archivos
+    content = builtins.concatStringsSep "\n" (map builtins.readFile files);
+  in
+    writeText "merged-file" content;
+
 }

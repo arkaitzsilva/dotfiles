@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  hostName,
   ...
 }:
 with lib;
@@ -21,7 +21,7 @@ in {
       sound = enabled;
     };
 
-    shelf.system.hosts.${default.host} = {
+    shelf.system.hosts.${hostName} = {
       variant = "dark";
       type = "scheme-neutral";
     };

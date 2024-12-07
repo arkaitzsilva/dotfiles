@@ -14,7 +14,7 @@ in {
   };
 
   config = {
-    time.timeZone = "cfg.timeZone";
+    time.timeZone = cfg.timeZone;
 
     i18n = let
       es_ES = "es_ES.UTF-8";

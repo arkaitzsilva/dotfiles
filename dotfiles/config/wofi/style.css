@@ -1,0 +1,30 @@
+window {
+  border-radius: 10px;
+  border: 1px solid @outline;
+}
+
+#input {
+  border-radius: 5px;
+  margin: 10px;
+}
+
+#inner-box {
+  margin: 0 10px 10px 10px;  
+}
+
+#entry {
+  background-color: #3C3C3C;
+  margin: 4px;
+  border: none;
+  border-radius: 4px;
+}
+
+#entry:selected {
+  background-color: @selected_bg;
+  color: @theme_selected_fg_color;
+  outline: none;
+}
+
+image {
+  margin: 5px;
+}

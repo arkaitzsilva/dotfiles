@@ -16,9 +16,9 @@ in {
         make a description later
       '';
     };
-  };
 
-  shelf.home.extraOptions.programs.firefox = {
-    enable = true;
+    shelf.home.extraOptions.programs.firefox = {
+      enable = true;
+    };
   };
 }

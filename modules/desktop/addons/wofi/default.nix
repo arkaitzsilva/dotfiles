@@ -8,19 +8,14 @@
 with lib;
 with lib.shelf; let
   cfg = config.shelf.desktop.addons.wofi;
-  matugenEnabled = config.shelf.desktop.addons.matugen.enable;
 in {
   options.shelf.desktop.addons.wofi = {
     enable = mkBoolOpt false "Whether to enable wofi.";
   };
 
   config = mkIf cfg.enable {
-    shelf.home.configFile."wofi/style.css".source =
-    if matugenEnabled then
-      "${config.programs.matugen.theme.files}/.config/wofi/style.css"
-    else
-      "${default.configFolder}/wofi/style.css";
-
+    shelf.home.configFile."wofi/style.css".source = "${default.configFolder}/wofi/style.css";
+    
     shelf.home.programs.wofi = {
       enable = true;
     

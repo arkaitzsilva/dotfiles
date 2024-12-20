@@ -15,8 +15,6 @@ with lib.shelf; let
   };
 
   cfg = config.shelf.desktop.addons.gtk;
-
-  matugenEnabled = config.shelf.desktop.addons.matugen.enable;
 in {
   options.shelf.desktop.addons.gtk = {
     enable = mkBoolOpt false "Whether to enable gtk theme.";
@@ -58,10 +56,6 @@ in {
           color-scheme = "prefer-dark";
         };
       };
-    };
-
-    shelf.home.configFile."gtk-3.0/gtk.css" = mkIf matugenEnabled {
-      source = "${config.programs.matugen.theme.files}/.config/gtk-3.0/gtk.css";
     };
   };
 }

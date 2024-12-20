@@ -9,6 +9,7 @@
 
       configFolder = ./dotfiles/config;
       templateFolder = ./dotfiles/templates;
+      dataFolder = ./dotfiles/local/share;
 
       wallpaperResolution = "768p";
       colorScheme = "dark";
@@ -30,12 +31,6 @@
             ./modules
             # The host specific configuration
             (./. + "/hosts/${hostName}/")
-            {
-              environment.systemPackages = [
-                matugen.packages.${default.system}.default
-              ];
-            }
-            inputs.matugen.nixosModules.default
           ];
           
           # Pass the variables to other modules
@@ -66,8 +61,6 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    #ags.url = "github:Aylur/ags";
-    matugen.url = "github:InioX/matugen";
     swww.url = "github:LGFae/swww";
   };
 }

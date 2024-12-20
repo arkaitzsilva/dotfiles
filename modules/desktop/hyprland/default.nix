@@ -10,7 +10,6 @@
 with lib;
 with lib.shelf; let
   cfg = config.shelf.desktop.hyprland;
-  matugenEnabled = config.shelf.desktop.addons.matugen.enable;
 in {
   options.shelf.desktop.hyprland = {
     enable = mkBoolOpt false "Whether to enable Hyprland, with other desktop addons.";
@@ -40,8 +39,8 @@ in {
       foot = enabled;
       gtk = enabled;
       wofi = enabled;
-      thunar = enabled;
-      #matugen = enabled;      
+      thunar = enabled; 
+      dunst = enabled;
     };
 
     shelf.cli = {
@@ -55,15 +54,13 @@ in {
         opera = enabled;
       };      
       standalone = enabled;
-      gtk = enabled;
+      gtk = {
+        basics = enabled;
+        gedit = enabled;
+      };
     };
 
-    shelf.home.configFile."hypr/colors.conf".source =
-    if matugenEnabled then
-      "${config.programs.matugen.theme.files}/.config/hypr/colors.conf"
-    else
-      "${default.configFolder}/hypr/colors.conf";
-
+    shelf.home.configFile."hypr/colors.conf".source = "${default.configFolder}/hypr/colors.conf";
     shelf.home.configFile."hypr/keybindings.conf".source = "${default.configFolder}/hypr/keybindings.conf";
     shelf.home.configFile."hypr/wallpapers".source = "${default.configFolder}/hypr/wallpapers/${default.wallpaperResolution}";
     shelf.home.configFile."hypr/scripts".source = "${default.configFolder}/hypr/scripts";

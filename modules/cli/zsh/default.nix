@@ -3,6 +3,7 @@
   pkgs,
   lib,
   default,
+  hostName,
   ...
 }:
 with lib;
@@ -23,6 +24,7 @@ in {
       shellAliases = {
         cls = "clear";
         crfs = "cryfs ~/.vault ~/Vault";
+        nx-switch = "sudo nixos-rebuild switch --flake ~/Projects/dotfiles#${hostName}";
       };
       enableCompletion = true;
       syntaxHighlighting = enabled;

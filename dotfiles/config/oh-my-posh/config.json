@@ -1,24 +1,24 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-    "lime": "#68b723",
-    "strawberry": "#c6262e",
-    "blueberry": "#3689e6",
-    "grape": "#a56de2",
-    "mint": "#28bca3",
-    "silver": "#abacae"
+    "green": "#a6e3a1",
+    "red": "#f38ba8",
+    "blue": "#89b4fa",
+    "purple": "#cba6f7",
+    "teal": "#94e2d5",
+    "gray": "#bac2de"
   },
   "secondary_prompt": {
     "template": "❯❯ ",
-    "foreground": "p:lime",
+    "foreground": "p:green",
     "background": "transparent"
   },
   "transient_prompt": {
     "template": "❯ ",
     "background": "transparent",
     "foreground_templates": [
-      "{{if gt .Code 0}}p:strawberry{{end}}",
-      "{{if eq .Code 0}}p:lime{{end}}"
+      "{{if gt .Code 0}}p:red{{end}}",
+      "{{if eq .Code 0}}p:green{{end}}"
     ]
   },
   "console_title_template": "{{.Folder}}{{if .Root}} :: root{{end}} :: {{.Shell}}",
@@ -33,7 +33,7 @@
             "style": "full"
           },
           "template": "{{ .Path }}",
-          "foreground": "p:blueberry",
+          "foreground": "p:purple",
           "background": "transparent",
           "type": "path",
           "style": "plain"
@@ -45,8 +45,8 @@
             "commit_icon": "@",
             "fetch_status": true
           },
-          "template": " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <p:mint>{{ if gt .Behind 0 }}\u21e3{{ end }}{{ if gt .Ahead 0 }}\u21e1{{ end }}</>",
-          "foreground": "p:grape",
+          "template": " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <p:teal>{{ if gt .Behind 0 }}\u21e3{{ end }}{{ if gt .Ahead 0 }}\u21e1{{ end }}</>",
+          "foreground": "p:gray",
           "background": "transparent",
           "type": "git",
           "style": "plain"
@@ -60,11 +60,12 @@
       "segments": [
         {
           "properties": {
+            "style": "round",
             "cache_duration": "none",
             "threshold": 5000
           },
           "template": "{{ .FormattedMs }}",
-          "foreground": "p:silver",
+          "foreground": "p:blue",
           "background": "transparent",
           "type": "executiontime",
           "style": "plain"
@@ -84,8 +85,8 @@
           "type": "text",
           "style": "plain",
           "foreground_templates": [
-            "{{if gt .Code 0}}p:strawberry{{end}}",
-            "{{if eq .Code 0}}p:lime{{end}}"
+            "{{if gt .Code 0}}p:red{{end}}",
+            "{{if eq .Code 0}}p:green{{end}}"
           ]
         }
       ],

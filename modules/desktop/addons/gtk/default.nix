@@ -8,10 +8,10 @@
 with lib;
 with lib.shelf; let
   colloid-gtk-theme = pkgs.colloid-gtk-theme.override {
-    themeVariants = [ "teal" ];
+    themeVariants = [ "all" ];
     #colorVariants = [ "" ];
     sizeVariants = [ "compact" ];
-    tweaks = [ "rimless" "normal" ];
+    tweaks = [ "catppuccin" "rimless" "normal" ];
   };
 
   cfg = config.shelf.desktop.addons.gtk;
@@ -35,7 +35,7 @@ in {
     shelf.home.extraOptions.gtk = {
       enable = true;
       theme = with pkgs; {
-        name = "Colloid-Teal-Dark-Compact";
+        name = "Colloid-Purple-Dark-Compact-Catppuccin";
         package = colloid-gtk-theme;
       };
       iconTheme = {

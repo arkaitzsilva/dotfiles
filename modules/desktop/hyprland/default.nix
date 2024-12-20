@@ -29,6 +29,10 @@ in {
       inputs.swww.packages.${pkgs.system}.swww
     ];
 
+    services = {
+      tumbler.enable = true;
+    };
+
     programs.hyprland.enable = true;
 
     shelf.desktop.addons = {
@@ -37,7 +41,7 @@ in {
       gtk = enabled;
       wofi = enabled;
       thunar = enabled;
-      matugen = enabled;      
+      #matugen = enabled;      
     };
 
     shelf.cli = {
@@ -46,6 +50,7 @@ in {
 
     shelf.apps = {
       browsers = {
+        firefox = enabled;
         brave = enabled;
         opera = enabled;
       };      

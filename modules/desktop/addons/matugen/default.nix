@@ -49,7 +49,7 @@ in {
           output_path = "~/.config/wofi/style.css";
         };
         "foot" = {
-          input_path = shelf.mergeFiles [ "${default.configFolder}/foot/foot.ini" "${default.templateFolder}/foot-colors.ini" ];
+          input_path = shelf.mergeConfigMatugenColors "${default.configFolder}/foot/foot.ini" "${default.templateFolder}/foot-colors.ini";
           output_path = "~/.config/foot/foot.ini";
         };
       };

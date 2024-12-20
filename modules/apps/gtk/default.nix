@@ -17,6 +17,8 @@ in {
       gedit
       vscode
       deluge
+      inkscape
+      gimp
     ];
   };
 }

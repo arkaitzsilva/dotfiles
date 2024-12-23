@@ -20,6 +20,6 @@ in {
       enable = true;
     };
     
-    shelf.home.configFile."foot/foot.ini".source = "${default.configFolder}/foot/foot.ini";      
+    shelf.home.configFile."foot/foot.ini".source = "${default.configFolder}/foot/foot.ini";
   };
 }

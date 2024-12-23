@@ -1,0 +1,16 @@
+{
+  "modules-left": [
+      "hyprland/workspaces"
+  ],
+  "modules-center": [],
+
+  "modules-right": [],
+
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "persistent-workspaces": {
+      "*": 8
+    }
+  }
+
+}

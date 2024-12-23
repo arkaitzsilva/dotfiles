@@ -36,6 +36,7 @@ in {
 
     shelf.desktop.addons = {
       greetd = enabled;
+      waybar = enabled;
       foot = enabled;
       gtk = enabled;
       wofi = enabled;

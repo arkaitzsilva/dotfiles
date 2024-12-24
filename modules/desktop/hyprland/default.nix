@@ -29,7 +29,7 @@ in {
     ];
 
     services = {
-      tumbler.enable = true;
+      upower.enable = true;
     };
 
     programs.hyprland.enable = true;

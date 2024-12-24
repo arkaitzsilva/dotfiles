@@ -18,9 +18,5 @@ in {
     environment.systemPackages = with pkgs; [
       inputs.hyprshell.packages.${pkgs.system}.default
     ];
-
-    services = {
-      upower.enable = true;
-    };
   };
 }

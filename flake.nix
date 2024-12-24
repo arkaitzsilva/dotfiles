@@ -62,5 +62,10 @@
     };
 
     swww.url = "github:LGFae/swww";
+
+    hyprshell = {
+      url = "github:arkaitzsilva/hyprshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

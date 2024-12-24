@@ -35,13 +35,14 @@ in {
     programs.hyprland.enable = true;
 
     shelf.desktop.addons = {
+      #hyprlock = enabled;
       greetd = enabled;
-      waybar = enabled;
-      foot = enabled;
       gtk = enabled;
       wofi = enabled;
-      thunar = enabled; 
       dunst = enabled;
+      foot = enabled;
+      thunar = enabled;
+      hyprshell = enabled;
     };
 
     shelf.cli = {

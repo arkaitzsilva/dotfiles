@@ -16,8 +16,12 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       gedit
+      libgedit-gtksourceview
     ];
 
-    shelf.home.dataFile."gedit/styles/catppuccin-mocha.xml".source = "${default.dataFolder}/gedit/styles/catppuccin-mocha.xml";
+    shelf.home.dataFile."libgedit-gtksourceview-300/styles/catppuccin-frappe.xml".source = "${default.dataFolder}/libgedit-gtksourceview-300/styles/catppuccin-frappe.xml";
+    shelf.home.dataFile."libgedit-gtksourceview-300/styles/catppuccin-latte.xml".source = "${default.dataFolder}/libgedit-gtksourceview-300/styles/catppuccin-latte.xml";
+    shelf.home.dataFile."libgedit-gtksourceview-300/styles/catppuccin-macchiato.xml".source = "${default.dataFolder}/libgedit-gtksourceview-300/styles/catppuccin-macchiato.xml";
+    shelf.home.dataFile."libgedit-gtksourceview-300/styles/catppuccin-mocha.xml".source = "${default.dataFolder}/libgedit-gtksourceview-300/styles/catppuccin-mocha.xml";
   };
 }

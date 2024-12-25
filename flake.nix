@@ -56,12 +56,16 @@
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
-    hyprfocus = {
-      url = "github:pyt0xic/hyprfocus";
-      inputs.hyprland.follows = "hyprland";
-    };
+    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
+
+    #hyprfocus = {
+    #  url = "github:pyt0xic/hyprfocus";
+    #  inputs.hyprland.follows = "hyprland";
+    #};
 
     swww.url = "github:LGFae/swww";
+
+    ags.url = "github:aylur/ags";
 
     hyprshell = {
       url = "github:arkaitzsilva/hyprshell";

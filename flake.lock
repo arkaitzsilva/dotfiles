@@ -343,15 +343,15 @@
       "locked": {
         "lastModified": 1734906472,
         "narHash": "sha256-pWPRv/GA/X/iAwoE6gMNUqn/ZeJX1IeLPRpZI0tTPK0=",
-        "ref": "refs/heads/main",
+        "owner": "hyprwm",
+        "repo": "hyprland-qtutils",
         "rev": "c77109d7e1ddbcdb87cafd32ce411f76328ae152",
-        "revCount": 15,
-        "type": "git",
-        "url": "https://github.com/hyprwm/hyprland-qtutils"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://github.com/hyprwm/hyprland-qtutils"
+        "owner": "hyprwm",
+        "repo": "hyprland-qtutils",
+        "type": "github"
       }
     },
     "hyprlang": {

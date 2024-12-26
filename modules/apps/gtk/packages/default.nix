@@ -6,9 +6,9 @@
 }:
 with lib;
 with lib.shelf; let
-  cfg = config.shelf.apps.gtk.basics;
+  cfg = config.shelf.apps.gtk.packages;
 in {
-  options.shelf.apps.gtk.basics = {
+  options.shelf.apps.gtk.packages = {
     enable = mkBoolOpt false "Whether to enable gtk apps.";
   };
 

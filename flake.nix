@@ -58,10 +58,10 @@
 
     hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
 
-    #hyprfocus = {
-    #  url = "github:pyt0xic/hyprfocus";
-    #  inputs.hyprland.follows = "hyprland";
-    #};
+    # hyprfocus = {
+    #   url = "github:pyt0xic/hyprfocus";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
 
     swww.url = "github:LGFae/swww";
 

@@ -46,7 +46,7 @@ in {
     };
 
     shelf.cli = {
-      utils = enabled;      
+      packages = enabled;      
     };
 
     shelf.apps = {

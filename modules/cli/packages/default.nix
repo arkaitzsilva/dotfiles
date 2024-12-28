@@ -6,10 +6,10 @@
 }:
 with lib;
 with lib.shelf; let
-  cfg = config.shelf.cli.utils;
+  cfg = config.shelf.cli.packages;
 in {
-  options.shelf.cli.utils = {
-    enable = mkBoolOpt false "Whether to enable util apps.";
+  options.shelf.cli.packages = {
+    enable = mkBoolOpt false "Whether to enable package apps.";
   };
 
   config = mkIf cfg.enable {

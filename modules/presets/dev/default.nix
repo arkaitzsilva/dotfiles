@@ -18,6 +18,7 @@ in {
       ssh = enabled;
       git = enabled;
       oh-my-posh = enabled;   
+      ags = enabled;
     };    
   };
 }

@@ -14,6 +14,11 @@ in {
   };
 
   config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      meson
+      ninja
+    ];
+
     shelf.cli = {
       ssh = enabled;
       git = enabled;

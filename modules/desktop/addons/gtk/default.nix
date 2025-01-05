@@ -24,6 +24,7 @@ in {
     environment.systemPackages = with pkgs; [
       colloid-gtk-theme
       adwaita-icon-theme
+      libdbusmenu-gtk3
     ];
 
     services.gnome.gnome-keyring.enable = true;

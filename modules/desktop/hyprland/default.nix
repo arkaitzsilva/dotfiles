@@ -27,6 +27,7 @@ in {
       wl-clipboard
       inputs.swww.packages.${pkgs.system}.swww
       inputs.hyprland-qtutils.packages.${pkgs.system}.default
+      #inputs.hyprfocus.packages.${pkgs.system}.default
     ];
 
     services = {
@@ -54,11 +55,13 @@ in {
         firefox = enabled;
         brave = enabled;
         opera = enabled;
+        google-chrome = enabled;
       };      
       standalone = enabled;
       gtk = {
         packages = enabled;
         gedit = enabled;
+        discord = enabled;
       };
     };
 

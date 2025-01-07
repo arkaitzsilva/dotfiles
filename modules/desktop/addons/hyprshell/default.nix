@@ -16,7 +16,12 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
+      libdbusmenu-gtk3
       inputs.hyprshell.packages.${pkgs.system}.default
     ];
+
+    services = {
+      upower.enable = true;
+    };
   };
 }

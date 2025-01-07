@@ -58,14 +58,20 @@
 
     hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
 
-    hyprfocus = {
-      url = "github:pyt0xic/hyprfocus";
-      inputs.hyprland.follows = "hyprland";
+    # hyprfocus = {
+    #   url = "github:pyt0xic/hyprfocus";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
+
+    swww = {
+      url = "github:LGFae/swww";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    swww.url = "github:LGFae/swww";
-
-    ags.url = "github:aylur/ags";
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     hyprshell = {
       url = "github:arkaitzsilva/hyprshell";

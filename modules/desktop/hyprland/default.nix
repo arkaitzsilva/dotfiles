@@ -26,13 +26,9 @@ in {
       swappy
       wl-clipboard
       inputs.swww.packages.${pkgs.system}.swww
-      inputs.hyprland-qtutils.packages.${pkgs.system}.default
-      #inputs.hyprfocus.packages.${pkgs.system}.default
-    ];
 
-    services = {
-      upower.enable = true;
-    };
+      inputs.hyprland-qtutils.packages.${pkgs.system}.default
+    ];
 
     programs.hyprland.enable = true;
 
@@ -62,6 +58,7 @@ in {
         packages = enabled;
         gedit = enabled;
         discord = enabled;
+        virt-manager = enabled;
       };
     };
 

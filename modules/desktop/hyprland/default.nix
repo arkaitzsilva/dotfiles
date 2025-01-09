@@ -40,6 +40,7 @@ in {
       foot = enabled;
       thunar = enabled;
       hyprshell = enabled;
+      wlogout = enabled;
     };
 
     shelf.cli = {

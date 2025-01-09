@@ -9,6 +9,7 @@ text_icon_padding=10
 horizontal_padding=10
 frame_width = 2
 gap_size = 4
+corner_radius = 10
 
 [urgency_low]
 background = "#1e1e2e"

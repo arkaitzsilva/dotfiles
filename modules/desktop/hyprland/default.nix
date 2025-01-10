@@ -41,6 +41,8 @@ in {
       thunar = enabled;
       hyprshell = enabled;
       wlogout = enabled;
+      hyprlock = enabled;
+      hypridle = enabled;
     };
 
     shelf.cli = {

@@ -119,6 +119,27 @@
         "type": "github"
       }
     },
+    "astal_3": {
+      "inputs": {
+        "nixpkgs": [
+          "hyprshell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1736497508,
+        "narHash": "sha256-murrCQMYKtZ8rkZ5O726ZCsCDee1l3ZdmV8yC9gRaIc=",
+        "owner": "aylur",
+        "repo": "astal",
+        "rev": "ef4f95608481414053ecdbe4de29bd86fb452813",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aylur",
+        "repo": "astal",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -388,16 +409,17 @@
     "hyprshell": {
       "inputs": {
         "ags": "ags_2",
+        "astal": "astal_3",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1736263841,
-        "narHash": "sha256-CXLF4OPjO1ItGGY+v9t06RQYQA6Q+GVv4cFlQBuC8Ck=",
+        "lastModified": 1736512894,
+        "narHash": "sha256-wSSPL1haR8MZQXd+fhF2H6cAqsAJlTEJ+bXRRqdPWQQ=",
         "owner": "arkaitzsilva",
         "repo": "hyprshell",
-        "rev": "89c5d18147c15ac449b44de9130c966e314416e9",
+        "rev": "0c127a8118e5f0d99bc31086af4371a6fc85c7ac",
         "type": "github"
       },
       "original": {

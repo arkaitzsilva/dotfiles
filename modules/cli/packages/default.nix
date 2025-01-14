@@ -18,6 +18,7 @@ in {
       htop
       gifsicle
       cryfs
+      unrar
     ];
   };
 }

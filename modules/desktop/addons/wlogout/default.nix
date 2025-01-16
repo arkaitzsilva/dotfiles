@@ -22,6 +22,30 @@ in {
 
       layout = [
         {
+          label = "shutdown";
+          action = "systemctl poweroff";
+          text = "Apagar";
+          keybind = "s";
+        }
+        {
+          label = "reboot";
+          action = "systemctl reboot";
+          text = "Reiniciar";
+          keybind = "r";
+        }
+        {
+          label = "logout";
+          action = "loginctl terminate-user $USER";
+          text = "Cerrar sesión";
+          keybind = "e";
+        }
+        {
+          label = "suspend";
+          action = "systemctl suspend";
+          text = "Suspender";
+          keybind = "u";
+        }
+        {
           label = "lock";
           action = "hyprlock";
           text = "Bloquear";
@@ -33,30 +57,6 @@ in {
           text = "Hibernar";
           keybind = "h";
         }
-        {
-          label = "logout";
-          action = "loginctl terminate-user $USER";
-          text = "Cerrar sesión";
-          keybind = "e";
-        }
-        {
-          label = "shutdown";
-          action = "systemctl poweroff";
-          text = "Apagar";
-          keybind = "s";
-        }
-        {
-          label = "suspend";
-          action = "systemctl suspend";
-          text = "Suspender";
-          keybind = "u";
-        }
-        {
-          label = "reboot";
-          action = "systemctl reboot";
-          text = "Reiniciar";
-          keybind = "r";
-        }
       ];
 
       style = ''
@@ -66,7 +66,7 @@ in {
         }
 
         window {
-          background-color: rgba(30, 30, 46, 0.9);
+          background-color: rgba(30, 30, 46, 0.8);
         }
 
         button {

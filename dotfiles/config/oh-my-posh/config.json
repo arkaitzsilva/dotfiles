@@ -1,13 +1,5 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "palette": {
-    "green": "#a6e3a1",
-    "red": "#f38ba8",
-    "blue": "#89b4fa",
-    "purple": "#cba6f7",
-    "teal": "#94e2d5",
-    "gray": "#bac2de"
-  },
   "secondary_prompt": {
     "template": "❯❯ ",
     "foreground": "p:green",
@@ -33,7 +25,7 @@
             "style": "full"
           },
           "template": "{{ .Path }}",
-          "foreground": "p:purple",
+          "foreground": "p:blue",
           "background": "transparent",
           "type": "path",
           "style": "plain"
@@ -65,7 +57,7 @@
             "threshold": 5000
           },
           "template": "{{ .FormattedMs }}",
-          "foreground": "p:blue",
+          "foreground": "p:purple",
           "background": "transparent",
           "type": "executiontime",
           "style": "plain"

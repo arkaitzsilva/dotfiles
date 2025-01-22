@@ -33,7 +33,7 @@ in {
     shelf.home.extraOptions.gtk = {
       enable = true;
       theme = with pkgs; {
-        name = "Colloid-Purple-Dark-Compact-Catppuccin";
+        name = "Colloid-Dark-Compact-Catppuccin";
         package = colloid-gtk-theme;
       };
       iconTheme = {

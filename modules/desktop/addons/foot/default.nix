@@ -21,9 +21,6 @@ in {
     };
     
     shelf.home.configFile."foot/foot.ini".source = "${default.configFolder}/foot/foot.ini";
-    shelf.home.configFile."foot/catppuccin-mocha".source = "${default.configFolder}/foot/catppuccin-mocha";
-    shelf.home.configFile."foot/catppuccin-macchiato".source = "${default.configFolder}/foot/catppuccin-macchiato";
-    shelf.home.configFile."foot/catppuccin-frappe".source = "${default.configFolder}/foot/catppuccin-frappe";
-    shelf.home.configFile."foot/catppuccin-latte".source = "${default.configFolder}/foot/catppuccin-latte";
+    shelf.home.configFile."foot/themes".source = "${default.configFolder}/foot/themes";
   };
 }

@@ -63,11 +63,14 @@ in {
         discord = enabled;
         virt-manager = enabled;
       };
+      qt = {
+        obs-studio = enabled;
+      };
     };
 
     shelf.home.configFile."hypr/hyprland.conf".source = "${default.configFolder}/hypr/hyprland.conf";
     shelf.home.configFile."hypr/keybindings.conf".source = "${default.configFolder}/hypr/keybindings.conf";
-    shelf.home.configFile."hypr/themes".source = "${default.configFolder}/hypr/themes";
+    shelf.home.configFile."hypr/colors.conf".source = "${default.configFolder}/hypr/themes/${default.theme}.conf";
     shelf.home.configFile."hypr/wallpapers".source = "${default.configFolder}/hypr/wallpapers/${default.wallpaperResolution}";
     #shelf.home.configFile."hypr/scripts".source = "${default.configFolder}/hypr/scripts";
 

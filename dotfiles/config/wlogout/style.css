@@ -28,7 +28,7 @@ button:focus, button:active, button:hover {
 }
 
 #lock {
-  background-image: url("icons/system-lock-screen.svg");
+  background-image: image(url("icons/system-lock-screen.svg"), url("icons/system-lock-screen.svg"));
 }
 
 #logout {

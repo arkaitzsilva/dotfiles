@@ -11,6 +11,7 @@
       templateFolder = ./dotfiles/templates;
       dataFolder = ./dotfiles/local/share;
 
+      theme = "catppuccin-frappe";
       wallpaperResolution = "768p";
       colorScheme = "dark";
 

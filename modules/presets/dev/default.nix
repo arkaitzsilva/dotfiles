@@ -24,6 +24,7 @@ in {
       git = enabled;
       oh-my-posh = enabled;   
       ags = enabled;
+      astal = enabled;
     };    
   };
 }

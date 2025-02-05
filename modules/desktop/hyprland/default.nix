@@ -35,8 +35,8 @@ in {
     shelf.desktop.addons = {
       greetd = enabled;
       gtk = enabled;
-      wofi = enabled;
-      dunst = enabled;
+      #wofi = enabled;
+      #dunst = enabled;
       foot = enabled;
       thunar = enabled;
       hyprshell = enabled;

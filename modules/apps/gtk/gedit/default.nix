@@ -19,9 +19,7 @@ in {
       libgedit-gtksourceview
     ];
 
-    shelf.home.dataFile."libgedit-gtksourceview-300/styles/catppuccin-frappe.xml".source = "${default.dataFolder}/libgedit-gtksourceview-300/styles/catppuccin-frappe.xml";
-    shelf.home.dataFile."libgedit-gtksourceview-300/styles/catppuccin-latte.xml".source = "${default.dataFolder}/libgedit-gtksourceview-300/styles/catppuccin-latte.xml";
-    shelf.home.dataFile."libgedit-gtksourceview-300/styles/catppuccin-macchiato.xml".source = "${default.dataFolder}/libgedit-gtksourceview-300/styles/catppuccin-macchiato.xml";
-    shelf.home.dataFile."libgedit-gtksourceview-300/styles/catppuccin-mocha.xml".source = "${default.dataFolder}/libgedit-gtksourceview-300/styles/catppuccin-mocha.xml";
+
+    shelf.home.dataFile."libgedit-gtksourceview-300/styles/theme-color-scheme.xml".source = "${default.dataFolder}/libgedit-gtksourceview-300/styles/${default.theme}.xml";
   };
 }

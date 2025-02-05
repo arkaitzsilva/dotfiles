@@ -11,7 +11,7 @@ with lib.shelf; let
     themeVariants = [ "all" ];
     #colorVariants = [ "" ];
     sizeVariants = [ "compact" ];
-    tweaks = [ "catppuccin" "rimless" "normal" ];
+    tweaks = [ "${default.colorScheme}" "rimless" "normal" ];
   };
 
   cfg = config.shelf.desktop.addons.gtk;
@@ -33,7 +33,7 @@ in {
     shelf.home.extraOptions.gtk = {
       enable = true;
       theme = with pkgs; {
-        name = "Colloid-Dark-Compact-Catppuccin";
+        name = "Colloid-Dark-Compact-${default.colorSchemeName}";
         package = colloid-gtk-theme;
       };
       iconTheme = {

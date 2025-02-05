@@ -22,8 +22,6 @@ in {
 
     system.stateVersion = default.stateVersion;
 
-    services.gvfs.enable = true;
-
     environment = {
       systemPackages = with pkgs; [
         vim

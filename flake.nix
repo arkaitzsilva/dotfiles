@@ -11,9 +11,12 @@
       templateFolder = ./dotfiles/templates;
       dataFolder = ./dotfiles/local/share;
 
+      colorSchemeName = "Catppuccin";
+      colorScheme = "catppuccin";
       theme = "catppuccin-frappe";
+
       wallpaperResolution = "768p";
-      colorScheme = "dark";
+      colorVariant = "dark";
 
       system = "x86_64-linux";
       hostName = "M11xR3";
@@ -71,6 +74,11 @@
 
     ags = {
       url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    astal = {
+      url = "github:aylur/astal";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

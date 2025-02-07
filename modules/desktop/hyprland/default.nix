@@ -35,14 +35,12 @@ in {
     shelf.desktop.addons = {
       greetd = enabled;
       gtk = enabled;
-      #wofi = enabled;
-      #dunst = enabled;
       foot = enabled;
       thunar = enabled;
-      hyprshell = enabled;
       wlogout = enabled;
       hyprlock = enabled;
       hypridle = enabled;
+      hyprshell = enabled;
     };
 
     shelf.cli = {

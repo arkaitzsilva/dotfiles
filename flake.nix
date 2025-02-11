@@ -11,9 +11,9 @@
       templateFolder = ./dotfiles/templates;
       dataFolder = ./dotfiles/local/share;
 
-      colorSchemeName = "Catppuccin";
-      colorScheme = "catppuccin";
-      theme = "catppuccin-frappe";
+      colorScheme = "nord"; # GTK Theme build variant
+      colorSchemeName = "Nord"; # GTK Theme select variant
+      theme = "nord"; # Addons/Apps Theme select
 
       wallpaperResolution = "768p";
       colorVariant = "dark";

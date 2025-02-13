@@ -11,9 +11,9 @@
       templateFolder = ./dotfiles/templates;
       dataFolder = ./dotfiles/local/share;
 
-      colorScheme = "nord"; # GTK Theme build variant
-      colorSchemeName = "Nord"; # GTK Theme select variant
-      theme = "nord"; # Addons/Apps Theme select
+      colorScheme = "catppuccin"; # Colloid GTK Theme build variant
+      colorSchemeName = "Catppuccin"; # Colloid GTK Theme select variant
+      theme = "catppuccin-frappe"; # Addons/Apps Theme select
 
       wallpaperResolution = "768p";
       colorVariant = "dark";

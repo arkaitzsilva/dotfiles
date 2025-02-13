@@ -1,10 +1,5 @@
-# -*- conf -*-
-# theme: Nord
-# author: Arctic Ice Studio <development@arcticicestudio.com>, Sven Greb <code@svengreb.de>
-# description: „Nord“ — An arctic, north-bluish color palette
-#
-# this specific foot theme is based on nord-alacritty:
-# https://github.com/arcticicestudio/nord-alacritty/blob/develop/src/nord.yml
+# _*_ conf _*_
+# Nord
 
 [cursor]
 color = 2e3440 d8dee9

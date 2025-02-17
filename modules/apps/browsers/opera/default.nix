@@ -13,6 +13,17 @@ in {
   };
 
   config = mkIf cfg.enable {
+    nixpkgs.overlays = [
+      (final: prev: {
+        opera = prev.opera.overrideAttrs (oldAttrs: {
+          postFixup = (oldAttrs.postFixup or "") + ''
+            wrapProgram $out/bin/opera \
+              --add-flags "--lang=es"
+          '';
+        });
+      })
+    ];
+
     environment.systemPackages = with pkgs; [
       opera
     ];

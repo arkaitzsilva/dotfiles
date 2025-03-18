@@ -12,7 +12,7 @@
       dataFolder = ./dotfiles/local/share;
 
       colorScheme = "nord"; # Colloid GTK Theme build variant
-      colorSchemeName = "Nord"; # Colloid GTK Theme select variant
+      colorSchemeName = "Colloid-Dark-Compact-Nord"; # Colloid GTK Theme select variant Colloid-[COLOR/NONE]-[DARK/LIGHT]-[COMPACT/NONE]-[COLOR-SCHEME]
       theme = "nord"; # Addons/Apps Theme select
 
       wallpaperResolution = "768p";

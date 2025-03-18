@@ -5,3 +5,4 @@ bun.lockb
 flake.lock
 .weather
 .sass-cache
+.vscode

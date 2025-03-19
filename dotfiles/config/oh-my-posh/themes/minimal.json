@@ -57,7 +57,7 @@
             "threshold": 5000
           },
           "template": "{{ .FormattedMs }}",
-          "foreground": "p:purple",
+          "foreground": "p:mauve",
           "background": "transparent",
           "type": "executiontime",
           "style": "plain"

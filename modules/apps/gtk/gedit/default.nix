@@ -20,6 +20,6 @@ in {
     ];
 
 
-    shelf.home.dataFile."libgedit-gtksourceview-300/styles/theme-color-scheme.xml".source = "${default.dataFolder}/libgedit-gtksourceview-300/styles/${default.theme}.xml";
+    shelf.home.dataFile."libgedit-gtksourceview-300/styles/theme-color-scheme.xml".source = "${default.dataFolder}/libgedit-gtksourceview-300/styles/${default.colorSchemeVariant}.xml";
   };
 }

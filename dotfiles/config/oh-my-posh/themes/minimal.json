@@ -25,7 +25,7 @@
             "style": "full"
           },
           "template": "{{ .Path }}",
-          "foreground": "p:teal",
+          "foreground": "p:blue",
           "background": "transparent",
           "type": "path",
           "style": "plain"
@@ -37,7 +37,7 @@
             "commit_icon": "@",
             "fetch_status": true
           },
-          "template": " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <p:mauve>{{ if gt .Behind 0 }}\u21e3{{ end }}{{ if gt .Ahead 0 }}\u21e1{{ end }}</>",
+          "template": " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <p:teal>{{ if gt .Behind 0 }}\u21e3{{ end }}{{ if gt .Ahead 0 }}\u21e1{{ end }}</>",
           "foreground": "p:gray",
           "background": "transparent",
           "type": "git",
@@ -57,7 +57,7 @@
             "threshold": 5000
           },
           "template": "{{ .FormattedMs }}",
-          "foreground": "p:blue",
+          "foreground": "p:gray",
           "background": "transparent",
           "type": "executiontime",
           "style": "plain"

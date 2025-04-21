@@ -19,6 +19,7 @@ in {
       gifsicle
       cryfs
       unrar
+      unzip
     ];
   };
 }

@@ -36,6 +36,7 @@ in {
       greetd = enabled;
       gtk = enabled;
       foot = enabled;
+      thunar = enabled;
       ranger = enabled;
       wlogout = enabled;
       hyprlock = enabled;

@@ -1,10 +1,10 @@
 {
   "palette": {
     "green": "#a6e3a1",
-    "red": "#f38ba8",
-    "blue": "#89b4fa",
-    "mauve": "#cba6f7",
-    "teal": "#94e2d5",
-    "gray": "#bac2de"
+    "red": "#e78284",
+    "blue": "#8caaee",
+    "mauve": "#ca9ee6",
+    "teal": "#81c8be",
+    "text": "#c6d0f5"
   }
 }

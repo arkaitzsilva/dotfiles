@@ -11,6 +11,7 @@
       templateFolder = ./dotfiles/templates;
       dataFolder = ./dotfiles/local/share;
 
+      accentColor = "teal";
       colorScheme = "nord"; # Colloid GTK Theme build variant
       colorSchemeName = "Colloid-Teal-Dark-Compact-Nord"; # Colloid GTK Theme select variant Colloid-[COLOR/NONE]-[DARK/LIGHT]-[COMPACT/NONE]-[COLOR-SCHEME]
       colorSchemeVariant = "nord"; # Addons/Apps Theme select

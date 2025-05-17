@@ -25,6 +25,7 @@ in {
       oh-my-posh = enabled;   
       ags = enabled;
       astal = enabled;
+      docker = enabled;
     };    
   };
 }

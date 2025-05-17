@@ -21,6 +21,7 @@ in {
         "networkmanager"
         "libvirtd"
         "docker"
+        "audio"
       ];
     };
   };

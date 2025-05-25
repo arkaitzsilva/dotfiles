@@ -26,6 +26,7 @@ in {
       ags = enabled;
       astal = enabled;
       docker = enabled;
+      ollama = enabled;
     };    
   };
 }

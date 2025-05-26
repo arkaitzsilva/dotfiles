@@ -86,5 +86,13 @@
     }
   ],
   "version": 3,
-  "final_space": true
+  "final_space": true,
+  "palette": {
+    "green": "#a3be8c",
+    "red": "#bf616a",
+    "blue": "#81a1c1",
+    "mauve": "#b48ead",
+    "teal": "#8fbcbb",
+    "text": "#d8dee9"
+  }
 }

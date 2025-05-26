@@ -23,13 +23,6 @@ in {
     system.stateVersion = default.stateVersion;
 
     environment = {
-      systemPackages = with pkgs; [
-        vim
-        wget
-        git
-        htop
-      ];
-
       sessionVariables = {
         XDG_CACHE_HOME = "$HOME/.cache";
         XDG_CONFIG_HOME = "$HOME/.config";

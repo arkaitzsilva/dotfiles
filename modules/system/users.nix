@@ -19,7 +19,6 @@ in {
       extraGroups = [
         "wheel"
         "networkmanager"
-        "libvirtd"
         "docker"
         "audio"
       ];

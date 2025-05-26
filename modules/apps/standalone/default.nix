@@ -14,8 +14,6 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      viewnior
-      zathura
       mpv
     ];
   };

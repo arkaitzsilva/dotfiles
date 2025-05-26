@@ -17,16 +17,7 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      hyprpicker
-      cliphist
-      brightnessctl
-      playerctl
-      slurp
-      wayshot
-      swappy
-      wl-clipboard
       inputs.swww.packages.${pkgs.system}.swww
-
       inputs.hyprland-qtutils.packages.${pkgs.system}.default
     ];
 
@@ -34,34 +25,16 @@ in {
 
     shelf.desktop.addons = {
       greetd = enabled;
-      gtk = enabled;
       foot = enabled;
-      thunar = enabled;
       ranger = enabled;
-      wlogout = enabled;
-      hyprlock = enabled;
-      hypridle = enabled;
-      hyprshell = enabled;
     };
 
     shelf.cli = {
       packages = enabled;      
     };
 
-    shelf.apps = {
-      browsers = {
-        firefox = enabled;
-        brave = enabled;
-        opera = enabled;
-        google-chrome = enabled;
-      };      
+    shelf.apps = {    
       standalone = enabled;
-      gtk = {
-        packages = enabled;
-        gedit = enabled;
-        discord = enabled;
-        virt-manager = enabled;
-      };
       qt = {
         obs-studio = enabled;
       };
@@ -69,18 +42,6 @@ in {
 
     shelf.home.configFile."hypr/hyprland.conf".source = "${default.configFolder}/hypr/hyprland.conf";
     shelf.home.configFile."hypr/keybindings.conf".source = "${default.configFolder}/hypr/keybindings.conf";
-    shelf.home.configFile."hypr/colors.conf".source = "${default.configFolder}/hypr/color-scheme-variants/${default.colorSchemeVariant}.conf";
     shelf.home.configFile."hypr/wallpapers".source = "${default.configFolder}/hypr/wallpapers/${default.wallpaperResolution}";
-    #shelf.home.configFile."hypr/scripts".source = "${default.configFolder}/hypr/scripts";
-
-    # shelf.home.extraOptions.wayland.windowManager.hyprland = {
-    #   enable = true;
-    #   plugins = [
-    #     inputs.hyprfocus.packages.${pkgs.system}.hyprfocus
-    #   ];
-    #   extraConfig = ''
-    #     ${builtins.readFile "${default.configFolder}/hypr/hyprland.conf"}
-    #   '';
-    # };
   };
 }

@@ -16,10 +16,10 @@ in {
     environment.systemPackages = with pkgs; [
       neofetch
       htop
-      gifsicle
       cryfs
-      unrar
-      unzip
+      git
+      neovim
+      wget
     ];
   };
 }

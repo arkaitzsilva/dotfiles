@@ -14,6 +14,11 @@ in {
   };
 
   config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      meson
+      ninja
+    ];
+  
     shelf.system = {
       diffScript = true;
       locale.timeZone = "Europe/Madrid";
@@ -28,6 +33,14 @@ in {
 
     shelf.desktop = {
       hyprland = enabled;
+    };
+
+    shelf.cli = {
+      ssh = enabled;
+      git = enabled;
+      oh-my-posh = enabled;
+      docker = enabled;
+      ollama = enabled;
     };
   };
 }

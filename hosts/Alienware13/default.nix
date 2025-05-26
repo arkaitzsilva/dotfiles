@@ -23,6 +23,5 @@ with lib.shelf; {
 
   shelf.presets = {
     default = enabled;
-    dev = enabled;
   };
 }

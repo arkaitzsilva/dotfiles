@@ -21,6 +21,5 @@ in {
     };
     
     shelf.home.configFile."foot/foot.ini".source = "${default.configFolder}/foot/foot.ini";
-    shelf.home.configFile."foot/colors".source = "${default.configFolder}/foot/color-scheme-variants/${default.colorSchemeVariant}";
   };
 }

@@ -18,7 +18,6 @@ in {
       htop
       cryfs
       git
-      neovim
       wget
     ];
   };

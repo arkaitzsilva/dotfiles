@@ -17,6 +17,9 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
+      wl-clipboard
+      cliphist
+      brightnessctl
       inputs.swww.packages.${pkgs.system}.swww
       inputs.hyprland-qtutils.packages.${pkgs.system}.default
     ];
@@ -27,6 +30,8 @@ in {
       greetd = enabled;
       foot = enabled;
       ranger = enabled;
+      neovim = enabled;
+      nyxt = enabled;
     };
 
     shelf.cli = {

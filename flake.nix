@@ -8,13 +8,7 @@
       stateVersion = "25.05";
 
       configFolder = ./dotfiles/config;
-      templateFolder = ./dotfiles/templates;
-      dataFolder = ./dotfiles/local/share;
-
-      accentColor = "teal";
-      colorScheme = "nord"; # Colloid GTK Theme build variant
-      colorSchemeName = "Colloid-Teal-Dark-Compact-Nord"; # Colloid GTK Theme select variant Colloid-[COLOR/NONE]-[DARK/LIGHT]-[COMPACT/NONE]-[COLOR-SCHEME]
-      colorSchemeVariant = "nord"; # Addons/Apps Theme select
+      # templateFolder = ./dotfiles/templates;
 
       wallpaperResolution = "1080p";
       colorVariant = "dark";
@@ -63,28 +57,8 @@
 
     hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
 
-    # hyprfocus = {
-    #   url = "github:pyt0xic/hyprfocus";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
-
     swww = {
       url = "github:LGFae/swww";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ags = {
-      url = "github:aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    astal = {
-      url = "github:aylur/astal";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprshell = {
-      url = "github:arkaitzsilva/hyprshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

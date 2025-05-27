@@ -16,11 +16,11 @@
       colorSchemeName = "Colloid-Teal-Dark-Compact-Nord"; # Colloid GTK Theme select variant Colloid-[COLOR/NONE]-[DARK/LIGHT]-[COMPACT/NONE]-[COLOR-SCHEME]
       colorSchemeVariant = "nord"; # Addons/Apps Theme select
 
-      wallpaperResolution = "768p";
+      wallpaperResolution = "1080p";
       colorVariant = "dark";
 
       system = "x86_64-linux";
-      hostName = "M11xR3";
+      hostName = "Alienware13";
       username = "alienware";
     };
 
@@ -47,7 +47,7 @@
   in {
     nixosConfigurations = {
       # USAGE: addNewHost <hostname>
-      M11xR3 = addNewHost default.hostName;
+      Alienware13 = addNewHost default.hostName;
     };
   };
 

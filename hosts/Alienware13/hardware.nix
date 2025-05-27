@@ -8,9 +8,14 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda"; 
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      devices = [ "nodev" ];
+      efiSupport = true;
+      useOSProber = true;
+    };
   };
 
   boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "firewire_ohci" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
@@ -33,7 +38,7 @@
   swapDevices = [
     {
       device = "/.swapfile";
-      size = 8*1024;
+      size = 16*1024;
     }
   ];
 

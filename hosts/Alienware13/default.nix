@@ -14,6 +14,8 @@ with lib.shelf; {
   # Additional packages to install
   environment.systemPackages = with pkgs; [];
 
+  time.hardwareClockInLocalTime = true;
+
   shelf.system.networking.bluetooth = true;
 
   shelf.cli.git = {

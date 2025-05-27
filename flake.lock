@@ -535,11 +535,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745226375,
-        "narHash": "sha256-cGRb3c08eNLsHCrkewbmX+F/EklXmF3xaOsVywoXPEw=",
+        "lastModified": 1748356808,
+        "narHash": "sha256-88Qk3VyPTV0e2YiiaQ+7BedzLv6aMgZ4F1RIUXSVX+U=",
         "owner": "arkaitzsilva",
         "repo": "hyprshell",
-        "rev": "304e4d5d17baa4242fb4e2e08dcb09ea33edef40",
+        "rev": "f7b70aeef5a99b29b471160348506d6649abf986",
         "type": "github"
       },
       "original": {

@@ -6,7 +6,9 @@
 }:
 with lib;
 with lib.shelf; {
-  imports = [./hardware.nix];
+  imports = [
+    ./hardware.nix
+  ];
 
   # To prevent freezing when compiling
   nix.settings.cores = 3;

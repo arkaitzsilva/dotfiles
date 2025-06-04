@@ -1,5 +1,5 @@
 {
-  description = "My nixos dotfiles flake";
+  description = "My NixOS dotfiles flake";
 
   outputs = {nixpkgs, ...} @ inputs: let
 

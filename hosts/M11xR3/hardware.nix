@@ -31,31 +31,15 @@
   ];
 
   boot = {
-    loader = {
-      efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        devices = [ "nodev" ];
-        efiSupport = true;
-        useOSProber = true;
-      };
-    };
+    loader.grub.device = "/dev/sda";
 
-    # kernelPackages = pkgs.linuxPackages_6_14;
+    # kernelPackages = pkgs.linuxPackages_lqx;
 
     kernelModules = [
       "kvm-intel"
-      "dell_smbios"
-      "dell_wmi"
-      "dell_laptop"
-      "dell_rbtn"
-      "dell_smm_hwmon"
-      "ec_sys"
     ];
 
-    kernelParams = [
-
-    ];
+    kernelParams = [];
 
     initrd = {
       availableKernelModules = [
@@ -67,6 +51,8 @@
         "sd_mod"
         "sdhci_pci"
       ];
+
+      kernelModules = [];
     };
 
     extraModprobeConfig = ''
@@ -81,13 +67,6 @@
       "nvidia_modeset"
     ];
   };
-
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-    DefaultTimeoutStartSec=10s
-    LogLevel=debug
-  '';
-
 
   services.udev.extraRules = ''
     # Remover dispositivos VGA/3D de NVIDIA

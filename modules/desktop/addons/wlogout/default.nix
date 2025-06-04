@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  defaults,
   inputs,
   ...
 }:
@@ -19,8 +19,8 @@ in {
       wlogout
     ];
 
-    shelf.home.configFile."wlogout/layout".source = "${default.configFolder}/wlogout/layout";
-    shelf.home.configFile."wlogout/style.css".source = "${default.configFolder}/wlogout/style.css";
-    shelf.home.configFile."wlogout/icons".source = "${default.configFolder}/wlogout/icons";
+    shelf.home.configFile."wlogout/layout".source = "${defaults.configFolder}/wlogout/layout";
+    shelf.home.configFile."wlogout/style.css".source = "${defaults.configFolder}/wlogout/style.css";
+    shelf.home.configFile."wlogout/icons".source = "${defaults.configFolder}/wlogout/icons";
   };
 }

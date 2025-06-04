@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  defaults,
   ...
 }:
 with lib;
@@ -20,6 +20,6 @@ in {
     ];
 
 
-    shelf.home.dataFile."libgedit-gtksourceview-300/styles/theme-color-scheme.xml".source = "${default.dataFolder}/libgedit-gtksourceview-300/styles/${default.colorSchemeVariant}.xml";
+    shelf.home.dataFile."libgedit-gtksourceview-300/styles/theme-color-scheme.xml".source = "${defaults.dataFolder}/libgedit-gtksourceview-300/styles/${defaults.colorSchemeVariant}.xml";
   };
 }

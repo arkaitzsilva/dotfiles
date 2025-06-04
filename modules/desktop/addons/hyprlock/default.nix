@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  defaults,
   inputs,
   ...
 }:
@@ -19,6 +19,6 @@ in {
       hyprlock
     ];
 
-    shelf.home.configFile."hypr/hyprlock.conf".source = "${default.configFolder}/hypr/hyprlock.conf";
+    shelf.home.configFile."hypr/hyprlock.conf".source = "${defaults.configFolder}/hypr/hyprlock.conf";
   };
 }

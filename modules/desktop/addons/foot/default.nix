@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  defaults,
   ...
 }:
 with lib;
@@ -20,7 +20,7 @@ in {
       enable = true;
     };
     
-    shelf.home.configFile."foot/foot.ini".source = "${default.configFolder}/foot/foot.ini";
-    shelf.home.configFile."foot/colors".source = "${default.configFolder}/foot/color-scheme-variants/${default.colorSchemeVariant}";
+    shelf.home.configFile."foot/foot.ini".source = "${defaults.configFolder}/foot/foot.ini";
+    shelf.home.configFile."foot/colors".source = "${defaults.configFolder}/foot/color-scheme-variants/${defaults.colorSchemeVariant}";
   };
 }

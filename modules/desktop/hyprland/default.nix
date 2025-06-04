@@ -4,7 +4,7 @@
   lib,
   inputs,
   options,
-  default,
+  defaults,
   ...
 }:
 with lib;
@@ -37,7 +37,6 @@ in {
       gtk = enabled;
       foot = enabled;
       thunar = enabled;
-      ranger = enabled;
       wlogout = enabled;
       hyprlock = enabled;
       hypridle = enabled;
@@ -67,11 +66,11 @@ in {
       };
     };
 
-    shelf.home.configFile."hypr/hyprland.conf".source = "${default.configFolder}/hypr/hyprland.conf";
-    shelf.home.configFile."hypr/keybindings.conf".source = "${default.configFolder}/hypr/keybindings.conf";
-    shelf.home.configFile."hypr/colors.conf".source = "${default.configFolder}/hypr/color-scheme-variants/${default.colorSchemeVariant}.conf";
-    shelf.home.configFile."hypr/wallpapers".source = "${default.configFolder}/hypr/wallpapers/${default.wallpaperResolution}";
-    #shelf.home.configFile."hypr/scripts".source = "${default.configFolder}/hypr/scripts";
+    shelf.home.configFile."hypr/hyprland.conf".source = "${defaults.configFolder}/hypr/hyprland.conf";
+    shelf.home.configFile."hypr/keybindings.conf".source = "${defaults.configFolder}/hypr/keybindings.conf";
+    shelf.home.configFile."hypr/colors.conf".source = "${defaults.configFolder}/hypr/color-scheme-variants/${defaults.colorSchemeVariant}.conf";
+    shelf.home.configFile."hypr/wallpapers".source = "${defaults.configFolder}/hypr/wallpapers/${defaults.wallpaperResolution}";
+    #shelf.home.configFile."hypr/scripts".source = "${defaults.configFolder}/hypr/scripts";
 
     # shelf.home.extraOptions.wayland.windowManager.hyprland = {
     #   enable = true;
@@ -79,7 +78,7 @@ in {
     #     inputs.hyprfocus.packages.${pkgs.system}.hyprfocus
     #   ];
     #   extraConfig = ''
-    #     ${builtins.readFile "${default.configFolder}/hypr/hyprland.conf"}
+    #     ${builtins.readFile "${defaults.configFolder}/hypr/hyprland.conf"}
     #   '';
     # };
   };

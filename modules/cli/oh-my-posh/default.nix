@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  defaults,
   ...
 }:
 with lib;
@@ -10,8 +10,8 @@ with lib.shelf; let
   cfg = config.shelf.cli.oh-my-posh;
   zshEnabled = config.shelf.cli.zsh.enable || config.shelf.system.defaultShell == pkgs.zsh;
 
-  theme = builtins.fromJSON (builtins.readFile "${default.configFolder}/oh-my-posh/themes/minimal.json");
-  colorSchemeVariant = builtins.fromJSON (builtins.readFile "${default.configFolder}/oh-my-posh/color-scheme-variants/${default.colorSchemeVariant}.json");
+  theme = builtins.fromJSON (builtins.readFile "${defaults.configFolder}/oh-my-posh/themes/minimal.json");
+  colorSchemeVariant = builtins.fromJSON (builtins.readFile "${defaults.configFolder}/oh-my-posh/color-scheme-variants/${defaults.colorSchemeVariant}.json");
   mergedConfig = lib.recursiveUpdate theme colorSchemeVariant;
 
   jsonFormat = pkgs.formats.json { };

@@ -3,7 +3,7 @@
   config,
   lib,
   options,
-  default,
+  defaults,
   ...
 }:
 with lib; let
@@ -67,7 +67,7 @@ in {
       backupFileExtension = "backup";
       useUserPackages = true;
 
-      users.${default.username} = {config, ...}:
+      users.${defaults.username} = {config, ...}:
         mkMerge [
           (mkAliasDefinitions options.shelf.home.extraOptions)
         ];

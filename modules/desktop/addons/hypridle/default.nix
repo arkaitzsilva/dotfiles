@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  defaults,
   inputs,
   ...
 }:
@@ -19,6 +19,6 @@ in {
       hypridle
     ];
 
-    shelf.home.configFile."hypr/hypridle.conf".source = "${default.configFolder}/hypr/hypridle.conf";
+    shelf.home.configFile."hypr/hypridle.conf".source = "${defaults.configFolder}/hypr/hypridle.conf";
   };
 }

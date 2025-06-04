@@ -33,7 +33,7 @@ in {
       enable = true;
       extraConfig = {
         color.ui = true;
-        core.editor = "nvim";
+        core.editor = "nano";
         credential.helper = "store";
         github.user = config.shelf.cli.git.name;
         push.autoSetupRemote = true;

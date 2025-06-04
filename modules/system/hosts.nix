@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  default,
   hostName,
   ...
 }:
@@ -11,7 +10,6 @@ with lib.shelf; let
   cfg = config.shelf.system.hosts.${hostName};
 in {
   options.shelf.system.hosts.${hostName} = {
-    #wallpaper = mkOpt types.package default.wallpaper "The wallpaper to use for current host.";
     variant = mkOpt (lib.types.enum ["light" "dark" "amoled"]) "dark" "Colorscheme variant.";
     type = mkOpt' (lib.types.enum [
       "scheme-content"

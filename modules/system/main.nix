@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  defaults,
   inputs,
   ...
 }:
@@ -16,15 +16,14 @@ in {
   };
 
   config = {
-    users.users.${default.username} = {
+    users.users.${defaults.username} = {
       shell = cfg.defaultShell;
     };
 
-    system.stateVersion = default.stateVersion;
+    system.stateVersion = defaults.stateVersion;
 
     environment = {
       systemPackages = with pkgs; [
-        vim
         wget
         git
         htop

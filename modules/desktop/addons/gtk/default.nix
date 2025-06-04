@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  defaults,
   ...
 }:
 with lib;
@@ -11,7 +11,7 @@ with lib.shelf; let
     themeVariants = [ "all" ];
     #colorVariants = [ "" ];
     sizeVariants = [ "compact" ];
-    tweaks = [ "${default.colorScheme}" "rimless" "normal" ];
+    tweaks = [ "${defaults.colorScheme}" "rimless" "normal" ];
   };
 
   cfg = config.shelf.desktop.addons.gtk;
@@ -33,7 +33,7 @@ in {
     shelf.home.extraOptions.gtk = {
       enable = true;
       theme = with pkgs; {
-        name = "${default.colorSchemeName}";
+        name = "${defaults.colorSchemeName}";
         package = colloid-gtk-theme;
       };
       iconTheme = {

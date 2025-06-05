@@ -8,7 +8,7 @@ with lib;
 with lib.shelf; {
   imports = [
     ./hardware.nix
-    ./dsdt-override.nix
+    #./dsdt-override.nix
   ];
 
   # To prevent freezing when compiling
@@ -20,11 +20,6 @@ with lib.shelf; {
   time.hardwareClockInLocalTime = true;
 
   shelf.system.networking.bluetooth = true;
-
-  shelf.cli.git = {
-    email = "arkaitz.develop@gmail.com";
-    name = "arkaitzsilva";
-  };
 
   shelf.presets = {
     default = enabled;

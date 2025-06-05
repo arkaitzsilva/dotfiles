@@ -54,9 +54,9 @@
       "ec_sys"
     ];
 
-    # kernelParams = [
-
-    # ];
+    kernelParams = [
+      "apm=power_off"
+    ];
 
     initrd = {
       availableKernelModules = [

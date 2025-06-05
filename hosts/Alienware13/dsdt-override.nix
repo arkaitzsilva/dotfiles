@@ -3,17 +3,17 @@
 let
   acpiOverride = pkgs.stdenv.mkDerivation {
     name = "acpi-dsdt-override";
-    CPIO_PATH = "kernel/firmware/acpi";
+    cpio_path = "kernel/firmware/acpi";
 
-    src = ./acpi/dsdt.aml;
+    src = ./acpi/dsdt-a11.aml;
 
     nativeBuildInputs = [ pkgs.cpio ];
 
     unpackPhase = "true";
 
     installPhase = ''
-      mkdir -p $CPIO_PATH
-      cp $src $CPIO_PATH/dsdt.aml
+      mkdir -p $cpio_path
+      cp $src $cpio_path/dsdt.aml
       find kernel | cpio -H newc --create > acpi_override
       cp acpi_override $out
     '';

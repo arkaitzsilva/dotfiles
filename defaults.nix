@@ -36,6 +36,9 @@ let
     colorSchemeVariant = "nord";
 
     colorVariant = "dark";
+
+    gitEmail = "arkaitz.develop@gmail.com";
+    gitName = "arkaitzsilva";
   };
 in
   base // overrides

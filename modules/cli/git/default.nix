@@ -3,7 +3,7 @@
   pkgs,
   lib,
   inputs,
-  default,
+  defaults,
   ...
 }:
 with lib;
@@ -12,20 +12,6 @@ with lib.shelf; let
 in {
   options.shelf.cli.git = with types; {
     enable = mkBoolOpt false "Whether to enable git.";
-    email = mkOption {
-      type = str;
-      default = "";
-      description = ''
-        The email adress that will be used.
-      '';
-    };
-    name = mkOption {
-      type = str;
-      default = "";
-      description = ''
-        The name that will be used.
-      '';
-    };
   };
 
   config = mkIf cfg.enable {
@@ -35,11 +21,11 @@ in {
         color.ui = true;
         core.editor = "nano";
         credential.helper = "store";
-        github.user = config.shelf.cli.git.name;
+        github.user = defaults.gitName;
         push.autoSetupRemote = true;
       };
-      userEmail = config.shelf.cli.git.email;
-      userName = config.shelf.cli.git.name;
+      userEmail = defaults.gitEmail;
+      userName = defaults.gitName;
     };
   };
 }

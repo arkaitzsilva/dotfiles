@@ -3,6 +3,7 @@
   lib,
   pkgs,
   modulesPath,
+  defaults,
   ...
 }:
 
@@ -26,7 +27,7 @@
   swapDevices = [
     {
       device = "/.swapfile";
-      size = 16*1024;
+      size = 8*1024;
     }
   ];
 
@@ -55,23 +56,42 @@
       kernelModules = [];
     };
 
-    extraModprobeConfig = ''
+    extraModprobeConfig = lib.mkIf (!defaults.enableDiscreteGraphics) ''
       blacklist nouveau
       options nouveau modeset=0
     '';
 
-    blacklistedKernelModules = [
+    blacklistedKernelModules = lib.mkIf (!defaults.enableDiscreteGraphics) [
       "nouveau"
       "nvidia"
       "nvidia_drm"
       "nvidia_modeset"
-    ];
+    ];  
   };
 
-  services.udev.extraRules = ''
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+    DefaultTimeoutStartSec=10s
+    LogLevel=debug
+  '';
+
+  services.udev.extraRules = lib.mkIf (!defaults.enableDiscreteGraphics) ''
     # Remover dispositivos VGA/3D de NVIDIA
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x03[0-9]*", ATTR{power/control}="auto", ATTR{remove}="1"
   '';
+
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  hardware.graphics = lib.mkIf (defaults.enableDiscreteGraphics) {
+    enable = true;
+  };
+
+  hardware.nvidia.prime = lib.mkIf (defaults.enableDiscreteGraphics) {
+    sync.enable = true;
+    
+    intelBusId = "PCI:0:2:0";
+    nvidiaBusId = "PCI:1:0:0";
+  };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -82,5 +102,4 @@
   # networking.interfaces.wlp13s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

@@ -1,0 +1,8 @@
+bluetoothctl
+power on
+agent KeyboardOnly
+default-agent
+pairable on
+# Enable keyboard pairing mode
+scan on
+pair 01:02:03:04:05:06

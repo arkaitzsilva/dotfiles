@@ -12,7 +12,7 @@ let
       wallpaperResolution = "1080p";    
       hostName = "Alienware13";
       username = "alienware";
-      enableDiscreteGraphics = false;
+      enableDiscreteGraphics = true;
     };
   };
 

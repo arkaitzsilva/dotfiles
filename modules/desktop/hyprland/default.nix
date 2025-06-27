@@ -25,8 +25,7 @@ in {
       wayshot
       swappy
       wl-clipboard
-      inputs.swww.packages.${pkgs.system}.swww
-
+      inputs.swww.packages.${pkgs.system}.default
       inputs.hyprland-qtutils.packages.${pkgs.system}.default
     ];
 
@@ -53,8 +52,13 @@ in {
         brave = enabled;
         opera = enabled;
         google-chrome = enabled;
+        qutebrowser = enabled;
       };      
-      standalone = enabled;
+      standalone = {
+        packages = enabled;
+        neovim = enabled;
+        ranger = enabled;
+      };
       gtk = {
         packages = enabled;
         gedit = enabled;
@@ -66,11 +70,12 @@ in {
       };
     };
 
+    shelf.home.dataFile."backgrounds".source = "${defaults.dataFolder}/backgrounds/${defaults.wallpaperResolution}";
+
     shelf.home.configFile."hypr/hyprland.conf".source = "${defaults.configFolder}/hypr/hyprland.conf";
     shelf.home.configFile."hypr/keybindings.conf".source = "${defaults.configFolder}/hypr/keybindings.conf";
     shelf.home.configFile."hypr/colors.conf".source = "${defaults.configFolder}/hypr/color-scheme-variants/${defaults.colorSchemeVariant}.conf";
     shelf.home.configFile."hypr/device.conf".source = "${defaults.configFolder}/hypr/devices/${defaults.hostName}.conf";
-    shelf.home.configFile."hypr/wallpapers".source = "${defaults.configFolder}/hypr/wallpapers/${defaults.wallpaperResolution}";
     #shelf.home.configFile."hypr/scripts".source = "${defaults.configFolder}/hypr/scripts";
 
     # shelf.home.extraOptions.wayland.windowManager.hyprland = {

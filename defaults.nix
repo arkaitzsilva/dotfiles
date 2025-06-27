@@ -30,7 +30,6 @@ let
     templateFolder = ./dotfiles/templates;
     dataFolder = ./dotfiles/local/share;
 
-    accentColor = "teal";
     colorScheme = "nord";
     colorSchemeName = "Colloid-Teal-Dark-Compact-Nord";
     colorSchemeVariant = "nord";

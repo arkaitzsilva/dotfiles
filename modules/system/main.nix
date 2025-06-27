@@ -2,8 +2,8 @@
   config,
   pkgs,
   lib,
-  default,
   inputs,
+  defaults,
   ...
 }:
 with lib;
@@ -16,11 +16,11 @@ in {
   };
 
   config = {
-    users.users.${default.username} = {
+    users.users.${defaults.username} = {
       shell = cfg.defaultShell;
     };
 
-    system.stateVersion = default.stateVersion;
+    system.stateVersion = defaults.stateVersion;
 
     environment = {
       sessionVariables = {
@@ -28,11 +28,8 @@ in {
         XDG_CONFIG_HOME = "$HOME/.config";
         XDG_DATA_HOME = "$HOME/.local/share";
         XDG_BIN_HOME = "$HOME/.local/bin";
-        # To prevent firefox from creating ~/Desktop.
         XDG_DESKTOP_DIR = "$HOME";
         XDG_DOCUMENTS_DIR = "$HOME/docs";
-
-        NIXOS_OZONE_WL = "1";
       };
     };
 

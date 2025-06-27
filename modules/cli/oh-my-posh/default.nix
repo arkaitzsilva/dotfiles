@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  defaults,
   ...
 }:
 with lib;
@@ -20,7 +20,7 @@ in {
     shelf.home.programs.oh-my-posh = {
       enable = true;
       enableZshIntegration = zshEnabled;
-      settings = builtins.fromJSON (builtins.readFile "${default.configFolder}/oh-my-posh/minimal.json");
+      settings = builtins.fromJSON (builtins.readFile "${defaults.configFolder}/oh-my-posh/minimal.json");
     };
   };
 }

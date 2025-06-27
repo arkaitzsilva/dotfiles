@@ -8,7 +8,6 @@ with lib;
 with lib.shelf; {
   imports = [
     ./hardware.nix
-    #./dsdt-override.nix
   ];
 
   # To prevent freezing when compiling

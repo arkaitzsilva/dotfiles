@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  defaults,
   ...
 }:
 with lib;
@@ -19,11 +19,11 @@ in {
     shelf.home.programs = {
       neovim = {
         enable = true;
-        #extraConfig = lib.fileContents "${default.configFolder}/nvim/init.vim";
+        defaultEditor = true;
       };
     };
     
-    shelf.home.configFile."nvim/init.vim".source = "${default.configFolder}/nvim/init.vim";
-    shelf.home.configFile."nvim/colors/nord.vim".source = "${default.configFolder}/nvim/nord.vim";
+    shelf.home.configFile."nvim/init.vim".source = "${defaults.configFolder}/nvim/init.vim";
+    shelf.home.configFile."nvim/colors/nord.vim".source = "${defaults.configFolder}/nvim/nord.vim";
   };
 }

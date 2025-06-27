@@ -32,7 +32,7 @@ in {
     };
 
     shelf.desktop = {
-      hyprland = enabled;
+      qtile = enabled;
     };
 
     shelf.cli = {

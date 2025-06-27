@@ -4,7 +4,6 @@
   lib,
   inputs,
   options,
-  default,
   hostName,
   ...
 }:

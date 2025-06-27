@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  defaults,
   ...
 }:
 with lib;
@@ -24,6 +24,6 @@ in {
       };
     };
 
-    shelf.home.configFile."ranger/rc.conf".source = "${default.configFolder}/ranger/rc.conf";
+    shelf.home.configFile."ranger/rc.conf".source = "${defaults.configFolder}/ranger/rc.conf";
   };
 }

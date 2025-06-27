@@ -1,22 +1,7 @@
 {
-  description = "My nixos dotfiles flake";
+  description = "My NixOS dotfiles flake";
 
   outputs = {nixpkgs, ...} @ inputs: let
-
-    default = {
-      # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-      stateVersion = "25.05";
-
-      configFolder = ./dotfiles/config;
-      # templateFolder = ./dotfiles/templates;
-
-      wallpaperResolution = "1080p";
-      colorVariant = "dark";
-
-      system = "x86_64-linux";
-      hostName = "Alienware13";
-      username = "alienware";
-    };
 
     mkLib = nixpkgs:
       nixpkgs.lib.extend
@@ -24,24 +9,28 @@
 
     addNewHost = hostName:
       with inputs;
-        nixpkgs.lib.nixosSystem {
-          system = default.system;
-          modules = [
-            ./modules
-            # The host specific configuration
-            (./. + "/hosts/${hostName}/")
-          ];
-          
-          # Pass the variables to other modules
-          specialArgs = {
-            lib = mkLib inputs.nixpkgs;
-            inherit inputs hostName default;
+        let
+          defaults = import ./defaults.nix { inherit hostName; };
+        in
+          nixpkgs.lib.nixosSystem {
+            system = defaults.system;
+            modules = [
+              ./modules
+              # The host specific configuration
+              (./. + "/hosts/${hostName}/")
+            ];
+            
+            # Pass the variables to other modules
+            specialArgs = {
+              lib = mkLib inputs.nixpkgs;
+              inherit inputs hostName defaults;
+            };
           };
-        };
   in {
     nixosConfigurations = {
       # USAGE: addNewHost <hostname>
-      Alienware13 = addNewHost default.hostName;
+      M11xR3 = addNewHost "M11xR3";
+      Alienware13 = addNewHost "Alienware13";
     };
   };
 
@@ -53,9 +42,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-
-    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
+    qtile = {
+      url = "github:qtile/qtile";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     swww = {
       url = "github:LGFae/swww";

@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  default,
+  defaults,
   ...
 }:
 with lib;
@@ -13,7 +13,7 @@ in {
   };
 
   config = {
-    users.users.${default.username} = {
+    users.users.${defaults.username} = {
       createHome = true;
       isNormalUser = true;
       extraGroups = [

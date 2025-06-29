@@ -60,6 +60,7 @@ in {
         packages = enabled;
         neovim = enabled;
         ranger = enabled;
+        mpv = enabled;
       };
       gtk = {
         packages = enabled;

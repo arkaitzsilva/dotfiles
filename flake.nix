@@ -66,6 +66,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprshell = {
       url = "github:arkaitzsilva/hyprshell";
       inputs.nixpkgs.follows = "nixpkgs";

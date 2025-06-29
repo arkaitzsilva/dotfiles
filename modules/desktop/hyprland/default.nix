@@ -25,8 +25,10 @@ in {
       wayshot
       swappy
       wl-clipboard
+      
       inputs.swww.packages.${pkgs.system}.default
       inputs.hyprland-qtutils.packages.${pkgs.system}.default
+      inputs.quickshell.packages.${pkgs.system}.default
     ];
 
     programs.hyprland.enable = true;

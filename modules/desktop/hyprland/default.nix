@@ -35,6 +35,7 @@ in {
 
     shelf.desktop.addons = {
       greetd = enabled;
+      qt = enabled;
       gtk = enabled;
       foot = enabled;
       thunar = enabled;

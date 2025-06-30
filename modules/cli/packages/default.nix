@@ -20,6 +20,7 @@ in {
       cryfs
       unrar
       unzip
+      lm_sensors
     ];
   };
 }

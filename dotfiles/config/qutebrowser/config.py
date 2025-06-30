@@ -1,9 +1,22 @@
-c.tabs.padding = {
-  "left": 8,
-  "right": 8,
-  "top": 8,
-  "bottom": 8,
-}
+import theme
+
+# Theme config.
+config.load_autoconfig()
+theme.draw(c, {
+    'padding': {
+        'left': 8,
+        'right': 8,
+        'top': 8,
+        'bottom': 8,
+    }
+})
+
+# Configure spanish language.
+c.content.headers.accept_language = "es-ES,es;q=0.9,en;q=0.8"
+c.qt.args = ["--lang=es-ES"]
+
+# Dark mode if available.
+c.colors.webpage.preferred_color_scheme = "dark"
 
 c.content.blocking.method = "both"
 c.content.blocking.adblock.lists = [
@@ -18,6 +31,6 @@ c.content.blocking.adblock.lists = [
 ]
 
 config.bind('<Ctrl-Shift-m>', 'spawn mpv {url}')
-config.bind('<Ctrl-m>', 'hint links spawn mpv {hint-url}')          
+config.bind('<Ctrl-m>', 'hint links spawn mpv {hint-url}')
 
 config.load_autoconfig()

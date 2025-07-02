@@ -15,20 +15,25 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      git
-      unzip
-      gcc
-      ripgrep
-      fd
+
     ];
 
     programs.neovim = {
       enable = true;
       defaultEditor = true;
     };
+
+    # shelf.home.programs.nvf = {
+    #   enable = true;
+    #   vim = {
+    #     theme = {
+    #       enable = true;
+    #       name = "nord";
+    #       style = "dark";
+    #     };
+    #   };
+    # };
     
-    shelf.home.configFile."nvim/lua".source = "${defaults.configFolder}/nvim/lua";
-    shelf.home.configFile."nvim/init.lua".source = "${defaults.configFolder}/nvim/init.lua";
-    #shelf.home.configFile."nvim/colors.vim".source = "${defaults.configFolder}/nvim/color-scheme-variants/${defaults.colorSchemeVariant}.vim";
+    #shelf.home.configFile."nvim/init.lua".source = "${defaults.configFolder}/nvim/init.lua";
   };
 }

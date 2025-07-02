@@ -46,13 +46,18 @@
 
     hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
 
-    # hyprfocus = {
-    #   url = "github:pyt0xic/hyprfocus";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
-
     swww = {
       url = "github:LGFae/swww";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nvf = {
+      url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -63,11 +68,6 @@
 
     astal = {
       url = "github:aylur/astal";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

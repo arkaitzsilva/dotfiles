@@ -16,7 +16,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs; with inputs; [
       hyprpicker
       cliphist
       brightnessctl
@@ -26,9 +26,9 @@ in {
       swappy
       wl-clipboard
       
-      inputs.swww.packages.${pkgs.system}.default
-      inputs.hyprland-qtutils.packages.${pkgs.system}.default
-      inputs.quickshell.packages.${pkgs.system}.default
+      swww.packages.${pkgs.system}.default
+      hyprland-qtutils.packages.${pkgs.system}.default
+      quickshell.packages.${pkgs.system}.default
     ];
 
     programs.hyprland.enable = true;

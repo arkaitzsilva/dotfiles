@@ -17,26 +17,16 @@ in with lib; {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [];
+    environment.systemPackages = with pkgs; [
+      gcc
+    ];
 
     programs.neovim = {
       enable = true;
       defaultEditor = true;
     };
-
-    programs.nvf = {
-      enable = true;
-      settings = {
-        vim = {
-          theme = {
-            enable = true;
-            name = "${defaults.colorSchemeVariant}";
-            style = "dark";
-          };
-        };
-      };
-    };
     
-    #shelf.home.configFile."nvim/init.lua".source = "${defaults.configFolder}/nvim/init.lua";
+    shelf.home.configFile."nvim/init.lua".source = "${defaults.configFolder}/nvim/init.lua";
+    shelf.home.configFile."nvim/lua/plugins".source = "${defaults.configFolder}/nvim/lua/plugins";
   };
 }

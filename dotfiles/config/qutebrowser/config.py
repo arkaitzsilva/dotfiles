@@ -28,9 +28,9 @@ c.content.blocking.adblock.lists = [
     "https://easylist-downloads.adblockplus.org/easyprivacy.txt",
     # Anti-annoyances (opcional)
     "https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt",
+    "https://easylist.to/easylist/fanboy-social.txt",
 ]
 
-config.bind('<Ctrl-Shift-m>', 'spawn mpv {url}')
-config.bind('<Ctrl-m>', 'hint links spawn mpv {hint-url}')
+config.bind('<Ctrl-f>', 'hint links spawn mpv {hint-url}')
 
 config.load_autoconfig()

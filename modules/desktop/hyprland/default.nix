@@ -28,7 +28,6 @@ in {
       
       swww.packages.${pkgs.system}.default
       hyprland-qtutils.packages.${pkgs.system}.default
-      quickshell.packages.${pkgs.system}.default
     ];
 
     programs.hyprland.enable = true;
@@ -43,6 +42,7 @@ in {
       hyprlock = enabled;
       hypridle = enabled;
       hyprshell = enabled;
+      quickshell = enabled;
     };
 
     shelf.cli = {
@@ -70,6 +70,7 @@ in {
         virt-manager = enabled;
       };
       qt = {
+        packages = enabled;
         obs-studio = enabled;
       };
     };

@@ -8,6 +8,10 @@ return {
     'mason-org/mason-lspconfig.nvim',
   },
   config = function()
-
+    local servers = {
+      qmlls = {
+        cmd = {'qmlls', '-E'}
+      }
+    }
   end
 }

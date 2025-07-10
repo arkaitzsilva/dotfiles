@@ -60,6 +60,7 @@ in {
       standalone = {
         packages = enabled;
         neovim = enabled;
+        helix = enabled;
         ranger = enabled;
         mpv = enabled;
       };

@@ -18,5 +18,7 @@ in {
     environment.systemPackages = with pkgs; with inputs; [
       quickshell.packages.${pkgs.system}.default
     ];
+
+    shelf.home.configFile."quickshell".source = "${defaults.configFolder}/quickshell";
   };
 }

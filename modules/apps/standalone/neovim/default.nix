@@ -10,8 +10,6 @@ with lib;
 with lib.shelf; let
   cfg = config.shelf.apps.standalone.neovim;
 in with lib; {
-  imports = [ inputs.nvf.nixosModules.default ];
-
   options.shelf.apps.standalone.neovim = {
     enable = mkBoolOpt false "Whether to enable neovim editor.";
   };

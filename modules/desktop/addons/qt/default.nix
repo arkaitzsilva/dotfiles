@@ -18,6 +18,10 @@ in {
       systemPackages = with pkgs; [
         libsForQt5.qtstyleplugin-kvantum
         kdePackages.qtstyleplugin-kvantum
+        libsForQt5.qt5.qtwayland
+        kdePackages.qtwayland
+        libsForQt5.kdialog
+        kdePackages.kdialog
       ];
       variables = {
         QT_QPA_PLATFORM = "wayland";

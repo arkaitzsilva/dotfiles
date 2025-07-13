@@ -55,13 +55,10 @@ in {
         brave = enabled;
         opera = enabled;
         google-chrome = enabled;
-        qutebrowser = enabled;
+        #qutebrowser = enabled;
       };      
       standalone = {
         packages = enabled;
-        neovim = enabled;
-        helix = enabled;
-        ranger = enabled;
         mpv = enabled;
       };
       gtk = {

@@ -42,6 +42,13 @@ in {
       Theme=Luv-Dark
     '';
 
+    shelf.home.configFile."xdg-desktop-portal/hyprland-portals.conf".text = ''
+      [preferred]
+      default=hyprland
+
+      org.freedesktop.impl.portal.FileChooser=kde
+    '';
+
     shelf.home.configFile."Kvantum".source = "${defaults.configFolder}/Kvantum";
   };
 }

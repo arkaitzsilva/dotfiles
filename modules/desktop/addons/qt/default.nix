@@ -45,7 +45,6 @@ in {
     shelf.home.configFile."xdg-desktop-portal/hyprland-portals.conf".text = ''
       [preferred]
       default=hyprland
-
       org.freedesktop.impl.portal.FileChooser=kde
     '';
 

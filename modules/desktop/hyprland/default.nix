@@ -34,7 +34,6 @@ in {
 
     shelf.desktop.addons = {
       greetd = enabled;
-      qt = enabled;
       gtk = enabled;
       foot = enabled;
       thunar = enabled;
@@ -42,7 +41,6 @@ in {
       hyprlock = enabled;
       hypridle = enabled;
       hyprshell = enabled;
-      quickshell = enabled;
     };
 
     shelf.cli = {
@@ -55,7 +53,6 @@ in {
         brave = enabled;
         opera = enabled;
         google-chrome = enabled;
-        #qutebrowser = enabled;
       };      
       standalone = {
         packages = enabled;
@@ -68,7 +65,6 @@ in {
         virt-manager = enabled;
       };
       qt = {
-        packages = enabled;
         obs-studio = enabled;
       };
     };

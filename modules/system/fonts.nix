@@ -9,8 +9,7 @@
       noto-fonts-color-emoji
       noto-fonts-monochrome-emoji
       google-fonts
-      nerd-fonts.fira-code
-      nerd-fonts.jetbrains-mono
+      meslo-lgs-nf
     ];
   };
 }

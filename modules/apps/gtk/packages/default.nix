@@ -17,7 +17,7 @@ in {
       vscode
       deluge
       inkscape
-      gimp
+      #gimp
     ];
   };
 }

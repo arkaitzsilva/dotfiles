@@ -27,7 +27,8 @@ in {
       wl-clipboard
       
       swww.packages.${pkgs.system}.default
-      hyprland-qtutils.packages.${pkgs.system}.default
+      #hyprland-qtutils.packages.${pkgs.system}.default
+      hyprland-plugins.packages.${pkgs.system}.default
     ];
 
     programs.hyprland.enable = true;
@@ -51,7 +52,7 @@ in {
       browsers = {
         firefox = enabled;
         brave = enabled;
-        opera = enabled;
+        opera = disabled;
         google-chrome = enabled;
       };      
       standalone = {

@@ -16,7 +16,8 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       helix
-      qt6Packages.qtdeclarative # qmlls server included
+      qt6Packages.qtdeclarative # qmlls language server included
+      nixd # nix language server
     ];
 
     shelf.home.configFile."helix/config.toml".source = "${defaults.configFolder}/helix/config.toml";

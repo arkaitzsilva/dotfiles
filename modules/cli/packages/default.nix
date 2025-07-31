@@ -19,6 +19,7 @@ in {
       cryfs
       git
       wget
+      cmatrix
     ];
   };
 }

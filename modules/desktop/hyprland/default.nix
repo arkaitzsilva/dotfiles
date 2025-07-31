@@ -11,7 +11,7 @@ with lib; with lib.shelf; let
   cfg = config.shelf.desktop.hyprland;
 
   hyprPluginPkgs = inputs.hyprland-plugins.packages.${pkgs.system};
-  hypr-plugin-dir = pkgs.symlinkJoin {
+  hyprPluginDir = pkgs.symlinkJoin {
     name = "hyprland-plugins";
     paths = with hyprPluginPkgs; [
       hyprfocus
@@ -25,18 +25,13 @@ in {
   config = mkIf cfg.enable {
     environment = {
       sessionVariables = {
-        #HYPR_PLUGIN_DIR = toString hypr-plugin-dir;
-        #HYPR_PLUGIN_DIR = "${pkgs.hyprlandPlugins.hyprfocus}/lib/hyprland/plugins";
+        HYPR_PLUGIN_DIR = hyprPluginDir;
       };
 
-      systemPackages = with pkgs; [
-        hyprlandPlugins.hyprfocus
- 
+      systemPackages = with pkgs; [ 
         wl-clipboard
         cliphist
         brightnessctl
-
-        inputs.swww.packages.${pkgs.system}.default
       ];
     };
 
@@ -44,6 +39,7 @@ in {
 
     shelf.desktop.addons = {
       greetd = enabled;
+      swww = enabled;
       theme = enabled;
       qt = enabled;
     };
@@ -59,10 +55,12 @@ in {
         yazi = enabled;
         helix = enabled;
       };
+
       qt = {
         packages = enabled;
         obs-studio = enabled;
       };
+
       browsers = {
         qutebrowser = enabled;
       };
@@ -72,7 +70,5 @@ in {
     shelf.home.configFile."hypr/keybindings.conf".source = "${defaults.configFolder}/hypr/keybindings.conf";
     shelf.home.configFile."hypr/device.conf".source = "${defaults.configFolder}/hypr/devices/${defaults.hostName}.conf";
     shelf.home.configFile."hypr/theme.conf".source = "${defaults.configFolder}/hypr/color-scheme-variants/${defaults.colorSchemeVariant}.conf";
-    
-    shelf.home.dataFile."wallpapers".source = "${defaults.dataFolder}/wallpapers/${defaults.wallpaperResolution}";
   };
 }

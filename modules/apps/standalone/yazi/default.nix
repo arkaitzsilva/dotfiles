@@ -14,15 +14,19 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ ];
+    environment = {
+      sessionVariables = {
+        YAZI_CONFIG_HOME = "$HOME/.config/yazi";
+      };
+      
+      systemPackages = with pkgs; [];    
+    };
 
     programs.yazi = {
       enable = true;
-      plugins = {
-        
-      };
+      plugins = { };
     };
 
-    #shelf.home.configFile."yazi/theme.toml".source = "${defaults.configFolder}/yazi/color-scheme-variants/catppuccin-frappe-blue.toml";
+    shelf.home.configFile."yazi/yazi.toml".source = "${defaults.configFolder}/yazi/yazi.toml";
   };
 }

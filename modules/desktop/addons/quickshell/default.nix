@@ -3,7 +3,6 @@
   pkgs,
   lib,
   defaults,
-  inputs,
   ...
 }:
 with lib;
@@ -15,8 +14,8 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; with inputs; [
-      quickshell.packages.${pkgs.system}.default
+    environment.systemPackages = with pkgs; [
+      quickshell
     ];
 
     #shelf.home.configFile."quickshell".source = "${defaults.configFolder}/quickshell";

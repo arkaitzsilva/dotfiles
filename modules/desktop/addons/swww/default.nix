@@ -16,7 +16,7 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; with inputs; [
-      swww.packages.${pkgs.system}.default
+      swww
     ];
 
     shelf.home.dataFile."wallpapers".source = "${defaults.dataFolder}/wallpapers/${defaults.wallpaperResolution}";

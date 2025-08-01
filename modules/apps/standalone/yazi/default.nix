@@ -23,6 +23,6 @@ in {
       };
     };
 
-    # shelf.home.configFile."yazi/yazi...".source = "${defaults.configFolder}/yazi/..."";
+    #shelf.home.configFile."yazi/theme.toml".source = "${defaults.configFolder}/yazi/color-scheme-variants/catppuccin-frappe-blue.toml";
   };
 }

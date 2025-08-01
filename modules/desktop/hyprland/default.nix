@@ -3,17 +3,15 @@
   pkgs,
   lib,
   inputs,
-  options,
   defaults,
   ...
 }:
 with lib; with lib.shelf; let
   cfg = config.shelf.desktop.hyprland;
 
-  hyprPluginPkgs = inputs.hyprland-plugins.packages.${pkgs.system};
-  hyprPluginDir = pkgs.symlinkJoin {
+  hypr-plugin-dir = pkgs.symlinkJoin {
     name = "hyprland-plugins";
-    paths = with hyprPluginPkgs; [
+    paths = with pkgs.hyprlandPlugins; [
       hyprfocus
     ];
   };
@@ -25,7 +23,7 @@ in {
   config = mkIf cfg.enable {
     environment = {
       sessionVariables = {
-        HYPR_PLUGIN_DIR = hyprPluginDir;
+        HYPR_PLUGIN_DIR = hypr-plugin-dir;
       };
 
       systemPackages = with pkgs; [ 

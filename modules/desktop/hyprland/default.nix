@@ -52,6 +52,7 @@ in {
         foot = enabled;
         yazi = enabled;
         helix = enabled;
+        mpv = enabled;
       };
 
       qt = {

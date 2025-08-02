@@ -13,9 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      mpv
-      ranger
-    ];
+    environment.systemPackages = with pkgs; [ ];
   };
 }

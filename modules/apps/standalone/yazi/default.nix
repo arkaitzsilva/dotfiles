@@ -10,23 +10,17 @@ with lib.shelf; let
   cfg = config.shelf.apps.standalone.yazi;
 in {
   options.shelf.apps.standalone.yazi = {
-    enable = mkBoolOpt false "Whether to enable yazi filemanager.";
+    enable = mkBoolOpt false "Whether to enable yazi file manager.";
   };
 
   config = mkIf cfg.enable {
-    environment = {
-      sessionVariables = {
-        YAZI_CONFIG_HOME = "$HOME/.config/yazi";
-      };
-      
-      systemPackages = with pkgs; [];    
-    };
+    environment.systemPackages = with pkgs; [ ];
 
-    programs.yazi = {
+    shelf.home.programs.yazi = {
       enable = true;
-      plugins = { };
     };
 
     shelf.home.configFile."yazi/yazi.toml".source = "${defaults.configFolder}/yazi/yazi.toml";
+    shelf.home.configFile."yazi/theme.toml".source = "${defaults.configFolder}/yazi/color-scheme-variants/${defaults.colorSchemeVariant}.toml";
   };
 }

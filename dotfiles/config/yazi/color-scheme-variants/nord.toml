@@ -1,0 +1,31 @@
+[icon]
+dirs = [
+  { name = ".git", text = "󰝰", fg = "#81a1c1" },
+  { name = ".config", text = "󱁿", fg = "#81a1c1" }
+]
+
+files = [
+  { name = "README.md", text = "󰍔", fg = "#d8dee9" },
+  { name = "hyprland.conf", text = "", fg = "#d8dee9" },
+  { name = ".gitignore", text = "󰊢", fg = "#d8dee9" },
+  { name = "config", text = "󱁻", fg = "#d8dee9" } 
+]
+
+exts = [
+  { name = "nix", text = "󱄅", fg = "#d8dee9" },
+  { name = "ini", text = "󱁻", fg = "#d8dee9" },
+  { name = "toml", text = "", fg = "#d8dee9" },
+  { name = "conf", text = "󱁻", fg = "#d8dee9" },
+  { name = "svg", text = "󰜡", fg = "#d8dee9" },
+  { name = "json", text = "󰘦", fg = "#d8dee9" },
+  { name = "py", text = "󰌠", fg = "#d8dee9" },
+  { name = "srt", text = "󰨖", fg = "#d8dee9" },
+  { name = "lock", text = "󰈡", fg = "#d8dee9" }
+]
+
+conds = [
+  { if = "dir", text = "󰝰", fg = "#81a1c1" },
+  { if = "file & link", text = "󱅷", fg = "#d8dee9" },
+  { if = "dir & link", text =  "󰌷", fg = "#81a1c1" },
+  { if = "!(dir|link)", text = "󰈔", fg = "#d8dee9" }
+]

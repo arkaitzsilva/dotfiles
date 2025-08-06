@@ -1,3 +1,11 @@
+[mgr]
+cwd = { fg = "#8fbcbb" }
+
+hovered = { fg = "#3b4252", bg = "#81a1c1" }
+preview_hovered = { fg = "#d8dee9", bg = "#4c566a" }
+
+border_style = { fg = "#81a1c1" }
+
 [icon]
 dirs = [
   { name = ".git", text = "󰝰", fg = "#81a1c1" },

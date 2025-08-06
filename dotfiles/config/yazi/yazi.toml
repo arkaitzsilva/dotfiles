@@ -5,3 +5,13 @@
 [mgr]
 show_hidden = true
 ratio = [2, 3, 3]
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*"
+run  = "git"
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*/"
+run  = "git"

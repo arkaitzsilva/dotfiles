@@ -38,7 +38,7 @@
             "fetch_status": true
           },
           "template": " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <p:teal>{{ if gt .Behind 0 }}\u21e3{{ end }}{{ if gt .Ahead 0 }}\u21e1{{ end }}</>",
-          "foreground": "p:text",
+          "foreground": "p:white",
           "background": "transparent",
           "type": "git",
           "style": "plain"
@@ -57,7 +57,7 @@
             "threshold": 5000
           },
           "template": "{{ .FormattedMs }}",
-          "foreground": "p:text",
+          "foreground": "p:white",
           "background": "transparent",
           "type": "executiontime",
           "style": "plain"

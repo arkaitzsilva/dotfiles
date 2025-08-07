@@ -3,7 +3,6 @@
   pkgs,
   lib,
   defaults,
-  inputs,
   ...
 }:
 with lib;
@@ -15,8 +14,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ ];
-
     shelf.home.dataFile."icons/nx-snow".source = "${defaults.dataFolder}/icons/nx-snow";
   };
 }

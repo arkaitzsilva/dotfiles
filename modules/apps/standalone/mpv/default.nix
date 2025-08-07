@@ -14,7 +14,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
+    shelf.home.packages = with pkgs; [
       mpv
       ffmpeg
       yt-dlp

@@ -3,7 +3,6 @@
   pkgs,
   lib,
   defaults,
-  inputs,
   ...
 }:
 with lib;
@@ -15,7 +14,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; with inputs; [
+    shelf.home.packages = with pkgs; [
       swww
     ];
 

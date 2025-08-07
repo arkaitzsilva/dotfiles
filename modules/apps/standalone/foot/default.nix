@@ -14,8 +14,6 @@ in {
   };
 
   config = mkIf (cfg.enable || config.shelf.system.defaultShell == pkgs.zsh) {
-    environment.systemPackages = with pkgs; [];
-
     shelf.home.programs.foot = {
       enable = true;
     };

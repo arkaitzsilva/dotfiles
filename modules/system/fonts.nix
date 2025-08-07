@@ -9,6 +9,7 @@
       noto-fonts-color-emoji
       noto-fonts-monochrome-emoji
       nerd-fonts.fira-code
+      kbd
     ];
   };
 }

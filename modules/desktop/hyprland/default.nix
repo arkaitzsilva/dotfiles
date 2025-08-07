@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  inputs,
   defaults,
   ...
 }:
@@ -21,25 +20,25 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment = {
-      sessionVariables = {
-        HYPR_PLUGIN_DIR = hypr-plugin-dir;
-      };
-
-      systemPackages = with pkgs; [ 
-        wl-clipboard
-        cliphist
-        brightnessctl
-      ];
+    environment.sessionVariables = {
+      HYPR_PLUGIN_DIR = hypr-plugin-dir;
     };
 
     programs.hyprland.enable = true;
+
+    shelf.home.packages = with pkgs; [
+      wl-clipboard
+      cliphist
+      brightnessctl
+      playerctl
+    ];
 
     shelf.desktop.addons = {
       greetd = enabled;
       swww = enabled;
       theme = enabled;
       qt = enabled;
+      quickshell = enabled;
     };
 
     shelf.cli = {

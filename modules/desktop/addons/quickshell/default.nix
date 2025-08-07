@@ -14,10 +14,12 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
+    services.upower = enabled;
+    
+    shelf.home.packages = with pkgs; [
       quickshell
     ];
-
+    
     #shelf.home.configFile."quickshell".source = "${defaults.configFolder}/quickshell";
   };
 }

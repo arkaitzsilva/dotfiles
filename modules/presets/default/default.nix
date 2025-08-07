@@ -13,12 +13,7 @@ in {
     enable = mkBoolOpt false "Whether to enable the default suite.";
   };
 
-  config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      meson
-      ninja
-    ];
-  
+  config = mkIf cfg.enable { 
     shelf.system = {
       diffScript = true;
       locale.timeZone = "Europe/Madrid";

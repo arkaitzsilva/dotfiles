@@ -50,12 +50,19 @@ in {
         Options to pass directly to home-manager.
       '';
     };
+    packages = mkOption {
+      type = types.attrs;
+      description = ''
+        Options to pass directly to home-manager.
+      '';
+    };
   };
 
   config = {
     shelf.home.extraOptions = {
       home.stateVersion = config.system.stateVersion;
       home.file = mkAliasDefinitions options.shelf.home.file;
+      home.packages = mkAliasDefinitions options.shelf.home.packages;
       programs = mkAliasDefinitions options.shelf.home.programs;
       services = mkAliasDefinitions options.shelf.home.services;
       xdg.enable = true;

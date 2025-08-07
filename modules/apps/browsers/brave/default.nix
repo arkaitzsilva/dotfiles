@@ -13,8 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [];
-
     shelf.home.programs.chromium = {
       enable = true;
       package = pkgs.brave;

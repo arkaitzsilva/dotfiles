@@ -1,10 +1,10 @@
 [mgr]
-cwd = { fg = "#8fbcbb" }
+cwd = { fg = "#88c0d0" }
 
 hovered = { fg = "#3b4252", bg = "#81a1c1" }
 preview_hovered = { fg = "#d8dee9", bg = "#4c566a" }
 
-border_style = { fg = "#81a1c1" }
+border_style = { fg = "#4c566a" }
 
 [icon]
 dirs = [
@@ -32,8 +32,8 @@ exts = [
 ]
 
 conds = [
+  { if = "!dir & link", text = "󱅷", fg = "#d8dee9" },
+  { if = "!file & link", text =  "󰌷", fg = "#81a1c1" },
+  { if = "!(dir | link)", text = "󰈔", fg = "#d8dee9" },
   { if = "dir", text = "󰝰", fg = "#81a1c1" },
-  { if = "file & link", text = "󱅷", fg = "#d8dee9" },
-  { if = "dir & link", text =  "󰌷", fg = "#81a1c1" },
-  { if = "!(dir|link)", text = "󰈔", fg = "#d8dee9" }
 ]

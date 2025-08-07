@@ -17,7 +17,7 @@ with lib.shelf; {
   # Additional packages to install
   environment.systemPackages = with pkgs; [];
 
-  time.hardwareClockInLocalTime = true;
+  # console.font = "${pkgs.kbd}/share/consolefonts/Lat2-Terminus32.psfu.gz";
 
   shelf.system.networking.bluetooth = true;
 

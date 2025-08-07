@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  default,
   hostName,
   ...
 }:
@@ -11,7 +10,7 @@ with lib.shelf; let
   cfg = config.shelf.system.networking;
 in {
   options.shelf.system.networking = {
-    bluetooth = mkBoolOpt false "Whether to enable bluetooth.";
+    bluetooth = mkBoolOpt false "Whether to enable networking.";
   };
 
   config = {

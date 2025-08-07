@@ -14,8 +14,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [];
-
     services.udisks2.enable = true;
     
     shelf.home.programs.yazi = {
@@ -26,7 +24,6 @@ in {
         full-border = yaziPlugins.full-border;
       };
     };
-
 
     shelf.home.configFile."yazi/init.lua".source = "${defaults.configFolder}/yazi/init.lua";
     shelf.home.configFile."yazi/yazi.toml".source = "${defaults.configFolder}/yazi/yazi.toml";

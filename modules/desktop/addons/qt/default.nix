@@ -22,6 +22,7 @@ in {
 
     shelf.home.packages = with pkgs; [
       qt6Packages.qtstyleplugin-kvantum
+      # qt6Packages.qttranslations
     ];
 
     shelf.home.extraOptions.qt = {

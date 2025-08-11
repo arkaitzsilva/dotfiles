@@ -38,6 +38,7 @@ in {
       swww = enabled;
       theme = enabled;
       qt = enabled;
+      quickshell = enabled;
     };
 
     shelf.cli = {

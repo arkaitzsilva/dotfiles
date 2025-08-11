@@ -1,3 +1,7 @@
 [language-server.qmlls]
 args = ["-E"]
 command = "qmlls"
+
+[[language]]
+name = "python"
+indent = { tab-width = 2, unit = " "}

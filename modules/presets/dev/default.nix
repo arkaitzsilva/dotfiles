@@ -16,7 +16,11 @@ in {
     shelf.home.packages = with pkgs; [
       meson
       ninja
+
+      # Python
       python3
+      ty
+      ruff
     ];
 
     shelf.cli = {

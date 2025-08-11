@@ -91,7 +91,7 @@ def setup(c, options={}):
     c.colors.hints.bg = palette['nord0']
 
     # Font color for hints.
-    c.colors.hints.fg = palette['nord10']
+    c.colors.hints.fg = palette['nord9']
 
     # Hints
     c.hints.border = '1px solid ' + palette['nord0']
@@ -103,7 +103,7 @@ def setup(c, options={}):
     c.colors.keyhint.bg = palette['nord0']
 
     # Text color for the keyhint widget.
-    c.colors.keyhint.fg = palette['nord10']
+    c.colors.keyhint.fg = palette['nord9']
 
     # Highlight color for keys to complete the current keychain.
     c.colors.keyhint.suffix.fg = palette['nord3']

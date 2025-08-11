@@ -20,5 +20,6 @@ in {
 
     shelf.home.configFile."qutebrowser/theme.py".source = "${defaults.configFolder}/qutebrowser/color-scheme-variants/${defaults.colorSchemeVariant}.py";
     shelf.home.configFile."qutebrowser/config.py".source = "${defaults.configFolder}/qutebrowser/config.py";
+    shelf.home.configFile."qutebrowser/quickmarks".source = "${defaults.configFolder}/qutebrowser/quickmarks";
   };
 }

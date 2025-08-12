@@ -106,7 +106,7 @@ def setup(c, options={}):
     c.colors.keyhint.fg = palette['nord9']
 
     # Highlight color for keys to complete the current keychain.
-    c.colors.keyhint.suffix.fg = palette['nord3']
+    c.colors.keyhint.suffix.fg = palette['nord10']
 
     # Background color of an error message.
     c.colors.messages.error.bg = palette['nord0']
@@ -124,7 +124,7 @@ def setup(c, options={}):
     c.colors.messages.info.border = palette['nord0']
 
     # Foreground color an info message.
-    c.colors.messages.info.fg = palette['nord3']
+    c.colors.messages.info.fg = palette['nord10']
 
     # Background color of a warning message.
     c.colors.messages.warning.bg = palette['nord0']

@@ -38,7 +38,6 @@ in {
       swww = enabled;
       theme = enabled;
       qt = enabled;
-      quickshell = enabled;
     };
 
     shelf.cli = {
@@ -56,11 +55,11 @@ in {
 
       qt = {
         packages = enabled;
-        obs-studio = enabled;
       };
 
       browsers = {
         qutebrowser = enabled;
+        nyxt = enabled;
       };
     };
 

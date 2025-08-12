@@ -6,7 +6,7 @@
 }:
 with lib;
 with lib.shelf; let
-  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+  tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
   hyprland-session = "${pkgs.hyprland}/share/wayland-sessions";
 
   cfg = config.shelf.desktop.addons.greetd;

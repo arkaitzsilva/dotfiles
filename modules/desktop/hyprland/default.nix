@@ -37,7 +37,6 @@ in {
       greetd = enabled;
       swww = enabled;
       theme = enabled;
-      qt = enabled;
     };
 
     shelf.cli = {
@@ -48,18 +47,7 @@ in {
       standalone = {
         packages = enabled;
         foot = enabled;
-        yazi = enabled;
-        helix = enabled;
         mpv = enabled;
-      };
-
-      qt = {
-        packages = enabled;
-      };
-
-      browsers = {
-        qutebrowser = enabled;
-        nyxt = enabled;
       };
     };
 

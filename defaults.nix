@@ -24,13 +24,16 @@ let
   } // {
     system = "x86_64-linux";
 
-    stateVersion = "25.05";
+    stateVersion = "25.11";
 
     configFolder = ./dotfiles/config;
     templateFolder = ./dotfiles/templates;
     dataFolder = ./dotfiles/local/share;
 
-    colorSchemeVariant = "nord";
+    colorScheme = "catppuccin"; # Used to genereate Colloid GTK theme
+    colorSchemeName = "Colloid-Dark-Compact-Catppuccin"; # Used to configure GTK theme
+    
+    colorSchemeVariant = "catppuccin-frappe"; # Used to copy standalone app color scheme variant file
 
     colorVariant = "dark";
 

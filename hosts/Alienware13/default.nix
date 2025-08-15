@@ -23,6 +23,7 @@ with lib.shelf; {
 
   shelf.presets = {
     default = enabled;
+    gtk = enabled;
     dev = enabled;
   };
 }

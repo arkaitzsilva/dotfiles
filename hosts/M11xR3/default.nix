@@ -22,6 +22,7 @@ with lib.shelf; {
 
   shelf.presets = {
     default = enabled;
+    qt = enabled;
     dev = enabled;
   };
 }

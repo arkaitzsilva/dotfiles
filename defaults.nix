@@ -29,11 +29,8 @@ let
     configFolder = ./dotfiles/config;
     templateFolder = ./dotfiles/templates;
     dataFolder = ./dotfiles/local/share;
-
-    colorScheme = "catppuccin"; # Used to genereate Colloid GTK theme
-    colorSchemeName = "Colloid-Dark-Compact-Catppuccin"; # Used to configure GTK theme
     
-    colorSchemeVariant = "catppuccin-frappe"; # Used to copy standalone app color scheme variant file
+    colorSchemeVariant = "nord";
 
     colorVariant = "dark";
 

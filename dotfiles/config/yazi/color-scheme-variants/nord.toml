@@ -116,7 +116,12 @@ tbl_col  = { bold = true }
 [icon]
 dirs = [
   { name = ".git", text = "󰝰", fg = "#88c0d0" },
-  { name = ".config", text = "󱁿", fg = "#88c0d0" }
+  { name = ".config", text = "󱁿", fg = "#88c0d0" },
+  { name = "Descargas", text = "󰉍", fg = "#88c0d0" },
+  { name = "Documentos", text = "󱧶", fg = "#88c0d0" },
+  { name = "Imágenes", text = "󰉏", fg = "#88c0d0" },
+  { name = "Música", text = "󱍙", fg = "#88c0d0" },
+  { name = "Vídeos", text =  "󱧺", fg = "#88c0d0" }
 ]
 
 files = [
@@ -135,7 +140,9 @@ exts = [
   { name = "json", text = "󰘦", fg = "#d8dee9" },
   { name = "py", text = "󰌠", fg = "#d8dee9" },
   { name = "srt", text = "󰨖", fg = "#d8dee9" },
-  { name = "lock", text = "󰈡", fg = "#d8dee9" }
+  { name = "lock", text = "󰈡", fg = "#d8dee9" },
+  { name = "txt", text = "󰈙", fg = "#d8dee9" },
+  { name = "lua", text = "󰢱", fg = "#d8dee9" }
 ]
 
 conds = [

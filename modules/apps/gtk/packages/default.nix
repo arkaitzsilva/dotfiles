@@ -14,10 +14,8 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      vscode
-      deluge
-      inkscape
-      #gimp
+      # inkscape
+      # gimp
     ];
   };
 }

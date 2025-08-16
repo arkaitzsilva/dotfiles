@@ -11,7 +11,7 @@ with lib.shelf; let
     themeVariants = [ "all" ];
     #colorVariants = [ "" ];
     sizeVariants = [ "compact" ];
-    tweaks = [ "${defaults.colorScheme}" "rimless" "normal" ];
+    tweaks = [ "nord" "rimless" "normal" ];
   };
 
   cfg = config.shelf.desktop.addons.gtk;
@@ -30,10 +30,19 @@ in {
 
     programs.dconf.enable = true;
 
+    shelf.home.extraOptions.dconf = {
+      enable = true;
+      settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+        };
+      };
+    };
+
     shelf.home.extraOptions.gtk = {
       enable = true;
-      theme = with pkgs; {
-        name = "${defaults.colorSchemeName}";
+      theme = {
+        name = "Colloid-Dark-Compact-Nord";
         package = colloid-gtk-theme;
       };
 
@@ -50,15 +59,17 @@ in {
         name = "Noto Sans";
         size = 10;
       };
-    };
 
-    shelf.home.extraOptions.dconf = {
-      enable = true;
-      settings = {
-        "org/gnome/desktop/interface" = {
-          color-scheme = "prefer-dark";
-        };
+      gtk3.extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
+
+      gtk4.extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
       };
     };
+
+    # shelf.home.configFile."gtk-3.0/settings.ini".source = "${defaults.configFolder}/gtk-3.0/settings.ini";
+    # shelf.home.configFile."gtk-4.0/settings.ini".source = "${defaults.configFolder}/gtk-4.0/settings.ini";
   };
 }

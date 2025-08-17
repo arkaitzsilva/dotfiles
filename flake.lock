@@ -20,6 +20,26 @@
         "type": "github"
       }
     },
+    "luv-icon-theme": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1755424318,
+        "narHash": "sha256-4qXvQ4pCzXTqdW6cGOzlsn2MuNossGq8wQzpu6k/lpk=",
+        "owner": "arkaitzsilva",
+        "repo": "luv-icon-theme",
+        "rev": "d7b60dbdfbc2c31d74de85681cecb7eadeed1f31",
+        "type": "github"
+      },
+      "original": {
+        "owner": "arkaitzsilva",
+        "repo": "luv-icon-theme",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1754725699,
@@ -39,6 +59,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "luv-icon-theme": "luv-icon-theme",
         "nixpkgs": "nixpkgs"
       }
     }

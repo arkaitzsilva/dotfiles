@@ -36,7 +36,6 @@ in {
     shelf.desktop.addons = {
       greetd = enabled;
       swww = enabled;
-      theme = enabled;
     };
 
     shelf.cli = {

@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   defaults,
   ...
 }:
@@ -22,8 +23,8 @@ in {
 
   config = mkIf cfg.enable {
     shelf.home.packages = with pkgs; [
-      colloid-gtk-theme
       adwaita-icon-theme
+      inputs.luv-icon-theme.packages.${system}.default
     ];
 
     services.gnome.gnome-keyring.enable = true;
@@ -51,7 +52,7 @@ in {
       };
 
       cursorTheme = {
-        name = "nx-snow";
+        name = "Luv-Dark";
         size = 24;
       };
 

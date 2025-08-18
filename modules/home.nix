@@ -72,6 +72,7 @@ in {
 
     home-manager = {
       backupFileExtension = "backup";
+      useGlobalPkgs = true;
       useUserPackages = true;
 
       users.${defaults.username} = {config, ...}:

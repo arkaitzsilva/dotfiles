@@ -115,13 +115,13 @@ tbl_col  = { bold = true }
 
 [icon]
 dirs = [
-  { name = ".git", text = "󰝰", fg = "#88c0d0" },
-  { name = ".config", text = "󱁿", fg = "#88c0d0" },
-  { name = "Descargas", text = "󰉍", fg = "#88c0d0" },
-  { name = "Documentos", text = "󱧶", fg = "#88c0d0" },
-  { name = "Imágenes", text = "󰉏", fg = "#88c0d0" },
-  { name = "Música", text = "󱍙", fg = "#88c0d0" },
-  { name = "Vídeos", text =  "󱧺", fg = "#88c0d0" }
+  { name = ".git", text = "󰝰", fg = "#81a1c1" },
+  { name = ".config", text = "󱁿", fg = "#81a1c1" },
+  { name = "Descargas", text = "󰉍", fg = "#81a1c1" },
+  { name = "Documentos", text = "󱧶", fg = "#81a1c1" },
+  { name = "Imágenes", text = "󰉏", fg = "#81a1c1" },
+  { name = "Música", text = "󱍙", fg = "#81a1c1" },
+  { name = "Vídeos", text =  "󱧺", fg = "#81a1c1" }
 ]
 
 files = [
@@ -147,7 +147,7 @@ exts = [
 
 conds = [
   { if = "!dir & link", text = "󱅷", fg = "#d8dee9" },
-  { if = "!file & link", text =  "󰌷", fg = "#88c0d0" },
+  { if = "!file & link", text =  "󰌷", fg = "#81a1c1" },
   { if = "!(dir | link)", text = "󰈔", fg = "#d8dee9" },
-  { if = "dir", text = "󰝰", fg = "#88c0d0" },
+  { if = "dir", text = "󰝰", fg = "#81a1c1" },
 ]

@@ -9,8 +9,7 @@ with lib;
 with lib.shelf; let
   cfg = config.shelf.system.nix;
 in {
-  options.shelf.system.nix = {
-  };
+  options.shelf.system.nix = {};
 
   config = {
     nix = {
@@ -37,6 +36,9 @@ in {
       settings.auto-optimise-store = true;
     };
 
-    nixpkgs.config.allowUnfree = true;
+    nixpkgs.config = {
+      allowUnfree = true;
+      allowUnfreePredicate = _: true;
+    };
   };
 }

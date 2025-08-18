@@ -29,6 +29,8 @@ in {
       oh-my-posh = enabled;
       docker = enabled;
       ollama = enabled;
-    };    
+    };
+
+    shelf.apps.gtk.vscode = enabled;    
   };
 }

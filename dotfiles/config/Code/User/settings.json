@@ -4,5 +4,7 @@
   "workbench.iconTheme": "hypernym-icons",
   "extensions.autoUpdate": false,
   "update.mode": "none",
-  "window.titleBarStyle": "native"
+  "window.titleBarStyle": "native",
+  "workbench.tree.indent": 12,
+  "editor.insertSpaces": true
 }

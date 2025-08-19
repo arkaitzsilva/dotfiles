@@ -15,13 +15,18 @@ in {
 
   config = mkIf cfg.enable {
     services.udisks2.enable = true;
+
+    shelf.home.packages = with pkgs; [
+      trash-cli
+    ];
     
     shelf.home.programs.yazi = {
       enable = true;
-      plugins = with pkgs; {
-        mount = yaziPlugins.mount;
-        git = yaziPlugins.git;
-        full-border = yaziPlugins.full-border;
+      plugins = with pkgs.yaziPlugins; {
+        mount = mount;
+        git = git;
+        full-border = full-border;
+        restore = restore;
       };
     };
 

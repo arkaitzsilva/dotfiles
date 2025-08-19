@@ -19,7 +19,7 @@ in {
     shelf.home.programs.vscode = {
       enable = true;
       mutableExtensionsDir = false;
-      extensions = with pkgs.vscode-extensions; [
+      profiles.default.extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
         arcticicestudio.nord-visual-studio-code
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
@@ -30,6 +30,8 @@ in {
           sha256 = "sha256-BrjujDjxPjZRw9+2DDBsU/45hxdrVgsowvsIyNweDy0=";
         }
       ];
-    };    
+    };
+
+    shelf.home.configFile."Code/User/settings.json".source = "${defaults.configFolder}/Code/User/settings.json";
   };
 }

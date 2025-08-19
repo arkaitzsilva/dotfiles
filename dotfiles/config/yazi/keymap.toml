@@ -1,5 +1,17 @@
 [mgr]
 prepend_keymap = [
+  # Mount plugin
   { on = "M", run = "plugin mount" },
-]
 
+  # Restore plugin
+  { on = ["u", "l"], run = "plugin restore", desc = "Restore last deleted files/folders" },
+
+  # Select files/folders to restore. Input item index or range separated by comma:
+  # - Restore a trashed file:
+  #      What file to restore [0..4]: 4
+  # - Restore multiple trashed files separated by comma, also support range:
+  #      What file to restore [0..3]: 0-2, 3
+
+  # If you remove --overwrite it will exit without restore when there is existed file.
+  { on = [ "u", "i" ], run = "shell --block -- clear && trash-restore --overwrite", desc = "Restore deleted file (Interactive)" },
+]

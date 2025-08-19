@@ -1,6 +1,25 @@
 {
   description = "My NixOS dotfiles flake";
 
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    luv-icon-theme = {
+      url = "github:arkaitzsilva/luv-icon-theme";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   outputs = {nixpkgs, ...} @ inputs: let
 
     mkLib = nixpkgs:
@@ -30,20 +49,6 @@
     nixosConfigurations = {
       # USAGE: addNewHost <hostname>
       Alienware13 = addNewHost "Alienware13";
-    };
-  };
-
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    luv-icon-theme = {
-      url = "github:arkaitzsilva/luv-icon-theme";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }

@@ -18,7 +18,7 @@ in {
       lfs.enable = true;
       extraConfig = {
         color.ui = true;
-        core.editor = "nano";
+        core.editor = "hx";
         credential.helper = "store";
         github.user = defaults.gitName;
         push.autoSetupRemote = true;

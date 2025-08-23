@@ -15,6 +15,7 @@ in {
   config = mkIf cfg.enable {
     shelf.home.programs.git = {
       enable = true;
+      lfs.enable = true;
       extraConfig = {
         color.ui = true;
         core.editor = "nano";

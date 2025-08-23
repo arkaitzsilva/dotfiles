@@ -33,7 +33,6 @@ in {
       browsers = {
         nyxt = enabled;
         brave = enabled;
-        # zen-browser = enabled;
       };
     };    
   };

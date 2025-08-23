@@ -20,6 +20,7 @@ in {
       git
       wget
       cmatrix
+      tree
     ];
   };
 }

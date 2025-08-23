@@ -19,6 +19,7 @@ in {
 
       # Python
       python3
+      uv
       ty
       ruff
     ];

@@ -1,0 +1,10 @@
+# Files to create
+config/foot
+config/hypr
+config/oh-my-posh
+config/qutebrowser
+config/yazi
+config/nyxt
+
+# GTK
+TODO: Integrate color-scheme-variant to theme generation/selection

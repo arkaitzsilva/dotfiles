@@ -20,6 +20,7 @@ in {
       nixd # nix language server
     ];
 
+    shelf.home.configFile."helix/themes/theme.toml".source = "${defaults.configFolder}/helix/color-scheme-variants/${defaults.colorSchemeVariant}.toml";
     shelf.home.configFile."helix/config.toml".source = "${defaults.configFolder}/helix/config.toml";
     shelf.home.configFile."helix/languages.toml".source = "${defaults.configFolder}/helix/languajes.toml";
   };

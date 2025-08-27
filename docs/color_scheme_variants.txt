@@ -5,6 +5,8 @@ config/oh-my-posh
 config/qutebrowser
 config/yazi
 config/nyxt
+config/Code
 
-# GTK
-TODO: Integrate color-scheme-variant to theme generation/selection
+
+TODO:
+Integrate color-scheme-variant to theme generation/selection of GTK theme

@@ -21,6 +21,7 @@ in {
       wget
       cmatrix
       tree
+      zip
     ];
   };
 }

@@ -34,6 +34,6 @@ in {
     };
 
     shelf.home.configFile."xdg-desktop-portal/hyprland-portals.conf".source = "${defaults.configFolder}/xdg-desktop-portal/hyprland-portals.conf";
-    shelf.home.configFile."Kvantum".source = "${defaults.configFolder}/Kvantum";
+    shelf.home.configFile."Kvantum".source = "${defaults.configFolder}/Kvantum/color-scheme-variants/${defaults.colorSchemeVariant}";
   };
 }

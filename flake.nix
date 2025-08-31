@@ -9,6 +9,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    
     luv-icon-theme = {
       url = "github:arkaitzsilva/luv-icon-theme";
       inputs.nixpkgs.follows = "nixpkgs";

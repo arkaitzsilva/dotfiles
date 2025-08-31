@@ -33,6 +33,7 @@ in {
 
       browsers = {
         qutebrowser = enabled;
+        brave = enabled;
       };
     };    
   };

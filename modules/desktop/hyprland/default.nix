@@ -2,15 +2,17 @@
   config,
   pkgs,
   lib,
+  inputs,
   defaults,
   ...
 }:
 with lib; with lib.shelf; let
   cfg = config.shelf.desktop.hyprland;
 
+  hyprPluginPkgs = inputs.hyprland-plugins.packages.${pkgs.system};
   hypr-plugin-dir = pkgs.symlinkJoin {
     name = "hyprland-plugins";
-    paths = with pkgs.hyprlandPlugins; [
+    paths = with hyprPluginPkgs; [
       hyprfocus
     ];
   };
@@ -24,7 +26,11 @@ in {
       HYPR_PLUGIN_DIR = hypr-plugin-dir;
     };
 
-    programs.hyprland.enable = true;
+    programs.hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    };
 
     shelf.home.packages = with pkgs; [
       wl-clipboard

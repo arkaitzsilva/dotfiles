@@ -21,6 +21,7 @@ in {
     };
 
     shelf.home.packages = with pkgs; [
+      qt6Packages.qtwayland
       qt6Packages.qtstyleplugin-kvantum
       # qt6Packages.qttranslations
     ];
@@ -28,7 +29,6 @@ in {
     shelf.home.extraOptions.qt = {
       enable = true;
       style = {
-        package = pkgs.catppuccin-kvantum;
         name = "kvantum";
       };
     };

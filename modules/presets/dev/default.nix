@@ -22,8 +22,6 @@ in {
       uv
       ty
       ruff
-
-      xpdf
     ];
 
     shelf.cli = {

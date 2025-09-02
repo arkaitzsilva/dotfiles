@@ -45,7 +45,7 @@ in {
 
       configPackages = lib.mkForce [];
 
-      # Configure hyprland desktop portal as default and KDE filechooser.
+      # Configure hyprland desktop portal as default with KDE file chooser.
       config.common = {
         default = [ "hyprland" ];
         "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];

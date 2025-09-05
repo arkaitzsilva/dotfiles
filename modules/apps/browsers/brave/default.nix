@@ -19,6 +19,7 @@ in {
       commandLineArgs = [
         "--ozone-platform-hint=wayland"
         "--force-dark-mode"
+        "--password-store=basic"
       ];
     };
   };

@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  shelf,
   ...
 }:
 with lib;
@@ -13,6 +14,8 @@ in {
   };
 
   config = mkIf cfg.enable {
-
+    shelf.home.packages = with pkgs; [
+      zathura
+    ];
   };
 }

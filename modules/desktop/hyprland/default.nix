@@ -19,7 +19,9 @@ in {
 
     shelf.home.extraOptions.wayland.windowManager.hyprland = {
       enable = true;
-      plugins = with pkgs; [ hyprlandPlugins.hyprfocus ];
+      plugins = with pkgs.hyprlandPlugins; [
+        hyprfocus
+      ];
       extraConfig = ''
         ${builtins.readFile "${defaults.configFolder}/hypr/hyprland.conf"}
       '';

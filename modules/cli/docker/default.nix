@@ -13,8 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [];
-
     virtualisation.docker.enable = true;
   };
 }

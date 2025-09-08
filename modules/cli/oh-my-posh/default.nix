@@ -24,8 +24,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    shelf.home.packages = with pkgs; [];
-
     shelf.home.programs.oh-my-posh = {
       enable = true;
       enableZshIntegration = zshEnabled;

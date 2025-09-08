@@ -13,8 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [];
-
     services.ollama = {
       enable = true;
       # Optional: preload models, see https://ollama.com/library

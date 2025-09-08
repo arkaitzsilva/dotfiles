@@ -13,16 +13,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    shelf.home.packages = with pkgs; [
-      meson
-      ninja
-
-      # Python
-      python3
-      uv
-      ty
-      ruff
-    ];
+    shelf.home.packages = with pkgs; [];
 
     shelf.cli = {
       ssh = enabled;
@@ -30,6 +21,7 @@ in {
       oh-my-posh = enabled;
       docker = enabled;
       ollama = enabled;
+      python = enabled;
     };
 
     shelf.apps.gtk.vscode = enabled;    

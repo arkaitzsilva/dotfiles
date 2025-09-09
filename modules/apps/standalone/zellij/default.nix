@@ -8,10 +8,10 @@
 }:
 with lib;
 with lib.shelf; let
-  cfg = config.shelf.cli.zellij;
+  cfg = config.shelf.apps.standalone.zellij;
   # zshEnabled = config.shelf.cli.zsh.enable || config.shelf.system.defaultShell == pkgs.zsh;
 in {
-  options.shelf.cli.zellij = {
+  options.shelf.apps.standalone.zellij = {
     enable = mkBoolOpt false "Whether to enable zellij.";
   };
 

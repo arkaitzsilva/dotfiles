@@ -13,11 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    shelf.apps.standalone = {
-      yazi = enabled;
-      helix = enabled;
-    };
-
     shelf.desktop.addons = {
       qt = enabled;
       quickshell = enabled;

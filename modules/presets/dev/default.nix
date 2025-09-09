@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   ...
 }:
@@ -20,7 +19,6 @@ in {
       docker = enabled;
       ollama = enabled;
       python = enabled;
-      zellij = enabled;
     };
   };
 }

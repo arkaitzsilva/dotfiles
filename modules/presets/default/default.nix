@@ -26,6 +26,11 @@ in {
       type = "scheme-neutral";
     };
 
+    shelf.presets = {
+      dev = enabled;
+      gtk = enabled;
+    };
+
     shelf.desktop = {
       hyprland = enabled;
     };

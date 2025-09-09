@@ -46,6 +46,9 @@ in {
         packages = enabled;
         foot = enabled;
         mpv = enabled;
+        yazi = enabled;
+        helix = enabled;
+        zellij = enabled;
       };
     };
 

@@ -13,8 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    shelf.home.packages = with pkgs; [];
-
     shelf.cli = {
       ssh = enabled;
       git = enabled;
@@ -22,8 +20,7 @@ in {
       docker = enabled;
       ollama = enabled;
       python = enabled;
+      zellij = enabled;
     };
-
-    shelf.apps.gtk.vscode = enabled;    
   };
 }

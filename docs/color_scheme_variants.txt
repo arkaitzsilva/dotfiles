@@ -7,6 +7,7 @@ config/yazi
 config/nyxt
 config/Code
 config/Kvantum
+config/zellij
 
 TODO:
 Integrate color-scheme-variant to theme generation/selection of GTK theme

@@ -13,8 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.sessionVariables = {};
-
     programs.hyprland.enable = true;
 
     shelf.home.extraOptions.wayland.windowManager.hyprland = {

@@ -56,6 +56,12 @@ in {
         Options to pass directly to home-manager.
       '';
     };
+    sessionVariables = mkOption {
+      type = types.attrs;
+      description = ''
+        Options to pass directly to home-manager.
+      '';
+    };
   };
 
   config = {
@@ -63,6 +69,7 @@ in {
       home.stateVersion = config.system.stateVersion;
       home.file = mkAliasDefinitions options.shelf.home.file;
       home.packages = mkAliasDefinitions options.shelf.home.packages;
+      home.sessionVariables = mkAliasDefinitions options.shelf.home.sessionVariables;
       programs = mkAliasDefinitions options.shelf.home.programs;
       services = mkAliasDefinitions options.shelf.home.services;
       xdg.enable = true;

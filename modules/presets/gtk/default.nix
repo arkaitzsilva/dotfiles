@@ -27,7 +27,8 @@ in {
     shelf.apps = {
       gtk = {
         packages = enabled;
-        gedit = enabled;      
+        gedit = enabled;
+        vscode = enabled;      
       };
 
       browsers = {

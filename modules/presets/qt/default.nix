@@ -13,8 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    shelf.home.packages = with pkgs; [];
-
     shelf.apps.standalone = {
       yazi = enabled;
       helix = enabled;

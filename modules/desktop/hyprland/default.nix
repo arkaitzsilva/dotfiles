@@ -48,7 +48,7 @@ in {
         mpv = enabled;
         yazi = enabled;
         helix = enabled;
-        zellij = enabled;
+        zellij = disabled;
       };
     };
 

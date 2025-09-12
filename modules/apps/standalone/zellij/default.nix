@@ -9,7 +9,7 @@
 with lib;
 with lib.shelf; let
   cfg = config.shelf.apps.standalone.zellij;
-  # zshEnabled = config.shelf.cli.zsh.enable || config.shelf.system.defaultShell == pkgs.zsh;
+  zshEnabled = config.shelf.cli.zsh.enable || config.shelf.system.defaultShell == pkgs.zsh;
 in {
   options.shelf.apps.standalone.zellij = {
     enable = mkBoolOpt false "Whether to enable zellij.";
@@ -18,8 +18,7 @@ in {
   config = mkIf cfg.enable {
     shelf.home.programs.zellij = {
       enable = true;
-      enableZshIntegration = false; # Only activate on demand.
-      # enableZshIntegration = zshEnabled;
+      enableZshIntegration = zshEnabled;
     };
 
     shelf.home.configFile."zellij/config.kdl".source = "${defaults.configFolder}/zellij/config.kdl";

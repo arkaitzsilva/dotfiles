@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   ...
 }:
@@ -16,6 +15,7 @@ in {
     shelf.home.programs.ssh = {
       enable = true;
       addKeysToAgent = "yes";
+      enableDefaultConfig = false;
     };
 
     shelf.home.services.ssh-agent = {

@@ -2,11 +2,13 @@
   config,
   pkgs,
   lib,
+  inputs,
   defaults,
   ...
 }:
 with lib; with lib.shelf; let
   cfg = config.shelf.desktop.hyprland;
+  hyprPluginPkgs = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   options.shelf.desktop.hyprland = {
     enable = mkBoolOpt false "Whether to enable Hyprland, with other desktop addons.";
@@ -17,7 +19,9 @@ in {
 
     shelf.home.extraOptions.wayland.windowManager.hyprland = {
       enable = true;
-      plugins = with pkgs.hyprlandPlugins; [
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      plugins = with hyprPluginPkgs; [
         hyprfocus
       ];
       extraConfig = ''

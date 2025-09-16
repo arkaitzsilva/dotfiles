@@ -15,7 +15,10 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs.hyprland.enable = true;
+    programs.hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    };
 
     shelf.home.extraOptions.wayland.windowManager.hyprland = {
       enable = true;

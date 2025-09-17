@@ -8,7 +8,8 @@
 }:
 with lib; with lib.shelf; let
   cfg = config.shelf.desktop.hyprland;
-  hyprPluginPkgs = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
+  hyprPluginPkgs = inputs.hyprland-plugins.packages.${pkgs.system};
+  hyprPkgs = inputs.hyprland.packages.${pkgs.system};
 in {
   options.shelf.desktop.hyprland = {
     enable = mkBoolOpt false "Whether to enable Hyprland, with other desktop addons.";
@@ -17,13 +18,13 @@ in {
   config = mkIf cfg.enable {
     programs.hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      package = hyprPkgs.hyprland;
     };
 
     shelf.home.extraOptions.wayland.windowManager.hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      package = hyprPkgs.hyprland;
+      portalPackage = hyprPkgs.xdg-desktop-portal-hyprland;
       plugins = with hyprPluginPkgs; [
         hyprfocus
       ];

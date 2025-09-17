@@ -20,7 +20,8 @@ in {
     };
 
     shelf.home.packages = with pkgs; [
-      inputs.luv-icon-theme.packages.${system}.default
+      inputs.luv-icon-theme.packages.${pkgs.system}.default
+      inputs.hyprqt6engine.packages.${pkgs.system}.default
       qt6Packages.qtwayland
       kdePackages.kdialog
     ];
@@ -58,8 +59,8 @@ in {
     };
 
     shelf.home.configFile."Kvantum".source = "${defaults.configFolder}/Kvantum/color-scheme-variants/${defaults.colorSchemeVariant}";
-    # shelf.home.configFile."hypr/hyprqt6engine.conf".source = "${defaults.configFolder}/hypr/hyprqt6engine.conf";
-    shelf.home.configFile."kdeglobals".source = "${defaults.configFolder}/kdeglobals";
+    shelf.home.configFile."hypr/hyprqt6engine.conf".source = "${defaults.configFolder}/hypr/hyprqt6engine.conf";
+    # shelf.home.configFile."kdeglobals".source = "${defaults.configFolder}/kdeglobals";
     
     # shelf.home.dataFile."color-schemes".source = "${defaults.dataFolder}/color-schemes/color-scheme-variants/${defaults.colorSchemeVariant}";
   };

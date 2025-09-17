@@ -14,8 +14,10 @@ in {
   config = mkIf cfg.enable {
     shelf.home.programs.ssh = {
       enable = true;
-      addKeysToAgent = "yes";
       enableDefaultConfig = false;
+      matchBlocks."*" = {
+        addKeysToAgent = "yes";
+      }; 
     };
 
     shelf.home.services.ssh-agent = {

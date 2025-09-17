@@ -15,6 +15,8 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+
+    hyprqt6engine.url = "github:hyprwm/hyprqt6engine";
        
     luv-icon-theme = {
       url = "github:arkaitzsilva/luv-icon-theme";

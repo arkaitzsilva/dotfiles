@@ -17,7 +17,8 @@ in {
       enable = true;
       package = pkgs.brave;
       commandLineArgs = [
-        "--ozone-platform-hint=wayland"
+        "--enable-features=UseOzonePlatform"
+        "--ozone-platform=wayland"
         "--force-dark-mode"
         "--password-store=basic"
       ];

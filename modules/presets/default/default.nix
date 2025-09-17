@@ -28,7 +28,7 @@ in {
 
     shelf.presets = {
       dev = enabled;
-      gtk = enabled;
+      qt = enabled;
     };
 
     shelf.desktop = {

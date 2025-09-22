@@ -17,16 +17,18 @@ in {
     services.udisks2.enable = true;
 
     shelf.home.packages = with pkgs; [
-      trash-cli
+      trash-cli # recycle-bin
+      ouch # Ouch
     ];
     
     shelf.home.programs.yazi = {
       enable = true;
-      plugins = with pkgs.yaziPlugins; {
-        mount = mount;
-        git = git;
-        full-border = full-border;
-        restore = restore;
+      plugins = with pkgs; {
+        mount = yaziPlugins.mount;
+        git = yaziPlugins.git;
+        full-border = yaziPlugins.full-border;
+        recycle-bin = yaziPlugins.recycle-bin;
+        ouch = yaziPlugins.ouch;
       };
     };
 

@@ -17,6 +17,7 @@ in {
   config = mkIf cfg.enable {
     shelf.home.sessionVariables = {
       QT_QPA_PLATFORM = "wayland";
+      QT_DEBUG_PLUGINS = 1;
     };
 
     shelf.home.packages = with pkgs; [

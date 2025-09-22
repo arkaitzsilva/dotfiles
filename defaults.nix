@@ -9,7 +9,7 @@ let
       enableDiscreteGraphics = true;
     };
     Alienware13 = {
-      wallpaperResolution = "3200p";
+      wallpaperResolution = "1800p";
       hostName = "Alienware13";
       username = "alienware";
       enableDiscreteGraphics = true;

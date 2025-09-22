@@ -3,8 +3,12 @@ prepend_keymap = [
   # Mount plugin
   { on = "M", run = "plugin mount" },
 
-  # Restore plugin
-  { on = ["u", "l"], run = "plugin restore", desc = "Restore last deleted files/folders" },
+  # Recycle bin plugin
+  { on = ["R","o"], run = "plugin recycle-bin -- open", desc = "Open Trash" },
+  { on = ["R","e"], run = "plugin recycle-bin -- empty", desc = "Empty Trash" },
+  { on = ["R","D"], run = "plugin recycle-bin -- emptyDays", desc = "Empty by days deleted" },
+  { on = ["R","d"], run = "plugin recycle-bin -- delete", desc = "Delete from Trash" },
+  { on = ["R","r"], run = "plugin recycle-bin -- restore", desc = "Restore from Trash" },
 
   # Select files/folders to restore. Input item index or range separated by comma:
   # - Restore a trashed file:
@@ -12,6 +16,5 @@ prepend_keymap = [
   # - Restore multiple trashed files separated by comma, also support range:
   #      What file to restore [0..3]: 0-2, 3
 
-  # If you remove --overwrite it will exit without restore when there is existed file.
-  { on = [ "u", "i" ], run = "shell --block -- clear && trash-restore --overwrite", desc = "Restore deleted file (Interactive)" },
+  { on = ["C"], run = "plugin ouch", desc = "Compress with ouch" },  
 ]

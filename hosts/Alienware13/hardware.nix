@@ -15,7 +15,10 @@
       devices = [ "nodev" ];
       efiSupport = true;
       useOSProber = true;
-      gfxmodeEfi = "1600x1200";
+      splashImage = null;
+      gfxmodeEfi = "3200x1800";
+      font = "${pkgs.terminus_font_ttf}/share/fonts/truetype/TerminusTTF.ttf";
+      fontSize = 32;
     };
   };
 

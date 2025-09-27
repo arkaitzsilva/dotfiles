@@ -7,3 +7,8 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"

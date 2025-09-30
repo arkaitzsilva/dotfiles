@@ -21,7 +21,7 @@ in {
       gtk = {
         packages = enabled;
         gedit = enabled;
-        vscode = enabled;      
+        vscode = disabled;
       };
 
       browsers = {

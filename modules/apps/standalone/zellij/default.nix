@@ -18,7 +18,7 @@ in {
   config = mkIf cfg.enable {
     shelf.home.programs.zellij = {
       enable = true;
-      enableZshIntegration = zshEnabled;
+      # enableZshIntegration = zshEnabled;
     };
 
     shelf.home.configFile."zellij/config.kdl".source = "${defaults.configFolder}/zellij/config.kdl";

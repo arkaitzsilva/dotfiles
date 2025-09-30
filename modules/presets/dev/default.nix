@@ -12,13 +12,19 @@ in {
   };
 
   config = mkIf cfg.enable {
-    shelf.cli = {
-      ssh = enabled;
-      git = enabled;
-      oh-my-posh = enabled;
-      docker = enabled;
-      ollama = enabled;
-      python = enabled;
+    shelf = {
+      cli = {
+        ssh = enabled;
+        git = enabled;
+        oh-my-posh = enabled;
+        docker = enabled;
+        ollama = enabled;
+        python = enabled;
+      };
+      
+      apps.standalone = {
+        lazygit = enabled;
+      };
     };
   };
 }

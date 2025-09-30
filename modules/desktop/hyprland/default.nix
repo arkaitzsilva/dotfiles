@@ -56,7 +56,7 @@ in {
         mpv = enabled;
         yazi = enabled;
         helix = enabled;
-        zellij = disabled;
+        zellij = enabled;
       };
     };
 

@@ -15,8 +15,8 @@ in {
   config = mkIf cfg.enable {
     shelf.home.packages = with pkgs; [
       deluge
-      # inkscape
-      # gimp
+      inkscape
+      gimp
     ];
   };
 }

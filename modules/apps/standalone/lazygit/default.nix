@@ -15,7 +15,7 @@ in {
 
   config = mkIf cfg.enable {
     shelf.home.sessionVariables = {
-      LG_CONFIG_FILE = "$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/theme.yml"; 
+      LG_CONFIG_FILE = "$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/theme.yml";
     };
 
     shelf.home.programs.lazygit = {

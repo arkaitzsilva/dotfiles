@@ -16,10 +16,12 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs.hyprland = {
-      enable = true;
-      package = hyprPkgs.hyprland;
-    };
+    #programs.hyprland = {
+    #  enable = true;
+    #  package = hyprPkgs.hyprland;
+    #};
+
+    services.upower.enable = true;
 
     shelf.home.extraOptions.wayland.windowManager.hyprland = {
       enable = true;

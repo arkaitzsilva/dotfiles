@@ -8,12 +8,26 @@
 }:
 with lib;
 with lib.shelf; let
+  colorSchemeVariant = defaults.colorSchemeVariant;
+
+  gtkCompileColorSchemeVariant = if colorSchemeVariant == "nord-dark"
+    then "nord"
+    else "";
+
+  gtkColorSchemeVariant = if colorSchemeVariant == "nord-dark"
+    then "Colloid-Dark-Compact-Nord"
+    else "Colloid-Dark-Compact";
+
   colloid-gtk-theme = pkgs.colloid-gtk-theme.override {
     themeVariants = [ "all" ];
     #colorVariants = [ "" ];
     sizeVariants = [ "compact" ];
-    tweaks = [ "nord" "rimless" "normal" ];
+    tweaks = [ gtkCompileColorSchemeVariant "rimless" "normal" ];
   };
+
+  preferDark = if colorSchemeVariant == "nord-dark"
+    then "dark"
+    else "light";
 
   cfg = config.shelf.desktop.addons.gtk;
 in {
@@ -35,7 +49,7 @@ in {
       enable = true;
       settings = {
         "org/gnome/desktop/interface" = {
-          color-scheme = "prefer-dark";
+          color-scheme = preferDark;
         };
       };
     };
@@ -43,7 +57,7 @@ in {
     shelf.home.extraOptions.gtk = {
       enable = true;
       theme = {
-        name = "Colloid-Dark-Compact-Nord";
+        name = gtkColorSchemeVariant;
         package = colloid-gtk-theme;
       };
 
@@ -58,7 +72,7 @@ in {
 
       font = {
         name = "Noto Sans";
-        size = 10;
+        size = 11;
       };
 
       gtk3.extraConfig = {

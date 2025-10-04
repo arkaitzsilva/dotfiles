@@ -14,7 +14,7 @@ in {
 
   config = mkIf cfg.enable {
     shelf.desktop.addons = {
-      qt = enabled;
+      kde = enabled;
       quickshell = enabled;
     };    
 

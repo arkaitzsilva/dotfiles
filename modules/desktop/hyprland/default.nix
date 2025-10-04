@@ -16,10 +16,10 @@ in {
   };
 
   config = mkIf cfg.enable {
-    #programs.hyprland = {
-    #  enable = true;
-    #  package = hyprPkgs.hyprland;
-    #};
+    programs.hyprland = {
+      enable = true;
+      package = hyprPkgs.hyprland;
+    };
 
     services.upower.enable = true;
 
@@ -45,6 +45,7 @@ in {
     shelf.desktop.addons = {
       greetd = enabled;
       swww = enabled;
+      hyprqt6engine = enabled;
     };
 
     shelf.cli = {

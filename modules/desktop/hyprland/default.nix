@@ -19,6 +19,7 @@ in {
     programs.hyprland = {
       enable = true;
       package = hyprPkgs.hyprland;
+      withUWSM = true;
     };
 
     services.upower.enable = true;

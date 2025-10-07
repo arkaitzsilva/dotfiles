@@ -7,7 +7,7 @@
 with lib;
 with lib.shelf; let
   tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
-  hyprland-session = "${pkgs.hyprland}/share/wayland-sessions";
+  hyprland-uwsm = "${lib.getExe config.programs.uwsm.package} start hyprland-uwsm.desktop";
 
   cfg = config.shelf.desktop.addons.greetd;
 in {
@@ -20,7 +20,7 @@ in {
       enable = true;
       settings = {
         default_session = {
-          command = "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session} --asterisks";
+          command = "${tuigreet} --time --remember --remember-session --asterisks --cmd \"${hyprland-uwsm}\"";
           user = "greeter";
         };
       };

@@ -6,7 +6,7 @@ let
       wallpaperResolution = "768p";    
       hostName = "M11xR3";
       username = "alienware";
-      enableDiscreteGraphics = true;
+      enableDiscreteGraphics = false;
     };
     Alienware13 = {
       wallpaperResolution = "1800p";

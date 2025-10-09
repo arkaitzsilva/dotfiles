@@ -1,0 +1,151 @@
+// Tokyo Night Storm theme for Zellij
+// Converted from Nord — adjusted for accuracy with official Tokyo Night Storm palette
+// https://github.com/enkia/tokyo-night-vscode-theme
+
+themes {
+    theme {
+        // Default unselected text
+        text_unselected {
+            base 192 202 245           // fg (#c0caf5)
+            background 36 40 59        // bg (#24283b)
+            emphasis_0 255 158 100     // orange (#ff9e64)
+            emphasis_1 125 207 255     // cyan (#7dcfff)
+            emphasis_2 158 206 106     // light-green (#9ece6a)
+            emphasis_3 187 154 247     // magenta (#bb9af7)
+        }
+
+        // Selected text (same as unselected, darker background)
+        text_selected {
+            base 192 202 245
+            background 31 35 53        // bg-menu (#1f2335)
+            emphasis_0 255 158 100
+            emphasis_1 125 207 255
+            emphasis_2 158 206 106
+            emphasis_3 187 154 247
+        }
+
+        // Ribbon when selected (active tabs or titles)
+        ribbon_selected {
+            base 31 35 53
+            background 125 162 247     // blue (#7aa2f7)
+            emphasis_0 247 118 142     // red (#f7768e)
+            emphasis_1 255 158 100     // orange
+            emphasis_2 187 154 247     // magenta
+            emphasis_3 192 202 245     // fg
+        }
+
+        // Ribbon when inactive
+        ribbon_unselected {
+            base 36 40 59
+            background 169 177 214     // fg-dark (#a9b1d6)
+            emphasis_0 247 118 142
+            emphasis_1 255 158 100
+            emphasis_2 125 162 247
+            emphasis_3 187 154 247
+        }
+
+        // Table title headers
+        table_title {
+            base 125 207 255           // cyan
+            background 0
+            emphasis_0 255 158 100
+            emphasis_1 158 206 106
+            emphasis_2 187 154 247
+            emphasis_3 125 162 247
+        }
+
+        // Selected table cells
+        table_cell_selected {
+            base 192 202 245
+            background 43 48 75        // bg-selection (#373d5a)
+            emphasis_0 255 158 100
+            emphasis_1 125 207 255
+            emphasis_2 158 206 106
+            emphasis_3 187 154 247
+        }
+
+        // Unselected table cells
+        table_cell_unselected {
+            base 169 177 214
+            background 36 40 59
+            emphasis_0 255 158 100
+            emphasis_1 125 207 255
+            emphasis_2 158 206 106
+            emphasis_3 187 154 247
+        }
+
+        // Selected list items
+        list_selected {
+            base 192 202 245
+            background 43 48 75
+            emphasis_0 255 158 100
+            emphasis_1 125 207 255
+            emphasis_2 158 206 106
+            emphasis_3 187 154 247
+        }
+
+        // Unselected list items
+        list_unselected {
+            base 169 177 214
+            background 36 40 59
+            emphasis_0 255 158 100
+            emphasis_1 125 207 255
+            emphasis_2 158 206 106
+            emphasis_3 187 154 247
+        }
+
+        // Active frame border / highlight
+        frame_selected {
+            base 187 154 247           // magenta for active
+            background 0
+            emphasis_0 125 207 255
+            emphasis_1 255 158 100
+            emphasis_2 125 162 247
+            emphasis_3 0
+        }
+
+        // Frame highlight (used for strong focus or alerts)
+        frame_highlight {
+            base 255 158 100
+            background 0
+            emphasis_0 187 154 247
+            emphasis_1 255 158 100
+            emphasis_2 247 118 142
+            emphasis_3 255 158 100
+        }
+
+        // Exit code success (green tone)
+        exit_code_success {
+            base 158 206 106
+            background 0
+            emphasis_0 125 207 255
+            emphasis_1 36 40 59
+            emphasis_2 187 154 247
+            emphasis_3 122 162 247
+        }
+
+        // Exit code error (red tone)
+        exit_code_error {
+            base 247 118 142
+            background 0
+            emphasis_0 224 175 104     // yellow (#e0af68)
+            emphasis_1 0
+            emphasis_2 0
+            emphasis_3 0
+        }
+
+        // Multiplayer colors (distinct user highlights)
+        multiplayer_user_colors {
+            player_1 187 154 247       // magenta
+            player_2 125 162 247       // blue
+            player_3 158 206 106       // light green
+            player_4 224 175 104       // yellow
+            player_5 125 207 255       // cyan
+            player_6 73 218 202        // green
+            player_7 247 118 142       // red
+            player_8 255 158 100       // orange
+            player_9 169 177 214       // fg-dark
+            player_10 65 72 104        // blackish tone
+        }
+    }
+}

@@ -10,20 +10,31 @@ with lib;
 with lib.shelf; let
   colorSchemeVariant = defaults.colorSchemeVariant;
 
-  gtkCompileColorSchemeVariant = if colorSchemeVariant == "nord-dark"
-    then "nord"
+  gtkCompileColorSchemeVariant = if colorSchemeVariant == "nord-dark" then "nord"
+    else if colorSchemeVariant == "tokyo-night-storm" then "storm"
+    else if colorSchemeVariant == "catppuccin-frappe" then "catppuccin"
     else "";
 
-  gtkColorSchemeVariant = if colorSchemeVariant == "nord-dark"
-    then "Colloid-Dark-Compact-Nord"
+  gtkColorSchemeVariant = if colorSchemeVariant == "nord-dark" then "Colloid-Dark-Compact-Nord"
+    else if colorSchemeVariant == "tokyo-night-storm" then "Tokyonight-Dark-Compact-Storm"
+    else if colorSchemeVariant == "catppuccin-frappe" then "Colloid-Dark-Compact-Catppuccin"
     else "Colloid-Dark-Compact";
 
-  colloid-gtk-theme = pkgs.colloid-gtk-theme.override {
-    themeVariants = [ "all" ];
-    #colorVariants = [ "" ];
-    sizeVariants = [ "compact" ];
-    tweaks = [ gtkCompileColorSchemeVariant "rimless" "normal" ];
-  };
+  gtk-theme = if colorSchemeVariant == "nord-dark" || colorSchemeVariant == "catppuccin-frappe"
+    then pkgs.colloid-gtk-theme.override {
+      themeVariants = [ "all" ];
+      #colorVariants = [ "" ];
+      sizeVariants = [ "compact" ];
+      tweaks = [ gtkCompileColorSchemeVariant "rimless" "normal" ];
+    }
+    else if colorSchemeVariant == "tokyo-night-storm"
+    then pkgs.tokyonight-gtk-theme.override {
+      colorVariants = [ "dark" ];
+      sizeVariants = [ "compact" ];
+      themeVariants = [ "all" ];
+      tweakVariants = [ gtkCompileColorSchemeVariant ];
+    }
+    else pkgs.colloid-gtk-theme;
 
   preferDark = if colorSchemeVariant == "nord-dark"
     then "dark"
@@ -58,7 +69,7 @@ in {
       enable = true;
       theme = {
         name = gtkColorSchemeVariant;
-        package = colloid-gtk-theme;
+        package = gtk-theme;
       };
 
       iconTheme = {
@@ -72,7 +83,7 @@ in {
 
       font = {
         name = "Noto Sans";
-        size = 11;
+        size = 10;
       };
 
       gtk3.extraConfig = {

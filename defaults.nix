@@ -30,7 +30,7 @@ let
     templateFolder = ./dotfiles/templates;
     dataFolder = ./dotfiles/local/share;
     
-    colorSchemeVariant = "nord-dark";
+    colorSchemeVariant = "catppuccin-frappe";
 
     colorVariant = "dark";
 

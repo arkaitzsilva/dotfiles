@@ -12,9 +12,7 @@ with lib.shelf; let
   configBase = builtins.fromJSON (builtins.readFile "${defaults.configFolder}/Code/settings.json");
 
   colorSchemePath = "${defaults.configFolder}/Code/color-scheme-variants/${defaults.colorSchemeVariant}.json";
-  colorSchemeVariant = if builtins.pathExists colorSchemePath
-    then builtins.fromJSON (builtins.readFile colorSchemePath)
-    else {};
+  colorSchemeVariant = if builtins.pathExists colorSchemePath then builtins.fromJSON (builtins.readFile colorSchemePath) else {};
     
   mergedConfig = lib.recursiveUpdate configBase colorSchemeVariant;
 in {
@@ -40,7 +38,25 @@ in {
             sha256 = "sha256-BrjujDjxPjZRw9+2DDBsU/45hxdrVgsowvsIyNweDy0=";
           }
         ]
-      );
+      )
+      ++ lib.optionals (defaults.colorSchemeVariant == "tokyo-night-storm") (
+        [
+          enkia.tokyo-night
+        ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace
+        [
+          {
+            name = "hypernym-icons";
+            publisher = "hypernym-studio";
+            version = "2.0.2";
+            sha256 = "sha256-BrjujDjxPjZRw9+2DDBsU/45hxdrVgsowvsIyNweDy0=";
+          }
+        ]
+      )
+      ++ lib.optionals (defaults.colorSchemeVariant == "catppuccin-frappe")
+        [
+          catppuccin.catppuccin-vsc
+          catppuccin.catppuccin-vsc-icons
+        ];
     };
 
     shelf.home.configFile."Code/User/settings.json".text = builtins.toJSON mergedConfig;

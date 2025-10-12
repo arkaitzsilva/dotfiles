@@ -58,6 +58,7 @@ in {
           catppuccin.catppuccin-vsc-icons
         ];
     };
+    
 
     shelf.home.configFile."Code/User/settings.json".text = builtins.toJSON mergedConfig;
   };

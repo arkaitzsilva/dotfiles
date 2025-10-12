@@ -1,21 +1,21 @@
 (define-configuration browser
   ((theme
     (make-instance 'theme:theme
-                   :background-color "#1A1B26"       ; Tokyo Night Storm background
-                   :on-background-color "#C0CAF5"    ; Default foreground
-                   :accent-color "#7DCFFF"           ; Accent cyan
-                   :on-accent-color "#C0CAF5"        ; Text on accent
-                   :primary-color "#7AA2F7"          ; Primary blue
-                   :on-primary-color "#C0CAF5"       ; Text on primary
-                   :secondary-color "#9ECE6A"        ; Secondary green
-                   :on-secondary-color "#1A1B26")))) ; Dark contrast
+                   :background-color "#303446"       ; Catppuccin Frappe base
+                   :on-background-color "#C6D0F5"    ; Text / foreground
+                   :accent-color "#8CAAEE"           ; Accent blue
+                   :on-accent-color "#303446"        ; Text on accent
+                   :primary-color "#8CAAEE"          ; Primary blue
+                   :on-primary-color "#303446"       ; Text on primary
+                   :secondary-color "#A6D189"        ; Secondary green
+                   :on-secondary-color "#303446")))) ; Dark contrast
 
 (define-configuration nyxt/mode/style:dark-mode
   ((style
     (theme:themed-css (theme *browser*)
       `(* :background-color ,theme:background "!important"
           :background-image none "!important"
-          :color "#C0CAF5" "!important")
+          :color "#C6D0F5" "!important")
       `(a :background-color ,theme:background "!important"
           :background-image none "!important"
-          :color "#7DCFFF" "!important")))))
+          :color "#8CAAEE" "!important")))))

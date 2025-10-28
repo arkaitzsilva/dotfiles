@@ -16,6 +16,8 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    hypridle.url = "github:hyprwm/hypridle";
+
     hyprqt6engine.url = "github:hyprwm/hyprqt6engine";
        
     luv-icon-theme = {

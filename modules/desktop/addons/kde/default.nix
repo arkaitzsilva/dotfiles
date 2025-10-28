@@ -3,6 +3,7 @@
   pkgs,
   lib,
   inputs,
+  defaults,
   ...
 }:
 with lib;
@@ -21,14 +22,14 @@ in {
       kdePackages.kdialog
     ];
     
-    shelf.home.extraOptions.systemd.user.services.plasma-xdg-desktop-portal-kde.Service = {
-      ExecStart = "${pkgs.kdePackages.xdg-desktop-portal-kde}/libexec/xdg-desktop-portal-kde";
-      BusName = "org.freedesktop.impl.portal.desktop.kde";
-      Restart = "no";
-      Environment = [
-        "QT_QPA_PLATFORMTHEME="
-      ];
-    };
+    # shelf.home.extraOptions.systemd.user.services.plasma-xdg-desktop-portal-kde.Service = {
+    #   ExecStart = "${pkgs.kdePackages.xdg-desktop-portal-kde}/libexec/xdg-desktop-portal-kde";
+    #   BusName = "org.freedesktop.impl.portal.desktop.kde";
+    #   Restart = "no";
+    #   Environment = [
+    #     "QT_QPA_PLATFORMTHEME="
+    #   ];
+    # };
 
     shelf.home.extraOptions.xdg.portal = {
       enable = true;
@@ -39,13 +40,10 @@ in {
         kdePackages.xdg-desktop-portal-kde
       ]);
 
-      configPackages = lib.mkForce [];
-
-      # Configure hyprland desktop portal as default with KDE file chooser.
-      config.common = {
-        default = [ "hyprland" ];
-        "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
-      };
+      # configPackages = lib.mkForce [];
     };
+
+    shelf.home.configFile."xdg-desktop-portal/xdg-desktop-portal.conf".source = "${defaults.configFolder}/xdg-desktop-portal/xdg-desktop-portal.conf";
+    
   };
 }

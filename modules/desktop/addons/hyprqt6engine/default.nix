@@ -17,7 +17,7 @@ in {
   config = mkIf cfg.enable {
     shelf.home.sessionVariables = {
       QT_QPA_PLATFORM = "wayland";
-      QT_DEBUG_PLUGINS = 1;
+      # QT_DEBUG_PLUGINS = 1;
       QT_PLUGIN_PATH = "${inputs.hyprqt6engine.packages.${pkgs.system}.default}/lib/qt-6";
     };
 

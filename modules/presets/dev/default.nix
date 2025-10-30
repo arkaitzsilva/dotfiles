@@ -17,9 +17,10 @@ in {
         ssh = enabled;
         git = enabled;
         oh-my-posh = enabled;
-        docker = enabled;
-        ollama = enabled;
+        docker = disabled;
+        ollama = disabled;
         python = enabled;
+        cassandra = disabled;
       };
       
       apps.standalone = {

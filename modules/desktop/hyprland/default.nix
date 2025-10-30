@@ -47,6 +47,7 @@ in {
       greetd = enabled;
       swww = enabled;
       hyprqt6engine = enabled;
+      hypridle = enabled;
     };
 
     shelf.cli = {

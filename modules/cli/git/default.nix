@@ -16,7 +16,7 @@ in {
     shelf.home.programs.git = {
       enable = true;
       lfs.enable = true;
-      extraConfig = {
+      settings = {
         color.ui = true;
         core.editor = "hx";
         credential.helper = "store";

@@ -46,7 +46,8 @@ in {
     shelf.desktop.addons = {
       greetd = enabled;
       swww = enabled;
-      hyprqt6engine = enabled;
+      # hyprqt6engine = enabled;
+      qt6ct = enabled;
       hypridle = enabled;
     };
 

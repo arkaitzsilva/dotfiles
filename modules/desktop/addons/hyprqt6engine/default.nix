@@ -11,7 +11,7 @@ with lib.shelf; let
   cfg = config.shelf.desktop.addons.hyprqt6engine;
 in {
   options.shelf.desktop.addons.hyprqt6engine = {
-    enable = mkBoolOpt false "Whether to enable hyprqt6engine platform theme.";
+    enable = mkBoolOpt false "Whether to enable hyprqt6engine.";
   };
 
   config = mkIf cfg.enable {

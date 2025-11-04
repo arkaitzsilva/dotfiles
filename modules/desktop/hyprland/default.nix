@@ -8,8 +8,8 @@
 }:
 with lib; with lib.shelf; let
   cfg = config.shelf.desktop.hyprland;
-  hyprPluginPkgs = inputs.hyprland-plugins.packages.${pkgs.system};
-  hyprPkgs = inputs.hyprland.packages.${pkgs.system};
+  hyprPluginPkgs = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
+  hyprPkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   options.shelf.desktop.hyprland = {
     enable = mkBoolOpt false "Whether to enable Hyprland, with other desktop addons.";
@@ -46,8 +46,7 @@ in {
     shelf.desktop.addons = {
       greetd = enabled;
       swww = enabled;
-      # hyprqt6engine = enabled;
-      qt6ct = enabled;
+      hyprqt6engine = enabled;
       hypridle = enabled;
     };
 

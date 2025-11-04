@@ -17,14 +17,16 @@ in {
       enable = true;
       lfs.enable = true;
       settings = {
+        user = {
+          email = defaults.gitEmail;
+          name = defaults.gitName;
+        };
         color.ui = true;
         core.editor = "hx";
         credential.helper = "store";
         github.user = defaults.gitName;
         push.autoSetupRemote = true;
       };
-      userEmail = defaults.gitEmail;
-      userName = defaults.gitName;
     };
   };
 }

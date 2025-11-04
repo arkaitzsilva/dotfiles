@@ -17,7 +17,7 @@ in {
   config = mkIf cfg.enable {
     shelf.home.services.hypridle = {
       enable = true;
-      package = inputs.hypridle.packages.${pkgs.system}.default;
+      package = inputs.hypridle.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
 
     shelf.home.configFile."hypr/hypridle.conf".source = "${defaults.configFolder}/hypr/hypridle.conf";

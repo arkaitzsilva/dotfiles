@@ -18,32 +18,22 @@ in {
     shelf.home.sessionVariables = {};
     
     shelf.home.packages = with pkgs; [
-      inputs.luv-icon-theme.packages.${pkgs.system}.default
       kdePackages.kdialog
     ];
     
-    # shelf.home.extraOptions.systemd.user.services.plasma-xdg-desktop-portal-kde.Service = {
-    #   ExecStart = "${pkgs.kdePackages.xdg-desktop-portal-kde}/libexec/xdg-desktop-portal-kde";
-    #   BusName = "org.freedesktop.impl.portal.desktop.kde";
-    #   Restart = "no";
-    #   Environment = [
-    #     "QT_QPA_PLATFORMTHEME="
-    #   ];
-    # };
-
-    shelf.home.extraOptions.xdg.portal = {
+    xdg.portal = {
       enable = true;
 
-      # Force to load only the desired desktop portals.
       extraPortals = lib.mkForce (with pkgs; [
         xdg-desktop-portal-hyprland
         kdePackages.xdg-desktop-portal-kde
       ]);
 
-      # configPackages = lib.mkForce [];
+      configPackages = lib.mkForce [];
+      config.common = {
+        default = [ "hyprland" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+      };
     };
-
-    shelf.home.configFile."xdg-desktop-portal/xdg-desktop-portal.conf".source = "${defaults.configFolder}/xdg-desktop-portal/xdg-desktop-portal.conf";
-    
   };
 }

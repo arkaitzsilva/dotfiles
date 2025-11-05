@@ -55,6 +55,7 @@
     nixosConfigurations = {
       # USAGE: addNewHost <hostname>
       Alienware13 = addNewHost "Alienware13";
+      M11xR3 = addNewHost "M11xR3";
     };
   };
 }

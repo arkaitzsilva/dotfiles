@@ -9,21 +9,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-
-    hypridle.url = "github:hyprwm/hypridle";
-
-    hyprqt6engine.url = "github:hyprwm/hyprqt6engine";
-       
-    luv-icon-theme = {
-      url = "github:arkaitzsilva/luv-icon-theme";
+    niri = {
+      url = "github:YaLTeR/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    luv-icon-theme.url = "github:arkaitzsilva/luv-icon-theme";
   };
 
   outputs = {nixpkgs, ...} @ inputs: let

@@ -18,6 +18,6 @@ in {
       swww
     ];
 
-    shelf.home.dataFile."wallpapers".source = "${defaults.dataFolder}/wallpapers/${defaults.wallpaperResolution}";
+    shelf.home.dataFile."backgrounds".source = "${defaults.dataFolder}/backgrounds/${defaults.wallpaperResolution}";
   };
 }

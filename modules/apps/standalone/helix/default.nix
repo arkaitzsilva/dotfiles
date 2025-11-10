@@ -16,7 +16,6 @@ in {
   config = mkIf cfg.enable {
     shelf.home.packages = with pkgs; [
       helix
-      qt6Packages.qtdeclarative # qmlls language server included
       nixd # nix language server
     ];
 

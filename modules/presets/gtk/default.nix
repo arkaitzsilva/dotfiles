@@ -26,7 +26,7 @@ in {
 
       browsers = {
         nyxt = enabled;
-        brave = enabled;
+        firefox = enabled;
       };
     };    
   };

@@ -28,12 +28,11 @@ in {
 
     shelf.presets = {
       dev = enabled;
-      # gtk = enabled;
-      qt = enabled;
+      gtk = enabled;
     };
 
     shelf.desktop = {
-      hyprland = enabled;
+      niri = enabled;
     };
   };
 }

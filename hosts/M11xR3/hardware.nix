@@ -69,12 +69,6 @@
     ];  
   };
 
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-    DefaultTimeoutStartSec=10s
-    LogLevel=debug
-  '';
-
   services.udev.extraRules = lib.mkIf (!defaults.enableDiscreteGraphics) ''
     # Remover dispositivos VGA/3D de NVIDIA
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x03[0-9]*", ATTR{power/control}="auto", ATTR{remove}="1"

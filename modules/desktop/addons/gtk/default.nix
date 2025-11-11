@@ -11,14 +11,12 @@ with lib.shelf; let
   colorSchemeVariant = defaults.colorSchemeVariant;
 
   gtkCompileColorSchemeVariant = if colorSchemeVariant == "nord-dark" then "nord"
-    else if colorSchemeVariant == "catppuccin-frappe" then "catppuccin"
     else "";
 
   gtkColorSchemeVariant = if colorSchemeVariant == "nord-dark" then "Colloid-Dark-Compact-Nord"
-    else if colorSchemeVariant == "catppuccin-frappe" then "Colloid-Dark-Compact-Catppuccin"
     else "Colloid-Dark-Compact";
 
-  gtk-theme = if colorSchemeVariant == "nord-dark" || colorSchemeVariant == "catppuccin-frappe"
+  gtk-theme = if colorSchemeVariant == "nord-dark"
     then pkgs.colloid-gtk-theme.override {
       themeVariants = [ "all" ];
       #colorVariants = [ "" ];
@@ -27,7 +25,7 @@ with lib.shelf; let
     }
     else pkgs.colloid-gtk-theme;
 
-  preferDark = if colorSchemeVariant == "nord-dark" || colorSchemeVariant == "catppuccin-frappe"
+  preferDark = if colorSchemeVariant == "nord-dark"
     then "dark"
     else "light";
 
@@ -44,6 +42,16 @@ in {
     ];
 
     services.gnome.gnome-keyring.enable = true;
+
+    xdg.portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-gnome
+      ];
+      config.niri.default = [ "gtk" ];
+    };
 
     programs.dconf.enable = true;
 

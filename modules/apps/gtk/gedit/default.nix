@@ -19,7 +19,6 @@ in {
       libgedit-gtksourceview
     ];
 
-
-    shelf.home.dataFile."libgedit-gtksourceview-300/styles/theme-color-scheme.xml".source = "${defaults.dataFolder}/libgedit-gtksourceview-300/styles/${defaults.colorSchemeVariant}.xml";
+    shelf.home.dataFile."libgedit-gtksourceview-300/styles/theme.xml".source = "${defaults.dataFolder}/libgedit-gtksourceview-300/styles/${defaults.colorSchemeVariant}.xml";
   };
 }

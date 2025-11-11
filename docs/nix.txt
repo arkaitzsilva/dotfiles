@@ -1,0 +1,2 @@
+# Search installed package
+nix-store --query --requisites /run/current-system | grep keyword

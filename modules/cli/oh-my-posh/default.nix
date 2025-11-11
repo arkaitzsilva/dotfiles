@@ -10,7 +10,7 @@ with lib.shelf; let
   cfg = config.shelf.cli.oh-my-posh;
   zshEnabled = config.shelf.cli.zsh.enable || config.shelf.system.defaultShell == pkgs.zsh;
 
-  theme = builtins.fromJSON (builtins.readFile "${defaults.configFolder}/oh-my-posh/themes/minimal.json");
+  theme = builtins.fromJSON (builtins.readFile "${defaults.configFolder}/oh-my-posh/config.json");
   
   colorSchemePath = "${defaults.configFolder}/oh-my-posh/color-scheme-variants/${defaults.colorSchemeVariant}.json";
   colorSchemeVariant = if builtins.pathExists colorSchemePath

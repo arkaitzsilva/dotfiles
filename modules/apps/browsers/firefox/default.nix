@@ -13,8 +13,9 @@ in {
   };
 
   config = mkIf cfg.enable {
-    shelf.home.packages = with pkgs; [
-      firefox
-    ];
+    shelf.home.programs.firefox = {
+      enable = true;
+      package = pkgs.firefox;
+    };
   };
 }

@@ -21,6 +21,7 @@ in {
         "networkmanager"
         "docker"
         "audio"
+        "input"
       ];
     };
   };

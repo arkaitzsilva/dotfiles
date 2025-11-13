@@ -19,22 +19,20 @@ stasis:
   #debounce-seconds 4
 
   inhibit_apps [
-    "mpv"
     "deluge"
-    r"chromium*"
   ]
 
   # desktop-only idle actions (applies to all devices)
   # lock_screen:
   #   timeout 300
-  #   command "swaylock"
-  #   resume-command "notify-send 'Welcome Back $env.USER!'"
+  #   command None
+  #   resume-command None
   # end
 
   dpms:
     timeout 130
     command "niri msg action power-off-monitors"
-    resume-command "niri msg action power-on-monitors"
+    resume-command None
   end
 
   suspend:
@@ -54,7 +52,7 @@ stasis:
 
   #   lock_screen:
   #     timeout 300
-  #     command "swaylock"
+  #     command None
   #   end
 
     brightness:
@@ -65,7 +63,7 @@ stasis:
     dpms:
       timeout 120
       command "niri msg action power-off-monitors"
-      resume-command "niri msg action power-on-monitors"
+      resume-command None
     end
 
     suspend:
@@ -76,30 +74,30 @@ stasis:
   end
 
   # Laptop-only battery actions
-  # on_battery:
-  #   custom-brightness-instant:
-  #     timeout 0
-  #     command "brightnessctl set 100%"
-  #   end
+  on_battery:
+    custom-brightness-instant:
+      timeout 0
+      command "brightnessctl set 100%"
+    end
 
   #   lock_screen:
-  #     timeout 120
-  #     command "swaylock"
+  #     timeout 150
+  #     command None
   #   end
 
-  #   brightness:
-  #     timeout 20
-  #     command "brightnessctl set 30%"
-  #   end
+    brightness:
+      timeout 30
+      command "brightnessctl set 30%"
+    end
 
-  #   dpms:
-  #     timeout 40
-  #     command "niri msg action power-off-monitors"
-  #   end
+    dpms:
+      timeout 60
+      command "niri msg action power-off-monitors"
+    end
 
-  #   suspend:
-  #     timeout 120
-  #     command "systemctl suspend"
-  #   end
-  # end
+     suspend:
+       timeout 150
+       command "systemctl suspend"
+     end
+   end
 end

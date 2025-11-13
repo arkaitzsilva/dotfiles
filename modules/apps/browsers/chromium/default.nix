@@ -15,7 +15,7 @@ in {
   config = mkIf cfg.enable {
     shelf.home.programs.chromium = {
       enable = true;
-      package = pkgs.chromium;
+      package = pkgs.ungoogled-chromium;
       commandLineArgs = [
         "--enable-features=UseOzonePlatform"
         "--ozone-platform=wayland"

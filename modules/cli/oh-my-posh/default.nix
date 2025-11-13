@@ -27,7 +27,11 @@ in {
     shelf.home.programs.oh-my-posh = {
       enable = true;
       enableZshIntegration = zshEnabled;
+      # configFile = "/home/alienware/.config/oh-my-posh/config.json";
       settings = mergedConfig;
     };
+
+    # shelf.home.configFile."oh-my-posh/config.json".source = "${defaults.configFolder}/oh-my-posh/config.json";
+    # shelf.home.configFile."oh-my-posh/theme.json".source = "${defaults.configFolder}/oh-my-posh/color-scheme-variants/${defaults.colorSchemeVariant}.json";
   };
 }

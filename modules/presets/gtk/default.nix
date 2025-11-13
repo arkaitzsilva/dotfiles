@@ -28,6 +28,7 @@ in {
         nyxt = enabled;
         firefox = enabled;
         chromium = enabled;
+        tor = enabled;
       };
     };    
   };

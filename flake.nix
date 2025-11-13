@@ -14,11 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stasis = {
-      url = "github:saltnpepper97/stasis";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     luv-icon-theme.url = "github:arkaitzsilva/luv-icon-theme";
   };
 

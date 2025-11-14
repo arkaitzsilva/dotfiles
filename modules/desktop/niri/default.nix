@@ -40,6 +40,7 @@ in {
       greetd = enabled;
       swww = enabled;
       stasis = enabled;
+      walker = enabled;
     };
 
     shelf.cli = {

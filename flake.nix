@@ -14,6 +14,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    elephant.url = "github:abenz1267/elephant";
+
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
+    };
+
     luv-icon-theme.url = "github:arkaitzsilva/luv-icon-theme";
   };
 

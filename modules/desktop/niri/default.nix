@@ -18,14 +18,14 @@ in {
 
     programs.niri = {
       enable = true;
-      package = # inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.default;
-        inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs (old: {
-          # To avoid tests failure
-          preCheck = ''
-            export XDG_RUNTIME_DIR="$(mktemp -d)"
-            ulimit -n 4096
-          '';
-        });
+#      package = # inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.default;
+#        inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs (old: {
+#          # To avoid tests failure
+#          preCheck = ''
+#            export XDG_RUNTIME_DIR="$(mktemp -d)"
+#            ulimit -n 4096
+#          '';
+#        });
     };
 
     shelf.home.packages = with pkgs; [
@@ -37,7 +37,7 @@ in {
     ];
 
     shelf.desktop.addons = {
-      greetd = enabled;
+      ly = enabled;
       swww = enabled;
       stasis = enabled;
       walker = enabled;

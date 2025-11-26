@@ -22,6 +22,7 @@ in {
         packages = enabled;
         gedit = enabled;
         vscode = enabled;
+        antigravity = enabled;
       };
 
       browsers = {

@@ -26,7 +26,7 @@ with lib.shelf; let
     else pkgs.colloid-gtk-theme;
 
   preferDark = if colorSchemeVariant == "nord-dark"
-    then "dark"
+    then "prefer-dark"
     else "light";
 
   cfg = config.shelf.desktop.addons.gtk;

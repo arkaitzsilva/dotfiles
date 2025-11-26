@@ -229,7 +229,7 @@ gestures {
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
-spawn-sh-at-startup "swww-daemon -f xrgb & swww img $HOME/.local/share/backgrounds/animated_mario_1.gif"
+spawn-sh-at-startup "swww-daemon -f xrgb & swww img $HOME/.local/share/backgrounds/animated_cell_2.gif --transition-type wave --transition-fps 60"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.

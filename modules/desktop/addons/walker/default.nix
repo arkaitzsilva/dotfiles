@@ -3,6 +3,7 @@
   pkgs,
   lib,
   defaults,
+  inputs,
   ...
 }:
 with lib;
@@ -12,6 +13,8 @@ in {
   options.shelf.desktop.addons.walker = with types; {
     enable = mkBoolOpt false "Whether to enable walker launcher.";
   };
+
+  # imports = with inputs; [ walker.homeManagerModules.default ];
 
   config = mkIf cfg.enable {
     shelf.home.packages = with pkgs; [];

@@ -4,9 +4,7 @@ with lib;
 with lib.shelf;
 
 let
-  brightnessctl-bin = "${pkgs.brightnessctl}/bin/brightnessctl";
-
-  ly-fixed = pkgs.ly.overrideAttrs (old: {
+  lyPkg = pkgs.ly.overrideAttrs (old: {
     postInstall = (old.postInstall or "") + ''
       mkdir -p $out/etc/ly/lang
       cp -v res/lang/*.ini $out/etc/ly/lang/
@@ -21,18 +19,19 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.etc."ly/lang".source = "${ly-fixed}/etc/ly/lang";
+    environment.etc."ly/lang".source = "${lyPkg}/etc/ly/lang";
     
     services.displayManager.ly = {
       enable = true;
-      package = ly-fixed;
+      package = lyPkg;
       settings = {
         animation = "matrix";
-        brightness_down_cmd = "${brightnessctl-bin} -q -n s 10%-";
-        brightness_up_cmd = "${brightnessctl-bin} -q -n s +10%";
-        bigclock = "en";
+        brightness_down_key = null;
+        brightness_up_key = null;
+        bigclock = "en"; # TODO: Hora no sale bien de inicio, al de 30 segundos se actualiza.
         lang = "es";
         battery_id = "BAT1";
+        hide_version_string = true;
       };
     };
   };

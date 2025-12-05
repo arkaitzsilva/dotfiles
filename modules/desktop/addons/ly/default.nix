@@ -28,11 +28,10 @@ in
         animation = "matrix";
         brightness_down_key = null;
         brightness_up_key = null;
-        bigclock = "en"; # TODO: Hora no sale bien de inicio, al de 30 segundos se actualiza.
         lang = "es";
-        battery_id = "BAT1";
         hide_version_string = true;
       };
+      x11Support = false;
     };
   };
 }

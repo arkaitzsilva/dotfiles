@@ -1,3 +1,7 @@
+overview {
+    backdrop-color "#2e3440"
+}
+
 layout {
     // You can change how the focus ring looks.
     focus-ring {
@@ -44,9 +48,5 @@ layout {
 
     shadow {
         color "#2e3440"
-    }
-
-    overview {
-        backdrop-color "#2e3440"
     }
 }

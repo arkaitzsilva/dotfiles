@@ -1,7 +1,7 @@
 [mgr]
 cwd = { fg = "#88c0d0" }
 
-hovered         = { fg = "#2e3440", bg = "#81a1c1" }
+hovered         = { fg = "#2e3440", bg = "#88c0d0" }
 preview_hovered = { fg = "#d8dee9", bg = "#4c566a" }
 
 find_keyword  = { fg = "#ebcb8b", italic = true }
@@ -14,7 +14,7 @@ marker_selected = { fg = "#88c0d0", bg = "#88c0d0" }
 
 count_copied   = { fg = "#2e3440", bg = "#a3be8c" }
 count_cut      = { fg = "#2e3440", bg = "#bf616a" }
-count_selected = { fg = "#2e3440", bg = "#81a1c1" }
+count_selected = { fg = "#2e3440", bg = "#88c0d0" }
 
 border_symbol = "│"
 border_style  = { fg = "#4c566a" }
@@ -26,8 +26,8 @@ active   = { fg = "#2e3440", bg = "#eceff4", bold = true }
 inactive = { fg = "#eceff4", bg = "#4c566a" }
 
 [mode]
-normal_main = { fg = "#2e3440", bg = "#81a1c1", bold = true }
-normal_alt  = { fg = "#81a1c1", bg = "#3b4252"}
+normal_main = { fg = "#2e3440", bg = "#88c0d0", bold = true }
+normal_alt  = { fg = "#88c0d0", bg = "#3b4252"}
 
 select_main = { fg = "#2e3440", bg = "#a3be8c", bold = true }
 select_alt  = { fg = "#a3be8c", bg = "#3b4252"}
@@ -40,39 +40,39 @@ sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
 progress_label  = { fg = "#ffffff", bold = true }
-progress_normal = { fg = "#81a1c1", bg = "#4c566a" }
+progress_normal = { fg = "#88c0d0", bg = "#4c566a" }
 progress_error  = { fg = "#bf616a", bg = "#4c566a" }
 
-perm_type  = { fg = "#81a1c1" }
+perm_type  = { fg = "#88c0d0" }
 perm_read  = { fg = "#ebcb8b" }
 perm_write = { fg = "#bf616a" }
 perm_exec  = { fg = "#a3be8c" }
 perm_sep   = { fg = "#4c566a" }
 
 [input]
-border   = { fg = "#81a1c1" }
+border   = { fg = "#88c0d0" }
 title    = {}
 value    = {}
 selected = { reversed = true }
 
 [pick]
-border   = { fg = "#81a1c1" }
+border   = { fg = "#88c0d0" }
 active   = { fg = "#b48ead" }
 inactive = {}
 
 [confirm]
-border     = { fg = "#81a1c1" }
-title      = { fg = "#81a1c1" }
+border     = { fg = "#88c0d0" }
+title      = { fg = "#88c0d0" }
 content    = {}
 list       = {}
 btn_yes    = { reversed = true }
 btn_no     = {}
 
 [cmp]
-border = { fg = "#81a1c1" }
+border = { fg = "#88c0d0" }
 
 [tasks]
-border  = { fg = "#81a1c1" }
+border  = { fg = "#88c0d0" }
 title   = {}
 hovered = { underline = true }
 
@@ -104,24 +104,24 @@ rules = [
 	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#b48ead" },
 	{ mime = "application/{pdf,doc,rtf}", fg = "#a3be8c" },
 	{ name = "*", fg = "#eceff4" },
-	{ name = "*/", fg = "#81a1c1" }
+	{ name = "*/", fg = "#88c0d0" }
 ]
 
 [spot]
-border   = { fg = "#81a1c1" }
-title    = { fg = "#81a1c1" }
-tbl_cell = { fg = "#81a1c1", reversed = true }
+border   = { fg = "#88c0d0" }
+title    = { fg = "#88c0d0" }
+tbl_cell = { fg = "#88c0d0", reversed = true }
 tbl_col  = { bold = true }
 
 [icon]
 dirs = [
-  { name = ".git", text = "󰝰", fg = "#81a1c1" },
-  { name = ".config", text = "󱁿", fg = "#81a1c1" },
-  { name = "Descargas", text = "󰉍", fg = "#81a1c1" },
-  { name = "Documentos", text = "󱧶", fg = "#81a1c1" },
-  { name = "Imágenes", text = "󰉏", fg = "#81a1c1" },
-  { name = "Música", text = "󱍙", fg = "#81a1c1" },
-  { name = "Vídeos", text =  "󱧺", fg = "#81a1c1" }
+  { name = ".git", text = "󰝰", fg = "#88c0d0" },
+  { name = ".config", text = "󱁿", fg = "#88c0d0" },
+  { name = "Descargas", text = "󰉍", fg = "#88c0d0" },
+  { name = "Documentos", text = "󱧶", fg = "#88c0d0" },
+  { name = "Imágenes", text = "󰉏", fg = "#88c0d0" },
+  { name = "Música", text = "󱍙", fg = "#88c0d0" },
+  { name = "Vídeos", text =  "󱧺", fg = "#88c0d0" }
 ]
 
 files = [
@@ -147,7 +147,7 @@ exts = [
 
 conds = [
   { if = "!dir & link", text = "󱅷", fg = "#d8dee9" },
-  { if = "!file & link", text =  "󰌷", fg = "#81a1c1" },
+  { if = "!file & link", text =  "󰌷", fg = "#88c0d0" },
   { if = "!(dir | link)", text = "󰈔", fg = "#d8dee9" },
-  { if = "dir", text = "󰝰", fg = "#81a1c1" },
+  { if = "dir", text = "󰝰", fg = "#88c0d0" },
 ]

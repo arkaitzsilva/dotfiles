@@ -36,5 +36,6 @@ in {
     shelf.home.configFile."yazi/yazi.toml".source = "${defaults.configFolder}/yazi/yazi.toml";
     shelf.home.configFile."yazi/keymap.toml".source = "${defaults.configFolder}/yazi/keymap.toml";
     shelf.home.configFile."yazi/theme.toml".source = "${defaults.configFolder}/yazi/color-scheme-variants/${defaults.colorSchemeVariant}.toml";
+    shelf.home.configFile."yazi/theme.tmTheme".source = "${defaults.configFolder}/yazi/color-scheme-variants/${defaults.colorSchemeVariant}.tmTheme";
   };
 }

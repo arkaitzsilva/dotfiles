@@ -13,13 +13,13 @@ with lib.shelf; let
   gtkCompileColorSchemeVariant = if colorSchemeVariant == "nord-dark" then "nord"
     else "";
 
-  gtkColorSchemeVariant = if colorSchemeVariant == "nord-dark" then "Colloid-Dark-Compact-Nord"
+  gtkColorSchemeVariant = if colorSchemeVariant == "nord-dark" then "Colloid-Teal-Dark-Compact-Nord"
     else "Colloid-Dark-Compact";
 
   gtk-theme = if colorSchemeVariant == "nord-dark"
     then pkgs.colloid-gtk-theme.override {
-      themeVariants = [ "all" ];
-      #colorVariants = [ "" ];
+      themeVariants = [ "teal" ];
+      colorVariants = [ "dark" ];
       sizeVariants = [ "compact" ];
       tweaks = [ gtkCompileColorSchemeVariant "rimless" "normal" ];
     }

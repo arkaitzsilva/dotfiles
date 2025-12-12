@@ -13,23 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    shelf.desktop.addons = {
-      gtk = enabled;
-    };    
-
-    shelf.apps = {
-      gtk = {
-        packages = enabled;
-        gedit = enabled;
-        vscode = enabled;
-        antigravity = enabled;
-      };
-
-      browsers = {
-        nyxt = disabled;
-        firefox = enabled;
-        tor = enabled;
-      };
-    };    
+    shelf.desktop.addons.gtk = enabled;
   };
 }

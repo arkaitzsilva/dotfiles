@@ -18,6 +18,7 @@ in {
 
     programs.niri = {
       enable = true;
+      package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
     };
 
     shelf.home.packages = with pkgs; [
@@ -30,12 +31,14 @@ in {
 
     shelf.desktop.addons = {
       ly = enabled;
-      swww = enabled;
+      awww = enabled;
       stasis = enabled;
     };
 
     shelf.cli = {
       packages = enabled;      
+      oh-my-posh = enabled;
+      flatpak = enabled;
     };
 
     shelf.apps = {    

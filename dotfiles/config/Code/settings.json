@@ -1,9 +1,0 @@
-{
-  "editor.tabSize": 2,
-  "extensions.autoUpdate": false,
-  "update.mode": "none",
-  "window.titleBarStyle": "native",
-  "workbench.tree.indent": 12,
-  "editor.insertSpaces": true,  
-  "workbench.startupEditor": "none"
-}

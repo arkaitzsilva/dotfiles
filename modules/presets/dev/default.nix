@@ -16,9 +16,7 @@ in {
       cli = {
         ssh = enabled;
         git = enabled;
-        oh-my-posh = enabled;
         python = enabled;
-        docker = disabled;
         ollama = disabled;
         cassandra = disabled;
       };

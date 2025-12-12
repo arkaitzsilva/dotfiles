@@ -3,6 +3,7 @@ overview {
 }
 
 layout {
+    background-color "#242933"
     // You can change how the focus ring looks.
     focus-ring {
         // Color of the ring on the active monitor.

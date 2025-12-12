@@ -9,6 +9,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri = {
+      url = "github:YaLTeR/niri";      
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    awww = {
+      url = "git+https://codeberg.org/LGFae/awww";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stasis = {
+      url = "github:saltnpepper97/stasis";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     luv-icon-theme.url = "github:arkaitzsilva/luv-icon-theme";
   };
 

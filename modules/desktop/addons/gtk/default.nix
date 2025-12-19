@@ -10,20 +10,16 @@ with lib;
 with lib.shelf; let
   colorSchemeVariant = defaults.colorSchemeVariant;
 
-  gtkCompileColorSchemeVariant = if colorSchemeVariant == "nord-dark" then "nord"
+  gtkColorSchemeVariant = if colorSchemeVariant == "nord-dark" then "Materia-nord-compact"
     else "";
 
-  gtkColorSchemeVariant = if colorSchemeVariant == "nord-dark" then "Colloid-Teal-Dark-Compact-Nord"
-    else "Colloid-Dark-Compact";
-
-  gtk-theme = if colorSchemeVariant == "nord-dark"
-    then pkgs.colloid-gtk-theme.override {
-      themeVariants = [ "teal" ];
-      colorVariants = [ "dark" ];
-      sizeVariants = [ "compact" ];
-      tweaks = [ gtkCompileColorSchemeVariant "rimless" "normal" ];
-    }
+  gtkThemePkg = if colorSchemeVariant == "nord-dark"
+    then inputs.gtk-themes.packages.${pkgs.stdenv.hostPlatform.system}.gtk-theme-materia.Materia-nord-compact
     else pkgs.colloid-gtk-theme;
+
+  iconThemePkg = inputs.icon-themes.packages.${pkgs.stdenv.hostPlatform.system}.icon-theme-luv.Luv-Dark;
+
+  cursorThemePkg = inputs.cursor-themes.packages.${pkgs.stdenv.hostPlatform.system}.cursor-theme-nx.nx-snow;
 
   preferDark = if colorSchemeVariant == "nord-dark"
     then "prefer-dark"
@@ -36,22 +32,12 @@ in {
   };
 
   config = mkIf cfg.enable {
-    shelf.home.packages = with pkgs; [
+    shelf.home.themePackages = with pkgs; [
       adwaita-icon-theme
-      inputs.luv-icon-theme.packages.${stdenv.hostPlatform.system}.default
+
+      iconThemePkg
+      cursorThemePkg
     ];
-
-    services.gnome.gnome-keyring.enable = true;
-
-    xdg.portal = {
-      enable = true;
-      xdgOpenUsePortal = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-gnome
-      ];
-      config.niri.default = [ "gtk" ];
-    };
 
     programs.dconf.enable = true;
 
@@ -68,15 +54,17 @@ in {
       enable = true;
       theme = {
         name = gtkColorSchemeVariant;
-        package = gtk-theme;
+        package = gtkThemePkg;
       };
 
       iconTheme = {
         name = "Luv-Dark";
+        package = iconThemePkg;
       };
 
       cursorTheme = {
-        name = "Luv-Dark";
+        name = "nx-snow";
+        package = cursorThemePkg;
         size = 24;
       };
 
@@ -93,8 +81,5 @@ in {
         gtk-application-prefer-dark-theme = 1;
       };
     };
-
-    # shelf.home.configFile."gtk-3.0/settings.ini".source = "${defaults.configFolder}/gtk-3.0/settings.ini";
-    # shelf.home.configFile."gtk-4.0/settings.ini".source = "${defaults.configFolder}/gtk-4.0/settings.ini";
   };
 }

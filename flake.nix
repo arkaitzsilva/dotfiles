@@ -14,6 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    declarative-flatpak.url = "github:in-a-dil-emma/declarative-flatpak/latest";
+
     awww = {
       url = "git+https://codeberg.org/LGFae/awww";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,7 +26,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    luv-icon-theme.url = "github:arkaitzsilva/luv-icon-theme";
+    gtk-themes = {
+      url = "github:arkaitzsilva/gtk-themes";
+      inputs.nixpkgs.follows = "nixpkgs";  
+    };
+
+    icon-themes = {
+      url = "github:arkaitzsilva/icon-themes";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    cursor-themes = {
+      url = "github:arkaitzsilva/cursor-themes";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {nixpkgs, ...} @ inputs: let

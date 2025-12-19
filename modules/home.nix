@@ -51,7 +51,22 @@ in {
       '';
     };
     packages = mkOption {
-      type = types.attrs;
+      type = listOf package;
+      default = [];
+      description = ''
+        Options to pass directly to home-manager.
+      '';
+    };
+    themePackages = mkOption {
+      type = listOf package;
+      default = [];
+      description = ''
+        Options to pass directly to home-manager.
+      '';
+    };
+    allPackages = mkOption {
+      type = listOf package;
+      default = [];
       description = ''
         Options to pass directly to home-manager.
       '';
@@ -62,13 +77,19 @@ in {
         Options to pass directly to home-manager.
       '';
     };
+    extraImports = mkOption {
+      type = with types; listOf anything;
+      default = [];
+      description = "Home Manager modules to import";
+    };
   };
 
   config = {
+    shelf.home.allPackages = cfg.packages ++ cfg.themePackages;
     shelf.home.extraOptions = {
       home.stateVersion = config.system.stateVersion;
       home.file = mkAliasDefinitions options.shelf.home.file;
-      home.packages = mkAliasDefinitions options.shelf.home.packages;
+      home.packages = mkAliasDefinitions options.shelf.home.allPackages;
       home.sessionVariables = mkAliasDefinitions options.shelf.home.sessionVariables;
       programs = mkAliasDefinitions options.shelf.home.programs;
       services = mkAliasDefinitions options.shelf.home.services;
@@ -83,7 +104,10 @@ in {
       useUserPackages = true;
 
       users.${defaults.username} = {config, ...}:
-        mkMerge [
+        {
+          imports = cfg.extraImports;
+        }
+        // mkMerge [
           (mkAliasDefinitions options.shelf.home.extraOptions)
         ];
     };

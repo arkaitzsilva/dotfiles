@@ -14,11 +14,34 @@ in {
   };
 
   config = mkIf cfg.enable {
-    services.upower.enable = true;
+    services = {
+      gnome.gnome-keyring.enable = true;
+      upower.enable = true;
+    };
 
     programs.niri = {
       enable = true;
       package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
+      useNautilus = false;
+    };
+
+    xdg.portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gnome
+        xdg-desktop-portal-gtk
+      ];
+      config.niri = {
+        default = [ "gnome" "gtk" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+        "org.freedesktop.impl.portal.Notification" = [ "gtk" ];
+        "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+      };
+    };
+
+    shelf.home.extraOptions.systemd.user.sessionVariables = {
+      GTK_USE_PORTAL = "1";
     };
 
     shelf.home.packages = with pkgs; [
@@ -33,12 +56,13 @@ in {
       ly = enabled;
       awww = enabled;
       stasis = enabled;
+      flatpak = enabled;
+      gtk = enabled;
     };
 
     shelf.cli = {
       packages = enabled;      
       oh-my-posh = enabled;
-      flatpak = enabled;
     };
 
     shelf.apps = {    

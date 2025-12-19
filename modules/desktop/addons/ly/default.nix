@@ -26,6 +26,8 @@ in
       package = lyPkg;
       settings = {
         animation = "matrix";
+        cmatrix_min_codepoint = "0x30";
+        cmatrix_max_codepoint = "0x32";
         brightness_down_key = null;
         brightness_up_key = null;
         lang = "es";

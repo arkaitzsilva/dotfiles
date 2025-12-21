@@ -7,13 +7,13 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Color of the ring on the active monitor.
-        active-color "#8fbcbb"
+        // active-color "#8fbcbb"
 
         // Color of the ring on inactive monitors.
         //
         // The focus ring only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
-        inactive-color "#4c566a"
+        // inactive-color "#4c566a"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -33,7 +33,9 @@ layout {
 
     // You can also add a border. It's similar to the focus ring, but always visible.
     border {
-        active-color "#8fbcbb"
+        // active-color "#8fbcbb"
+        active-gradient from="#8fbcbb" to="#b48ead" angle=45 in="oklch longer hue"
+
         inactive-color "#4c566a"
 
         // Color of the border around windows that request your attention.

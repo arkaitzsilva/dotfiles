@@ -1,104 +1,112 @@
-# global variable
-default_timeout 300
+@author "Arkaitz Silva"
+@description "Stasis configuration file"
 
-#
-# Stasis configuration
-#
+# Global variable
+default_timeout 300  # 5 minutes
+
 stasis:
   pre_suspend_command None
   monitor_media true
   ignore_remote_media true
-  # Stasis allows you to define a list of media
-  # players that you want to be ignored when inhibiting
-  # media playback
-  #media_blacklist ["spotify"]
+  
+  # Optional: ignore specific media players
+  # media_blacklist ["spotify"]
+  
   respect_idle_inhibitors true
-  #lid_close_action "lock-screen" (lock-screen | suspend | custom | ignore)
-  #lid_open_action "wake" (wake | custom | ignore)
-  # debounce: default is 3s; can be customized if needed
-  #debounce-seconds 4
-
+  
+  # Laptop lid behavior
+  #lid_close_action "lock-screen"  # lock-screen | suspend | custom | ignore
+  #lid_open_action "wake"          # wake | custom | ignore
+  
+  # Debounce: default is 3s; can be customized if needed
+  #debounce_seconds 4
+  
+  # Applications that prevent idle when active
   inhibit_apps [
-    "deluge"
+    "vlc"
+    "Spotify"
+    "mpv"
+    r".*\.exe"
+    r"steam_app_.*"
+    r"firefox.*"
   ]
-
-  # desktop-only idle actions (applies to all devices)
-  # lock_screen:
-  #   timeout 300
-  #   command None
-  #   resume-command None
-  # end
-
-  dpms:
-    timeout 130
-    command "niri msg action power-off-monitors"
-    resume-command None
+  
+  # Desktop-only idle actions (applies to all devices)
+  lock_screen:
+    timeout 300  # 5 minutes
+    command "loginctl lock-session"
+    resume-command "notify-send 'Welcome Back $env.USER!'"
+    lock-command "swaylock"
   end
-
+  
+  dpms:
+    timeout 60  # 1 minute
+    command "niri msg action power-off-monitors"
+    resume-command "niri msg action power-on-monitors"
+  end
+  
   suspend:
-    timeout 1800
+    timeout 1800  # 30 minutes
     command "systemctl suspend"
     resume-command None
   end
-
-  # laptop-only AC actions
+  
+  # Laptop-only AC actions
   on_ac:
-    # Step 1: Adjust brightness (instant)
-    # define it first so it does not retrigger later
+    # Instant brightness adjustment
     custom-brightness-instant:
       timeout 0
       command "brightnessctl set 100%"
     end
-
-#    lock_screen:
-#      timeout 300
-#      command None
-#    end
-
-    brightness:
-      timeout 120
-      command "brightnessctl set 30%"
-      resume "brightnessctl set 100%"
-    end
-
-    dpms:
-      timeout 240
-      command "niri msg action power-off-monitors"
-      resume-command None
-    end
-
-#    suspend:
-#      timeout 480
-#      command "systemctl suspend"
-#      resume-command None
-#    end
-  end
-
-  # Laptop-only battery actions
-  on_battery:
-    custom-brightness-instant:
-      timeout 0
-      command "brightnessctl set 100%"
-    end
-
-  #   lock_screen:
-  #     timeout 150
-  #     command None
-  #   end
-
+    
     brightness:
       timeout 30
       command "brightnessctl set 30%"
     end
-
+    
     dpms:
       timeout 60
       command "niri msg action power-off-monitors"
     end
-
-     suspend:
-       timeout 150
-       command "systemctl suspend"
-     end
-   end
+    
+    # lock_screen:
+    #   timeout 120  # 2 minutes
+    #   command "swaylock"
+    # end
+    
+    # suspend:
+    #   timeout 300  # 5 minutes
+    #   command "systemctl suspend"
+    # end
+  end
+  
+  # Laptop-only battery actions
+  on_battery:
+    custom-brightness-instant:
+      timeout 0
+      command "brightnessctl set 40%"
+    end
+    
+    brightness:
+      timeout 60  # 1 minute
+      command "brightnessctl set 20%"
+    end
+    
+    dpms:
+      timeout 30  # 30 seconds
+      command "niri msg action power-off-monitors"
+      resume-command "niri msg action power-on-monitors"
+    end
+    
+    lock_screen:
+      timeout 120  # 2 minutes
+      command "swaylock"
+      resume-command "notify-send 'Welcome back $env.USER!'"
+    end
+    
+    suspend:
+      timeout 120  # 2 minutes
+      command "systemctl suspend"
+    end
+  end
 end

@@ -20,26 +20,26 @@ in {
     shelf.home.packages = with pkgs; [
       stasisPkg
       libinput # Stasis needs this library to detect user input (also add `ìnput` group to the user).
+      playerctl # For enhanced media player detection.
       pulseaudio # `ignore_remote_media true` config needs `pactl` command to detect local media.
     ];
 
     shelf.home.extraOptions.systemd.user.services.stasis = {
       Unit = {
         Description = "Stasis Wayland Idle Manager";
+        PartOf = [ "graphical-session.target" ];
         After = [ "graphical-session.target" ];
-        Wants = [ "graphical-session.target" ];
+        ConditionEnvironment = "WAYLAND_DISPLAY";
       };
 
       Service = {
         Type = "simple";
         ExecStart = "${stasisPkg}/bin/stasis";
-        Restart = "always";
-        RestartSec = 5;
-        Environment = [];
+        Restart = "on-failure";
       };
 
       Install = {
-        WantedBy = [ "default.target" ];
+        WantedBy = [ "graphical-session.target" ];
       };
     };
 

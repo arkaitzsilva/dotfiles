@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   defaults,
   ...
@@ -19,7 +18,7 @@ in {
       extraGroups = [
         "wheel"
         "networkmanager"
-        "docker"
+        "video"
         "audio"
         "input"
       ];

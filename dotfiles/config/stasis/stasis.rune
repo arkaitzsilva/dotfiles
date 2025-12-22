@@ -23,12 +23,7 @@ stasis:
   
   # Applications that prevent idle when active
   inhibit_apps [
-    "vlc"
-    "Spotify"
-    "mpv"
-    r".*\.exe"
-    r"steam_app_.*"
-    r"firefox.*"
+    r"deluge*"
   ]
   
   # Desktop-only idle actions (applies to all devices)
@@ -60,24 +55,25 @@ stasis:
     end
     
     brightness:
-      timeout 30
+      timeout 60
       command "brightnessctl set 30%"
+      resume-command "brightnessctl set 100%"
     end
     
     dpms:
-      timeout 60
+      timeout 120
       command "niri msg action power-off-monitors"
     end
     
-    # lock_screen:
-    #   timeout 120  # 2 minutes
-    #   command "swaylock"
-    # end
+    lock_screen:
+      timeout 240
+      command None
+    end
     
-    # suspend:
-    #   timeout 300  # 5 minutes
-    #   command "systemctl suspend"
-    # end
+    suspend:
+      timeout 300
+      command "systemctl suspend"
+    end
   end
   
   # Laptop-only battery actions
@@ -88,24 +84,25 @@ stasis:
     end
     
     brightness:
-      timeout 60  # 1 minute
+      timeout 20
       command "brightnessctl set 20%"
+      resume-command "brightnessctl set 100%"
     end
     
     dpms:
-      timeout 30  # 30 seconds
+      timeout 60
       command "niri msg action power-off-monitors"
       resume-command "niri msg action power-on-monitors"
     end
     
     lock_screen:
-      timeout 120  # 2 minutes
-      command "swaylock"
-      resume-command "notify-send 'Welcome back $env.USER!'"
+      timeout 120
+      command None
+      resume-command None
     end
     
     suspend:
-      timeout 120  # 2 minutes
+      timeout 120
       command "systemctl suspend"
     end
   end

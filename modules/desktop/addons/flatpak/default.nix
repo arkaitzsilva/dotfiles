@@ -68,7 +68,7 @@ in {
         "flathub:app/org.mozilla.firefox/x86_64/stable"
         "flathub:app/org.torproject.torbrowser-launcher/x86_64/stable"
         "flathub:app/org.deluge_torrent.deluge/x86_64/stable"
-        "flathub:runtime/org.gtk.Gtk3theme.Materia-nord-compact/x86_64/3.22"
+        "flathub:app/com.obsproject.Studio/x86_64/stable"
       ]
       ++ (
         if colorSchemeVariant == "nord-dark" then

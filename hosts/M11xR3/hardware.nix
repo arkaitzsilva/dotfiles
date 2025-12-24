@@ -111,7 +111,7 @@
     nvidiaSettings = false;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
 
     prime = {
       sync.enable = true;
@@ -129,5 +129,9 @@
   # networking.interfaces.enp7s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp13s0.useDHCP = lib.mkDefault true;
 
+  nixpkgs.config.nvidia.acceptLicense = true;
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+
+  time.hardwareClockInLocalTime = true;
 }

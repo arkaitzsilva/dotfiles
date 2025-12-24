@@ -211,7 +211,7 @@ gestures {
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
-spawn-sh-at-startup "awww-daemon --format argb & awww img $HOME/.local/share/backgrounds/animated_mario_1.gif --transition-type wave --transition-fps 60 --transition-step 50"
+spawn-sh-at-startup "awww-daemon --format argb & awww img $HOME/.local/share/backgrounds/animated_cell_2.gif"
 spawn-sh-at-startup "systemctl --user start stasis"
 
 hotkey-overlay {

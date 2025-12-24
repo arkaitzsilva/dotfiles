@@ -77,7 +77,7 @@ in {
 
     shelf.home.configFile."niri/config.kdl".source = "${defaults.configFolder}/niri/config.kdl";
     shelf.home.configFile."niri/keybindings.kdl".source = "${defaults.configFolder}/niri/keybindings.kdl";
-    shelf.home.configFile."niri/device.kdl".source = "${defaults.configFolder}/niri/devices/${defaults.hostName}.kdl";
+    shelf.home.configFile."niri/device.kdl".source = "${defaults.configFolder}/niri/devices/device_${defaults.hostName}.kdl";
     shelf.home.configFile."niri/theme.kdl".source = "${defaults.configFolder}/niri/color-scheme-variants/${defaults.colorSchemeVariant}.kdl";
   };
 }

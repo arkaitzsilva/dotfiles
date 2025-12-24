@@ -20,6 +20,6 @@ in {
       yt-dlp
     ];
 
-    shelf.home.configFile."mpv/mpv.conf".source = "${defaults.configFolder}/mpv/${defaults.hostName}-mpv.conf";
+    shelf.home.configFile."mpv/mpv.conf".source = "${defaults.configFolder}/mpv/mpv_${defaults.hostName}.conf";
   };
 }

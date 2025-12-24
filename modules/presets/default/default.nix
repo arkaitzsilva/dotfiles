@@ -3,6 +3,7 @@
   pkgs,
   lib,
   hostName,
+  defaults,
   ...
 }:
 with lib;
@@ -31,7 +32,8 @@ in {
     };
 
     shelf.desktop = {
-      niri = enabled;
+      hyprland = mkIf (defaults.wm == "hyprland") enabled;
+      niri = mkIf (defaults.wm == "niri") enabled;
     };
   };
 }

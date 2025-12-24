@@ -26,6 +26,9 @@ let
 
     stateVersion = "25.11";
 
+    withUWSM = false;
+    wm = "hyprland";
+
     configFolder = ./dotfiles/config;
     templateFolder = ./dotfiles/templates;
     dataFolder = ./dotfiles/local/share;

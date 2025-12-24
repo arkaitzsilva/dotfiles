@@ -1,4 +1,10 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  defaults,
+  ...
+}:
 
 with lib;
 with lib.shelf;
@@ -20,20 +26,26 @@ in
 
   config = mkIf cfg.enable {
     environment.etc."ly/lang".source = "${lyPkg}/etc/ly/lang";
+
+    systemd.services.display-manager.environment = mkIf defaults.withUWSM {
+      XDG_CURRENT_DESKTOP = "X-NIXOS-SYSTEMD-AWARE";
+    };
     
-    services.displayManager.ly = {
-      enable = true;
-      package = lyPkg;
-      settings = {
-        animation = "matrix";
-        cmatrix_min_codepoint = "0x30";
-        cmatrix_max_codepoint = "0x32";
-        brightness_down_key = null;
-        brightness_up_key = null;
-        lang = "es";
-        hide_version_string = true;
+    services.displayManager = {
+      ly = {
+        enable = true;
+        package = lyPkg;
+        settings = {
+          animation = "matrix";
+          cmatrix_min_codepoint = "0x30";
+          cmatrix_max_codepoint = "0x32";
+          brightness_down_key = null;
+          brightness_up_key = null;
+          lang = "es";
+          hide_version_string = true;
+        };
+        x11Support = false;
       };
-      x11Support = false;
     };
   };
 }

@@ -10,7 +10,7 @@ with lib; with lib.shelf; let
   cfg = config.shelf.desktop.niri;
 in {
   options.shelf.desktop.niri = {
-    enable = mkBoolOpt false "Whether to enable Niri WM, with other desktop addons.";
+    enable = mkBoolOpt false "Whether to enable Niri WM, with desktop addons.";
   };
 
   config = mkIf cfg.enable {

@@ -27,7 +27,7 @@ let
     stateVersion = "25.11";
 
     withUWSM = false;
-    wm = "hyprland";
+    wm = "niri";
 
     configFolder = ./dotfiles/config;
     templateFolder = ./dotfiles/templates;

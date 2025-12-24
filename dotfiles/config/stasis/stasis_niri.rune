@@ -1,0 +1,109 @@
+@author "Arkaitz Silva"
+@description "Stasis configuration file"
+
+# Global variable
+default_timeout 300  # 5 minutes
+
+stasis:
+  pre_suspend_command None
+  monitor_media true
+  ignore_remote_media true
+  
+  # Optional: ignore specific media players
+  # media_blacklist ["spotify"]
+  
+  respect_idle_inhibitors true
+  
+  # Laptop lid behavior
+  #lid_close_action "lock-screen"  # lock-screen | suspend | custom | ignore
+  #lid_open_action "wake"          # wake | custom | ignore
+  
+  # Debounce: default is 3s; can be customized if needed
+  #debounce_seconds 4
+  
+  # Applications that prevent idle when active
+  inhibit_apps [
+    r"deluge*"
+  ]
+  
+  # Desktop-only idle actions (applies to all devices)
+  lock_screen:
+    timeout 300  # 5 minutes
+    command "loginctl lock-session"
+    resume-command "notify-send 'Welcome Back $env.USER!'"
+    lock-command "swaylock"
+  end
+  
+  dpms:
+    timeout 60  # 1 minute
+    command "niri msg action power-off-monitors"
+    resume-command "niri msg action power-on-monitors"
+  end
+  
+  suspend:
+    timeout 1800  # 30 minutes
+    command "systemctl suspend"
+    resume-command None
+  end
+  
+  # Laptop-only AC actions
+  on_ac:
+    # Instant brightness adjustment
+    custom-brightness-instant:
+      timeout 0
+      command "brightnessctl set 100%"
+    end
+    
+    brightness:
+      timeout 60
+      command "brightnessctl set 30%"
+      resume-command "brightnessctl set 100%"
+    end
+    
+    dpms:
+      timeout 120
+      command "niri msg action power-off-monitors"
+    end
+    
+    lock_screen:
+      timeout 240
+      command None
+    end
+    
+    suspend:
+      timeout 300
+      command "systemctl suspend"
+    end
+  end
+  
+  # Laptop-only battery actions
+  on_battery:
+    custom-brightness-instant:
+      timeout 0
+      command "brightnessctl set 100%"
+    end
+    
+    brightness:
+      timeout 20
+      command "brightnessctl set 20%"
+      resume-command "brightnessctl set 100%"
+    end
+    
+    dpms:
+      timeout 60
+      command "niri msg action power-off-monitors"
+      resume-command "niri msg action power-on-monitors"
+    end
+    
+    lock_screen:
+      timeout 120
+      command None
+      resume-command None
+    end
+    
+    suspend:
+      timeout 120
+      command "systemctl suspend"
+    end
+  end
+end

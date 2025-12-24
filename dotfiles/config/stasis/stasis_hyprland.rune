@@ -35,9 +35,9 @@ stasis:
   end
   
   dpms:
-    timeout 60  # 1 minute
-    command "niri msg action power-off-monitors"
-    resume-command "niri msg action power-on-monitors"
+    timeout 60
+    command "hyprctl dispatch dpms off"
+    resume-command "hyprctl dispatch dpms on"
   end
   
   suspend:
@@ -62,7 +62,7 @@ stasis:
     
     dpms:
       timeout 120
-      command "niri msg action power-off-monitors"
+      command "hyprctl dispatch dpms off"
     end
     
     lock_screen:
@@ -80,7 +80,7 @@ stasis:
   on_battery:
     custom-brightness-instant:
       timeout 0
-      command "brightnessctl set 40%"
+      command "brightnessctl set 100%"
     end
     
     brightness:
@@ -91,8 +91,8 @@ stasis:
     
     dpms:
       timeout 60
-      command "niri msg action power-off-monitors"
-      resume-command "niri msg action power-on-monitors"
+      command "hyprctl dispatch dpms off"
+      resume-command "hyprctl dispatch dpms on"
     end
     
     lock_screen:

@@ -30,10 +30,5 @@ in {
     shelf.presets = {
       dev = enabled;
     };
-
-    shelf.desktop = {
-      hyprland = mkIf (defaults.wm == "hyprland") enabled;
-      niri = mkIf (defaults.wm == "niri") enabled;
-    };
   };
 }

@@ -30,6 +30,8 @@ in {
 
     environment.sessionVariables = { HYPR_PLUGIN_DIR = hypr-plugin-dir; };
 
+    security.polkit.enable = true;
+
     programs.uwsm = mkIf defaults.withUWSM {
       enable = true;
       waylandCompositors = {

@@ -1,7 +1,8 @@
 @author "Arkaitz Silva"
 @description "Stasis configuration file"
 
-gather "variables.rune" as vars
+dpms_off "hyprctl dispatch dpms off"
+dpms_on "hyprctl dispatch dpms on"
 
 stasis:
   pre_suspend_command None

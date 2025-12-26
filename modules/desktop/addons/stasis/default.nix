@@ -44,6 +44,5 @@ in {
     };
 
     shelf.home.configFile."stasis/stasis.rune".source = "${defaults.configFolder}/stasis/stasis.rune";
-    shelf.home.configFile."stasis/variables.rune".source = "${defaults.configFolder}/stasis/variables.rune";
   };
 }

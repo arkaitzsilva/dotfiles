@@ -629,27 +629,6 @@
         "type": "github"
       }
     },
-    "niri": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "rust-overlay": "rust-overlay_2"
-      },
-      "locked": {
-        "lastModified": 1766085543,
-        "narHash": "sha256-96X+37m2HH8IG3BzXEN3d4eHeUbiu9g1Q+KJQRX/Jpw=",
-        "owner": "YaLTeR",
-        "repo": "niri",
-        "rev": "c4462d0c7fddfc11c9e98d43e3ef68a5b3c844ca",
-        "type": "github"
-      },
-      "original": {
-        "owner": "YaLTeR",
-        "repo": "niri",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1765779637,
@@ -699,7 +678,6 @@
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "icon-themes": "icon-themes",
-        "niri": "niri",
         "nixpkgs": "nixpkgs",
         "stasis": "stasis"
       }
@@ -717,27 +695,6 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "rev": "ab3536fe850211a96673c6ffb2cb88aab8071cc9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "rust-overlay_2": {
-      "inputs": {
-        "nixpkgs": [
-          "niri",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1757989933,
-        "narHash": "sha256-9cpKYWWPCFhgwQTww8S94rTXgg8Q8ydFv9fXM6I8xQM=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "8249aa3442fb9b45e615a35f39eca2fe5510d7c3",
         "type": "github"
       },
       "original": {

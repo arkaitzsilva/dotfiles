@@ -27,6 +27,10 @@ in {
       type = "scheme-neutral";
     };
 
+    shelf.desktop = {
+      hyprland = enabled;
+    };
+
     shelf.presets = {
       dev = enabled;
     };

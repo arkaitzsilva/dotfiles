@@ -26,11 +26,7 @@ in
 
   config = mkIf cfg.enable {
     environment.etc."ly/lang".source = "${lyPkg}/etc/ly/lang";
-
-    systemd.services.display-manager.environment = mkIf defaults.withUWSM {
-      XDG_CURRENT_DESKTOP = "X-NIXOS-SYSTEMD-AWARE";
-    };
-    
+   
     services.displayManager = {
       ly = {
         enable = true;

@@ -243,11 +243,20 @@ animations {
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
+
+    workspace-switch {
+        duration-ms 500
+        curve "cubic-bezier" 0.1 1 0 1
+    }
 }
 
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
+
+window-rule {
+    open-maximized-to-edges false
+}
 
 window-rule {
     match app-id="foot"

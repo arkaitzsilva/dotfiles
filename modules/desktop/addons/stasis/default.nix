@@ -27,19 +27,19 @@ in {
     shelf.home.extraOptions.systemd.user.services.stasis = {
       Unit = {
         Description = "Stasis Wayland Idle Manager";
-        Requires = [ "niri.service" ];
-        After = [ "niri.service" ];
+        PartOf = [ "graphical-session.target" ];
+        After = [ "graphical-session.target" ];
+        ConditionEnvironment = "WAYLAND_DISPLAY";
       };
 
       Service = {
         Type = "simple";
         ExecStart = "${stasisPkg}/bin/stasis";
         Restart = "on-failure";
-        RestartSec = 1;
       };
 
       Install = {
-        WantedBy = [ "niri.service" ];
+        WantedBy = [ "graphical-session.target" ];
       };
     };
 

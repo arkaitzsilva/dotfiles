@@ -35,7 +35,7 @@ in {
         Type = "simple";
         ExecStart = "${stasisPkg}/bin/stasis";
         Restart = "on-failure";
-        RestartSec = "1s";
+        RestartSec = 1;
       };
 
       Install = {

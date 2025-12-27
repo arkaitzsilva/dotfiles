@@ -10,6 +10,19 @@ with lib; with lib.shelf; let
   cfg = config.shelf.desktop.niri;
 
   niriPkg = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
+
+  polkit_gnome = pkgs.polkit_gnome.overrideAttrs (old: {
+    nativeBuildInputs = old.nativeBuildInputs ++ [ pkgs.wrapGAppsHook3 ];
+
+    postFixup = ''
+      wrapProgram $out/libexec/polkit-gnome-authentication-agent-1 \
+        --set GDK_BACKEND wayland \
+        --unset DISPLAY
+
+      mkdir -p $out/bin
+      ln -s $out/libexec/polkit-gnome-authentication-agent-1 $out/bin/polkit-gnome-authentication-agent-1
+    '';
+  });
 in {
   options.shelf.desktop.niri = {
     enable = mkBoolOpt false "Whether to enable Niri WM, with desktop addons.";
@@ -53,7 +66,7 @@ in {
 
       Service = {
         Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        ExecStart = "${polkit_gnome}/bin/polkit-gnome-authentication-agent-1";
         Restart = "on-failure";
         RestartSec = 1;
         TimeoutStopSec = 10;

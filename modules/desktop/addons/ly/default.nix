@@ -10,14 +10,14 @@ with lib;
 with lib.shelf;
 
 let
+  cfg = config.shelf.desktop.addons.ly;
+
   lyPkg = pkgs.ly.overrideAttrs (old: {
     postInstall = (old.postInstall or "") + ''
       mkdir -p $out/etc/ly/lang
       cp -v res/lang/*.ini $out/etc/ly/lang/
     '';
   });
-
-  cfg = config.shelf.desktop.addons.ly;
 in
 {
   options.shelf.desktop.addons.ly = {

@@ -30,7 +30,7 @@ in {
 
     environment.sessionVariables = { HYPR_PLUGIN_DIR = hypr-plugin-dir; };
 
-    programs.uwsm = mkIf defaults.withUWSM {
+    programs.uwsm = mkIf (defaults.withUWSM) {
       enable = true;
       waylandCompositors = {
         hyprland = {

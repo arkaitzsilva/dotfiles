@@ -1,8 +1,8 @@
 @author "Arkaitz Silva"
 @description "Stasis configuration file"
 
-dpms_off "niri msg action power-off-monitors"
-dpms_on "niri msg action power-on-monitors"
+dpms_off "hyprctl dispatch dpms off"
+dpms_on "hyprctl dispatch dpms on"
 
 stasis:
   pre_suspend_command None

@@ -26,6 +26,8 @@ let
 
     stateVersion = "26.05";
 
+    withUWSM = false;
+
     configFolder = ./dotfiles/config;
     templateFolder = ./dotfiles/templates;
     dataFolder = ./dotfiles/local/share;

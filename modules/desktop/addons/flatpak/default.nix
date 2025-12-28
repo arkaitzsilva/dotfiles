@@ -30,6 +30,7 @@ with lib.shelf; let
     pathsToLink = [
       "/share/fonts"
       "/share/icons"
+      "/share/themes"
     ];
   };
 in {
@@ -50,6 +51,7 @@ in {
     fileSystems = {
       "/usr/share/fonts" = mkRoSymBind "${aggregated}/share/fonts";
       "/usr/share/icons" = mkRoSymBind "${aggregated}/share/icons";
+      "/usr/share/themes" = mkRoSymBind "${aggregated}/share/themes";
     };
 
     # Declarative Flatpak

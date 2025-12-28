@@ -37,6 +37,7 @@ in {
 
       iconThemePkg
       cursorThemePkg
+      gtkThemePkg
     ];
 
     programs.dconf.enable = true;

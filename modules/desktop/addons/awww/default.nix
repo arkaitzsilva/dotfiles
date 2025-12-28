@@ -19,12 +19,6 @@ in {
       inputs.awww.packages.${stdenv.hostPlatform.system}.awww
     ];
 
-    shelf.home.sessionVariables = {
-      AWWW_TRANSITION = "wave";
-      AWWW_TRANSITION_FPS = 60;
-      AWWW_TRANSITION_STEP = 50;
-    };
-
     shelf.home.dataFile."backgrounds".source = "${defaults.dataFolder}/backgrounds/${defaults.wallpaperResolution}";
   };
 }

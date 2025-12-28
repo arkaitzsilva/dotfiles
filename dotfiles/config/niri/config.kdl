@@ -3,8 +3,9 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
-include "keybindings.kdl"
+include "animations.kdl"
 include "device.kdl"
+include "keybindings.kdl"
 include "theme.kdl"
 
 // Input device configuration.
@@ -210,15 +211,14 @@ gestures {
 // spawn-at-startup "waybar"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 spawn-sh-at-startup "awww-daemon --format argb & awww img $HOME/.local/share/backgrounds/animated_cell_2.gif"
 
 hotkey-overlay {
-    // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
+    // Disable the "Important Hotkeys" pop-up at startup.
     skip-at-startup
 }
 
-// Uncomment this line to ask the clients to omit their client-side decorations if possible.
+// Ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
@@ -233,50 +233,27 @@ screenshot-path "~/Imágenes/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
 
-// Animation settings.
-// The wiki explains how to configure individual animations:
-// https://yalter.github.io/niri/Configuration:-Animations
-animations {
-    // Uncomment to turn off all animations.
-    // off
-
-    // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
-
-    workspace-switch {
-        duration-ms 500
-        curve "cubic-bezier" 0.1 1 0 1
-    }
-}
-
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
+// Force windows not to open maximized to edges.
 window-rule {
     open-maximized-to-edges false
 }
 
+// Set `foot` app to open with half size.
 window-rule {
     match app-id="foot"
     default-column-width { proportion 0.5; }
 }
 
+// Set GTK portal windows as floating windows with fixed size.
 window-rule {
     match app-id=r#"^xdg-desktop-portal-gtk$"#
     open-floating true
     default-column-width { fixed 1200; }
     default-window-height { fixed 800; }
-}
-
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-/-window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
 }
 
 // Open the Firefox picture-in-picture player as floating by default.

@@ -14,9 +14,13 @@ animations {
         curve "cubic-bezier" 0.1 1 0 1
     }
 
+    window-open {
+        spring damping-ratio=0.7 stiffness=1000 epsilon=0.001
+    }
+
     window-movement {
-        duration-ms 400
-        curve "cubic-bezier" 0.39 1.29 0.35 0.98
+        duration-ms 600
+        curve "cubic-bezier" 0.38 1.21 0.22 1
     }
 
     horizontal-view-movement {

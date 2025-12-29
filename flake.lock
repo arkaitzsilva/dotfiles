@@ -155,11 +155,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1766077610,
-        "narHash": "sha256-pi2OsRoeVy2FWvInWxIamJxotmXEggn7eRDXZ7yIR+8=",
+        "lastModified": 1766997250,
+        "narHash": "sha256-k8yVzGrjL+JPGMdmKUO9O2/DECjC6v4CAUnDeetuAvE=",
         "owner": "arkaitzsilva",
         "repo": "gtk-themes",
-        "rev": "c147f110f9b61d35c0f2bbed0b30e52848a013f2",
+        "rev": "31a4d196bccb7851c6b428c04abcf51bf4268bd2",
         "type": "github"
       },
       "original": {

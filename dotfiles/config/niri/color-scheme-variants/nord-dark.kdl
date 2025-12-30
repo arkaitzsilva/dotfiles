@@ -34,7 +34,7 @@ layout {
     // You can also add a border. It's similar to the focus ring, but always visible.
     border {
         // active-color "#8fbcbb"
-        active-gradient from="#88c0d0" to="#b48ead" angle=45 in="oklch longer hue"
+        active-gradient from="#88c0d0" to="#ebcb8b" angle=45 in="oklch longer hue"
 
         inactive-color "#4c566a"
 

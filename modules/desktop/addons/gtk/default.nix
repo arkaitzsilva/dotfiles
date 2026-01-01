@@ -23,6 +23,8 @@ with lib.shelf; let
 
   cursorThemePkg = inputs.cursor-themes.packages.${pkgs.stdenv.hostPlatform.system}.cursor-theme-nx.nx-snow;
 
+  fontPkg = config.fonts.defaultFontPkg;
+
   preferDark = if colorSchemeVariant == "nord-dark"
     then "prefer-dark"
     else "light";
@@ -43,13 +45,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    shelf.home.packages = with pkgs; [
-      adwaita-icon-theme
-      iconThemePkg
-      cursorThemePkg
-      gtkThemePkg
-    ];
-
     fileSystems = {
       "/usr/share/icons" = lib.shelf.mkRoSymBind "${aggregated}/share/icons";
     };
@@ -85,6 +80,7 @@ in {
 
       font = {
         name = "Noto Sans";
+        package = fontPkg;
         size = 10;
       };
 

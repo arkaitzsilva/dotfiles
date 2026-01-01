@@ -14,6 +14,10 @@ in {
   };
 
   config = mkIf (cfg.enable || config.shelf.system.defaultShell == pkgs.zsh) {
+    shelf.home.packages = with pkgs; [
+      nerd-fonts.fira-code
+    ];
+
     shelf.home.programs.foot = {
       enable = true;
     };

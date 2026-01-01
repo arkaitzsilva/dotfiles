@@ -29,7 +29,7 @@ with lib.shelf; let
     then "prefer-dark"
     else "light";
 
-  aggregated = pkgs.buildEnv {
+  aggregated = if config.shelf.desktop.addons.flatpak.enable then pkgs.buildEnv {
     name = "system-icons";
     paths = [
       iconThemePkg
@@ -38,16 +38,19 @@ with lib.shelf; let
     pathsToLink = [
       "/share/icons"
     ];
-  };
+  } else null;
 in {
   options.shelf.desktop.addons.gtk = {
     enable = mkBoolOpt false "Whether to enable gtk theme.";
   };
 
   config = mkIf cfg.enable {
-    fileSystems = {
-      "/usr/share/icons" = lib.shelf.mkRoSymBind "${aggregated}/share/icons";
-    };
+    fileSystems = lib.mkMerge [
+      (if config.shelf.desktop.addons.flatpak.enable then
+        { "/usr/share/icons" = lib.shelf.mkRoSymBind "${aggregated}/share/icons"; }
+      else
+        {})
+    ];
 
     programs.dconf.enable = true;
 

@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   inputs,
   defaults,
@@ -11,28 +10,6 @@ with lib.shelf; let
   cfg = config.shelf.desktop.addons.flatpak;
 
   colorSchemeVariant = defaults.colorSchemeVariant;
-
-  mkRoSymBind = path: {
-    device = path;
-    fsType = "fuse.bindfs";
-    options = [
-      "ro"
-      "resolve-symlinks"
-      "x-gvfs-hide"
-    ];
-  };
-
-  aggregated = pkgs.buildEnv {
-    name = "system-fonts-and-icons";
-    paths =
-      config.fonts.packages
-      ++ config.shelf.home.themePackages;
-    pathsToLink = [
-      "/share/fonts"
-      "/share/icons"
-      "/share/themes"
-    ];
-  };
 in {
   options.shelf.desktop.addons.flatpak = {
     enable = mkBoolOpt false "Whether to enable flatpak.";
@@ -45,14 +22,6 @@ in {
     };
 
     services.flatpak.enable = true;
-
-    system.fsPackages = [ pkgs.bindfs ];
-
-    fileSystems = {
-      "/usr/share/fonts" = mkRoSymBind "${aggregated}/share/fonts";
-      "/usr/share/icons" = mkRoSymBind "${aggregated}/share/icons";
-      "/usr/share/themes" = mkRoSymBind "${aggregated}/share/themes";
-    };
 
     # Declarative Flatpak
     shelf.home.extraImports = [

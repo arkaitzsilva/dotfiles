@@ -57,20 +57,6 @@ in {
         Options to pass directly to home-manager.
       '';
     };
-    themePackages = mkOption {
-      type = listOf package;
-      default = [];
-      description = ''
-        Options to pass directly to home-manager.
-      '';
-    };
-    allPackages = mkOption {
-      type = listOf package;
-      default = [];
-      description = ''
-        Options to pass directly to home-manager.
-      '';
-    };
     sessionVariables = mkOption {
       type = types.attrs;
       description = ''
@@ -85,11 +71,10 @@ in {
   };
 
   config = {
-    shelf.home.allPackages = cfg.packages ++ cfg.themePackages;
     shelf.home.extraOptions = {
       home.stateVersion = config.system.stateVersion;
       home.file = mkAliasDefinitions options.shelf.home.file;
-      home.packages = mkAliasDefinitions options.shelf.home.allPackages;
+      home.packages = mkAliasDefinitions options.shelf.home.packages;
       home.sessionVariables = mkAliasDefinitions options.shelf.home.sessionVariables;
       programs = mkAliasDefinitions options.shelf.home.programs;
       services = mkAliasDefinitions options.shelf.home.services;

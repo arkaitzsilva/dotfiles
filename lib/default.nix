@@ -85,11 +85,13 @@ with lib; rec {
         && ! lib.hasSuffix "-hm.nix" file)
       (files dir));
 
-  fetchImage = url: sha256: let
-    ext = lib.last (lib.splitString "." url);
-  in
-    builtins.fetchurl {
-      name = "wallpaper-${sha256}.${ext}";
-      inherit url sha256;
-    };
+  mkRoSymBind = path: {
+    device = path;
+    fsType = "fuse.bindfs";
+    options = [
+      "ro"
+      "resolve-symlinks"
+      "x-gvfs-hide"
+    ];
+  };
 }

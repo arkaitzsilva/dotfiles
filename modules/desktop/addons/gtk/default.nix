@@ -8,6 +8,8 @@
 }:
 with lib;
 with lib.shelf; let
+  cfg = config.shelf.desktop.addons.gtk;
+  
   colorSchemeVariant = defaults.colorSchemeVariant;
 
   gtkColorSchemeVariant = if colorSchemeVariant == "nord-dark" then "Materia-nord-compact"
@@ -25,20 +27,32 @@ with lib.shelf; let
     then "prefer-dark"
     else "light";
 
-  cfg = config.shelf.desktop.addons.gtk;
+  aggregated = pkgs.buildEnv {
+    name = "system-icons";
+    paths = [
+      iconThemePkg
+      cursorThemePkg
+    ];
+    pathsToLink = [
+      "/share/icons"
+    ];
+  };
 in {
   options.shelf.desktop.addons.gtk = {
     enable = mkBoolOpt false "Whether to enable gtk theme.";
   };
 
   config = mkIf cfg.enable {
-    shelf.home.themePackages = with pkgs; [
+    shelf.home.packages = with pkgs; [
       adwaita-icon-theme
-
       iconThemePkg
       cursorThemePkg
       gtkThemePkg
     ];
+
+    fileSystems = {
+      "/usr/share/icons" = lib.shelf.mkRoSymBind "${aggregated}/share/icons";
+    };
 
     programs.dconf.enable = true;
 
@@ -82,6 +96,8 @@ in {
         extraConfig = {
           gtk-application-prefer-dark-theme = 1;
         };
+        
+        # Force GTK4 apps to use custom GTK theme stylesheet
         extraCss = ''
           @import url("file://${gtkThemePkg}/share/themes/${gtkColorSchemeVariant}/gtk-4.0/gtk.css");
         '';

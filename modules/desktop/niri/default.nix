@@ -109,7 +109,7 @@ in {
     shelf.home.configFile."niri/config.kdl".source = "${defaults.configFolder}/niri/config.kdl";
 
     shelf.home.configFile."niri/animations.kdl".source = "${defaults.configFolder}/niri/animations.kdl";
-    shelf.home.configFile."niri/outputs.kdl".source = "${defaults.configFolder}/niri/devices/device_${defaults.hostName}.kdl";
+    shelf.home.configFile."niri/outputs.kdl".source = "${defaults.configFolder}/niri/devices/outputs_${defaults.hostName}.kdl";
     shelf.home.configFile."niri/keybindings.kdl".source = "${defaults.configFolder}/niri/keybindings.kdl";
     shelf.home.configFile."niri/theme.kdl".source = "${defaults.configFolder}/niri/color-scheme-variants/${defaults.colorSchemeVariant}.kdl";
   };

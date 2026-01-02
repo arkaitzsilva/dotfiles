@@ -53,3 +53,10 @@ layout {
         color "#2e3440"
     }
 }
+
+recent-windows {
+    highlight {
+        active-color "#8fbcbbff"
+        urgent-color "#bf616aff"
+    }
+}

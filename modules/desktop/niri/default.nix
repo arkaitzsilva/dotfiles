@@ -85,6 +85,7 @@ in {
 
     shelf.desktop.addons = {
       ly = enabled;
+      auto-cpufreq = enabled;
       awww = enabled;
       stasis = enabled;
       flatpak = enabled;

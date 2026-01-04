@@ -115,10 +115,10 @@ tbl_col  = { bold = true }
 
 [icon]
 dirs = [
-  { name = ".git", text = "", fg = "#81a1c1" },
+  { name = ".git", text = "", fg = "#81a1c1" },
   { name = "Escritorio", text = "", fg = "#81a1c1" },
   { name = "Descargas", text = "", fg = "#81a1c1" },
-  { name = "Documentos", text = "", fg = "#81a1c1" },
+  { name = "Documentos", text = "", fg = "#81a1c1" },
   { name = "Imágenes", text = "", fg = "#81a1c1" },
   { name = "Música", text = "", fg = "#81a1c1" },
   { name = "Vídeos", text =  "", fg = "#81a1c1" }
@@ -146,6 +146,6 @@ exts = [
 conds = [
   { if = "!dir & link", text = "", fg = "#d8dee9" },
   { if = "!file & link", text =  "", fg = "#81a1c1" },
-  { if = "!(dir | link)", text = "", fg = "#d8dee9" },
-  { if = "dir", text = "", fg = "#81a1c1" },
+  { if = "!(dir | link)", text = "", fg = "#d8dee9" },
+  { if = "dir", text = "", fg = "#81a1c1" },
 ]

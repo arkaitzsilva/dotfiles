@@ -19,7 +19,7 @@ count_selected = { fg = "#2e3440", bg = "#81a1c1" }
 border_symbol = "│"
 border_style  = { fg = "#4c566a" }
 
-# syntect_theme = "~/.config/yazi/Nord.tmTheme"
+syntect_theme = "~/.config/yazi/theme.tmTheme"
 
 [tabs]
 active   = { fg = "#2e3440", bg = "#eceff4", bold = true }
@@ -114,8 +114,12 @@ tbl_cell = { fg = "#81a1c1", reversed = true }
 tbl_col  = { bold = true }
 
 [icon]
+globs = [
+  { name = "*.tar.gz", text = "", fg = "#d8dee9" },
+]
+
 dirs = [
-  { name = ".git", text = "", fg = "#81a1c1" },
+  { name = ".git", text = "", fg = "#81a1c1" },
   { name = "Escritorio", text = "", fg = "#81a1c1" },
   { name = "Descargas", text = "", fg = "#81a1c1" },
   { name = "Documentos", text = "", fg = "#81a1c1" },
@@ -134,6 +138,7 @@ files = [
 exts = [
   { name = "nix", text = "", fg = "#d8dee9" },
   { name = "ini", text = "", fg = "#d8dee9" },
+  { name = "zip", text = "", fg = "#d8dee9" },
   { name = "toml", text = "", fg = "#d8dee9" },
   { name = "conf", text = "", fg = "#d8dee9" },
   { name = "svg", text = "", fg = "#d8dee9" },
@@ -147,5 +152,5 @@ conds = [
   { if = "!dir & link", text = "", fg = "#d8dee9" },
   { if = "!file & link", text =  "", fg = "#81a1c1" },
   { if = "!(dir | link)", text = "", fg = "#d8dee9" },
-  { if = "dir", text = "", fg = "#81a1c1" },
+  { if = "dir", text = "", fg = "#81a1c1" },
 ]

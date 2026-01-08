@@ -8,6 +8,10 @@
 with lib;
 with lib.shelf; let
   cfg = config.shelf.apps.standalone.yazi;
+
+  yaziPkg = pkgs.yazi.override {
+    ffmpeg = pkgs.ffmpeg-headless;
+  };
 in {
   options.shelf.apps.standalone.yazi = {
     enable = mkBoolOpt false "Whether to enable yazi file manager.";
@@ -23,6 +27,7 @@ in {
     
     shelf.home.programs.yazi = {
       enable = true;
+      package = yaziPkg;
       plugins = with pkgs; {
         mount = yaziPlugins.mount;
         git = yaziPlugins.git;

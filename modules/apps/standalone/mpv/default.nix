@@ -16,7 +16,7 @@ in {
   config = mkIf cfg.enable {
     shelf.home.packages = with pkgs; [
       mpv
-      ffmpeg
+      ffmpeg-headless
       yt-dlp
     ];
 

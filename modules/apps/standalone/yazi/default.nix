@@ -8,10 +8,6 @@
 with lib;
 with lib.shelf; let
   cfg = config.shelf.apps.standalone.yazi;
-
-  yaziPkg = pkgs.yazi.override {
-    ffmpeg = pkgs.ffmpeg-headless;
-  };
 in {
   options.shelf.apps.standalone.yazi = {
     enable = mkBoolOpt false "Whether to enable yazi file manager.";
@@ -21,13 +17,18 @@ in {
     services.udisks2.enable = true;
 
     shelf.home.packages = with pkgs; [
+      file
+      resvg
+      ffmpeg-headless
+      fzf
+      
       trash-cli # recycle-bin
       ouch # Ouch
     ];
     
     shelf.home.programs.yazi = {
       enable = true;
-      package = yaziPkg;
+      package = pkgs.yazi-unwrapped;
       plugins = with pkgs; {
         mount = yaziPlugins.mount;
         git = yaziPlugins.git;

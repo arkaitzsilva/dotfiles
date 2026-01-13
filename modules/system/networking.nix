@@ -20,6 +20,5 @@ in {
     };
 
     hardware.bluetooth.enable = cfg.bluetooth;
-    services.blueman.enable = cfg.bluetooth;
   };
 }

@@ -18,7 +18,7 @@ in {
   config = mkIf cfg.enable {
     # Flatpak
     shelf.home.sessionVariables = {
-      XDG_DATA_DIRS="$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share";
+      XDG_DATA_DIRS = "$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share";
     };
 
     services.flatpak.enable = true;
@@ -35,13 +35,14 @@ in {
       };
       packages = [
         "flathub:app/com.brave.Browser/x86_64/stable"
-        "flathub:app/com.visualstudio.code/x86_64/stable"
         "flathub:app/org.mozilla.firefox/x86_64/stable"
         "flathub:app/org.torproject.torbrowser-launcher/x86_64/stable"
+        "flathub:app/com.visualstudio.code/x86_64/stable"
+        "flathub:app/dev.zed.Zed/x86_64/stable"
         "flathub:app/org.deluge_torrent.deluge/x86_64/stable"
-        "flathub:app/com.obsproject.Studio/x86_64/stable"
         "flathub:app/org.inkscape.Inkscape/x86_64/stable"
         "flathub:app/org.gimp.GIMP/x86_64/stable"
+        "flathub:app/com.obsproject.Studio/x86_64/stable"
       ]
       ++ (
         if colorSchemeVariant == "nord-dark" then
@@ -49,6 +50,13 @@ in {
         else
           []
       );
+      overrides = {
+        "dev.zed.Zed" = {
+          Environment = {
+            ZED_FLATPAK_NO_ESCAPE = 1;
+          };
+        };
+      };
     };
   };
 }

@@ -65,6 +65,11 @@ in {
 
     shelf.home.extraOptions.gtk = {
       enable = true;
+
+      gtk2.enable = false;
+      gtk3.enable = true;
+      gtk4.enable = false;
+
       theme = {
         name = gtkColorSchemeVariant;
         package = gtkThemePkg;
@@ -89,17 +94,6 @@ in {
 
       gtk3.extraConfig = {
         gtk-application-prefer-dark-theme = 1;
-      };
-
-      gtk4 = {
-        extraConfig = {
-          gtk-application-prefer-dark-theme = 1;
-        };
-        
-        # Force GTK4 apps to use custom GTK theme stylesheet
-        extraCss = ''
-          @import url("file://${gtkThemePkg}/share/themes/${gtkColorSchemeVariant}/gtk-4.0/gtk.css");
-        '';
       };
     };
   };

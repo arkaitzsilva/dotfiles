@@ -28,7 +28,6 @@ let
     dataFolder = ./dotfiles/local/share;
     
     colorSchemeVariant = "nord-dark";
-
     colorVariant = "dark";
 
     gitEmail = "arkaitz.develop@gmail.com";

@@ -122,7 +122,7 @@ dirs = [
   { name = ".git", text = "", fg = "#81a1c1" },
   { name = "Escritorio", text = "", fg = "#81a1c1" },
   { name = "Descargas", text = "", fg = "#81a1c1" },
-  { name = "Documentos", text = "", fg = "#81a1c1" },
+  { name = "Documentos", text = "", fg = "#81a1c1" },
   { name = "Imágenes", text = "", fg = "#81a1c1" },
   { name = "Música", text = "", fg = "#81a1c1" },
   { name = "Vídeos", text =  "", fg = "#81a1c1" }
@@ -144,13 +144,13 @@ exts = [
   { name = "svg", text = "", fg = "#d8dee9" },
   { name = "json", text = "", fg = "#d8dee9" },
   { name = "py", text = "󰌠", fg = "#d8dee9" },
-  { name = "lock", text = "", fg = "#d8dee9" },
+  { name = "lock", text = "󰌾", fg = "#d8dee9" },
   { name = "lua", text = "", fg = "#d8dee9" }
 ]
 
 conds = [
-  { if = "!dir & link", text = "", fg = "#d8dee9" },
-  { if = "!file & link", text =  "", fg = "#81a1c1" },
+  { if = "!dir & link", text = "󰌷", fg = "#d8dee9" },
+  { if = "!file & link", text =  "󰌷", fg = "#81a1c1" },
   { if = "!(dir | link)", text = "", fg = "#d8dee9" },
   { if = "dir", text = "", fg = "#81a1c1" },
 ]

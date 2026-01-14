@@ -19,9 +19,9 @@ border_style  = { fg = "#4c566a" }
 syntect_theme = "~/.config/yazi/theme.tmTheme"
 
 [indicator]
-parent  = { fg = "#2e3440", bg = "#81a1c1" }
+parent  = { fg = "#d8dee9", bg = "#4c566a" }
 current = { fg = "#2e3440", bg = "#81a1c1" }
-preview = { fg = "#d8dee9", bg = "#4c566a" }
+preview = { fg = "#d8dee9", bg = "#3b4252" }
 padding = { open = "█", close = "█" }
 
 [tabs]

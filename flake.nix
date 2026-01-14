@@ -9,15 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";      
+    niri = {
+      url = "github:YaLTeR/niri";      
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.hyprland.follows = "hyprland";
     };
 
     declarative-flatpak.url = "github:in-a-dil-emma/declarative-flatpak/latest";

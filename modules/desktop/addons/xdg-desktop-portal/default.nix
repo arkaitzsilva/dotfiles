@@ -29,13 +29,12 @@ in {
   config = mkIf cfg.enable {
     xdg.portal = {
       enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-wlr
+      extraPortals = [
         gtkPortalPkg
       ];
 
       config.hyprland = {
-        default = [ "wlr" "gtk" ];
+        default = [ "gtk" ];
         "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
         "org.freedesktop.impl.portal.Notification" = [ "gtk" ];
       };

@@ -20,7 +20,7 @@ let
 in
 {
   options.shelf.desktop.addons.ly = {
-    enable = mkBoolOpt false "Whether to enable ly.";
+    enable = mkBoolOpt false "Whether to enable Ly display manager.";
   };
 
   config = mkIf cfg.enable {
@@ -28,24 +28,8 @@ in
       brightnessctl
     ];
     
-    environment.etc = {
-      "ly/lang".source = "${lyPkg}/etc/ly/lang";
-      "ly/custom-sessions/hyprland-uwsm.desktop".text = ''
-        [Desktop Entry]
-        Name=Hyprland (uwsm-managed)
-        Comment=An intelligent dynamic tiling Wayland compositor
-        Exec=uwsm start -e -D Hyprland hyprland.desktop
-        TryExec=uwsm
-        DesktopNames=Hyprland
-        Type=Application
-      '';
-    };
-
-    # Workarount to start Hyprland (uwsm-managed) with Ly on NixOS
-    systemd.services."display-manager".environment = {
-      XDG_CURRENT_DESKTOP = "X-NIXOS-SYSTEMD-AWARE";
-    };
-   
+    environment.etc."ly/lang".source = "${lyPkg}/etc/ly/lang";
+  
     services.displayManager = {
       ly = {
         enable = true;
@@ -62,8 +46,8 @@ in
           brightness_up_cmd = "${pkgs.brightnessctl}/bin/brightnessctl -q -n s 10%+";
           lang = "es";
           hide_version_string = true;
-          waylandsessions = "";
-          custom_sessions = "/etc/ly/custom-sessions";
+          # waylandsessions = "";
+          # custom_sessions = "/etc/ly/custom-sessions";
           xsessions = "";
         };
         x11Support = false;

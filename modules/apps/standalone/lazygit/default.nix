@@ -18,9 +18,9 @@ in {
       LG_CONFIG_FILE = "$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/theme.yml";
     };
 
-    shelf.home.programs.lazygit = {
-      enable = true;
-    };
+    shelf.home.packages = with pkgs; [
+      lazygit
+    ];
 
     shelf.home.configFile."lazygit/config.yml".source = "${defaults.configFolder}/lazygit/config.yml";
     shelf.home.configFile."lazygit/theme.yml".source = "${defaults.configFolder}/lazygit/color-scheme-variants/${defaults.colorSchemeVariant}.yml";

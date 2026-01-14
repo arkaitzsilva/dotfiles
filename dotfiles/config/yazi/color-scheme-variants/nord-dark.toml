@@ -1,9 +1,6 @@
 [mgr]
 cwd = { fg = "#88c0d0" }
 
-hovered         = { fg = "#2e3440", bg = "#81a1c1" }
-preview_hovered = { fg = "#d8dee9", bg = "#4c566a" }
-
 find_keyword  = { fg = "#ebcb8b", italic = true }
 find_position = { fg = "#b48ead", bg = "reset", italic = true }
 
@@ -20,6 +17,12 @@ border_symbol = "│"
 border_style  = { fg = "#4c566a" }
 
 syntect_theme = "~/.config/yazi/theme.tmTheme"
+
+[indicator]
+parent  = { fg = "#2e3440", bg = "#81a1c1" }
+current = { fg = "#2e3440", bg = "#81a1c1" }
+preview = { fg = "#d8dee9", bg = "#4c566a" }
+padding = { open = "█", close = "█" }
 
 [tabs]
 active   = { fg = "#2e3440", bg = "#eceff4", bold = true }
@@ -63,7 +66,6 @@ inactive = {}
 [confirm]
 border     = { fg = "#81a1c1" }
 title      = { fg = "#81a1c1" }
-content    = {}
 list       = {}
 btn_yes    = { reversed = true }
 btn_no     = {}
@@ -115,7 +117,7 @@ tbl_col  = { bold = true }
 
 [icon]
 globs = [
-  { name = "*.tar.gz", text = "", fg = "#d8dee9" },
+  { url = "*.tar.gz", text = "", fg = "#d8dee9" },
 ]
 
 dirs = [

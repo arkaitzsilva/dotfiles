@@ -34,7 +34,6 @@ in {
     ];
 
     shelf.home.sessionVariables = {
-      XDG_CURRENT_DESKTOP = "X-NIXOS-SYSTEMD-AWARE"; # Solve ly does not start Hyprland uwsm session
       HYPR_PLUGIN_DIR = hypr-plugin-dir;
     };
 

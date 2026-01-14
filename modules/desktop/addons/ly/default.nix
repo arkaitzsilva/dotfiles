@@ -28,7 +28,18 @@ in
       brightnessctl
     ];
     
-    environment.etc."ly/lang".source = "${lyPkg}/etc/ly/lang";
+    environment.etc = {
+      "ly/lang".source = "${lyPkg}/etc/ly/lang";
+      "ly/custom-sessions/hyprland-uwsm.desktop".text = ''
+        [Desktop Entry]
+        Name=Hyprland (uwsm-managed)
+        Comment=An intelligent dynamic tiling Wayland compositor
+        Exec=uwsm start -e -D Hyprland hyprland.desktop
+        TryExec=uwsm
+        DesktopNames=Hyprland
+        Type=Application
+      '';
+    };
    
     services.displayManager = {
       ly = {
@@ -46,6 +57,9 @@ in
           brightness_up_cmd = "${pkgs.brightnessctl}/bin/brightnessctl -q -n s 10%+";
           lang = "es";
           hide_version_string = true;
+          waylandsessions = "";
+          custom_sessions = "/etc/ly/custom-sessions";
+          xsessions = "";
         };
         x11Support = false;
       };

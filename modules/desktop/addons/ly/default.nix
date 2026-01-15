@@ -46,8 +46,6 @@ in
           brightness_up_cmd = "${pkgs.brightnessctl}/bin/brightnessctl -q -n s 10%+";
           lang = "es";
           hide_version_string = true;
-          # waylandsessions = "";
-          # custom_sessions = "/etc/ly/custom-sessions";
           xsessions = "";
         };
         x11Support = false;

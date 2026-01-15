@@ -7,7 +7,7 @@
 with lib; with lib.shelf; let
   cfg = config.shelf.desktop.addons.xdg-desktop-portal;
 
-  # Build xdg-desktop-portal-gtk disabling gnome wallpaper feature preventing gnome-desktop/gt4 dependencies installation.
+  # Build xdg-desktop-portal-gtk disabling gnome wallpaper feature preventing gnome-desktop/gt4 dependencies installation
   gtkPortalPkg = pkgs.xdg-desktop-portal-gtk.overrideAttrs (old: {
     buildInputs = with pkgs; [
       glib
@@ -16,7 +16,7 @@ with lib; with lib.shelf; let
       gsettings-desktop-schemas
     ];
 
-    # Disable gnome features
+    # Disable xdg-desktop-portal-gtk gnome features
     mesonFlags = (old.mesonFlags or []) ++ [
       "-Dwallpaper=disabled"
     ];
@@ -30,15 +30,19 @@ in {
     xdg.portal = {
       enable = true;
       extraPortals = with pkgs; [
-        xdg-desktop-portal-wlr
         gtkPortalPkg
+        xdg-desktop-portal-wlr
       ];
 
       config.hyprland = {
-        default = [ "wlr" "gtk" ];
-        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-        "org.freedesktop.impl.portal.Notification" = [ "gtk" ];
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+        "org.freedesktop.impl.portal.RemoteDesktop" = [ "wlr" ];
       };
     };
+
+    shelf.home.packages = with pkgs; [
+      slurp
+    ];
   };
 }

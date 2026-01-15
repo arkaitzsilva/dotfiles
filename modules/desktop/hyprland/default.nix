@@ -26,8 +26,10 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       hyprlandPkg
-      uwsm
+      # uwsm
     ];
+
+    programs.uwsm.enable = true;
 
     services.displayManager.sessionPackages = [
       hyprlandPkg

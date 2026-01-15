@@ -8,7 +8,7 @@ let
       username = "alienware";
     };
     Alienware13 = {
-      wallpaperResolution = "1800p";
+      wallpaperResolution = "900p";
       hostName = "Alienware13";
       username = "alienware";
     };

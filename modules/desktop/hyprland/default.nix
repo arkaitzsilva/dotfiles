@@ -9,12 +9,11 @@
 with lib; with lib.shelf; let
   cfg = config.shelf.desktop.hyprland;
 
-  hyprlandPkg = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+  hyprlandPkg = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
-  hyprPluginPkgs = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
   hypr-plugin-dir = pkgs.symlinkJoin {
     name = "hyrpland-plugins";
-    paths = with hyprPluginPkgs; [
+    paths = with inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}; [
       hyprfocus
     ];
   };
@@ -24,9 +23,8 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = [
       hyprlandPkg
-      # uwsm
     ];
 
     programs.uwsm.enable = true;
@@ -34,18 +32,12 @@ in {
     services.displayManager.sessionPackages = [
       hyprlandPkg
     ];
-
-    # Workarount to start Hyprland (uwsm-managed) with Ly on NixOS
-    systemd.services."display-manager".environment = {
-      XDG_CURRENT_DESKTOP = "X-NIXOS-SYSTEMD-AWARE";
-    };
   
     shelf.home.sessionVariables = {
       HYPR_PLUGIN_DIR = hypr-plugin-dir;
     };
 
     shelf.home.packages = with pkgs; [
-      hyprpicker
       xwayland
       wl-clipboard
       cliphist

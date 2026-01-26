@@ -37,18 +37,33 @@ in {
         "flathub:app/com.brave.Browser/x86_64/stable"
         "flathub:app/org.mozilla.firefox/x86_64/stable"
         "flathub:app/org.torproject.torbrowser-launcher/x86_64/stable"
-        "flathub:app/com.visualstudio.code/x86_64/stable"
+        "flathub:app/app.zen_browser.zen/x86_64/stable"
+        "flathub:app/dev.zed.Zed/x86_64/stable"
         "flathub:app/org.deluge_torrent.deluge/x86_64/stable"
         "flathub:app/org.inkscape.Inkscape/x86_64/stable"
         "flathub:app/org.gimp.GIMP/x86_64/stable"
         "flathub:app/com.obsproject.Studio/x86_64/stable"
-      ]
-      ++ (
-        if colorSchemeVariant == "nord-dark" then
-          [ "flathub:runtime/org.gtk.Gtk3theme.Materia-nord-compact/x86_64/3.22" ]
-        else
-          []
-      );
+      ];
+      overrides = {
+        "app.zen_browser.zen" = {
+          Context = {
+            filesystems = [
+              "~/.zen"
+            ];
+          };
+          Environment = {
+            __NV_PRIME_RENDER_OFFLOAD = 1;
+            __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+          };
+        };
+        "org.deluge_torrent.deluge" = {
+          Context = {
+            filesystems = [
+              "~/Torrent"
+            ];
+          };
+        };
+      };
     };
   };
 }

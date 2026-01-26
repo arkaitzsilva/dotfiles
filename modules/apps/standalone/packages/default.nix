@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  shelf,
   ...
 }:
 with lib;

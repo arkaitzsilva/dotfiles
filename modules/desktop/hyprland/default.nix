@@ -67,6 +67,7 @@ in {
         mpv = enabled;
         yazi = enabled;
         helix = enabled;
+        btop = enabled;
       };
     };
 

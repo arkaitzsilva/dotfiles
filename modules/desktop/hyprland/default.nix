@@ -9,7 +9,7 @@
 with lib; with lib.shelf; let
   cfg = config.shelf.desktop.hyprland;
 
-  hyprlandPkg = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+  hyprlandPkg = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 in {
   options.shelf.desktop.hyprland = {
     enable = mkBoolOpt false "Whether to enable Hyprland WM, with desktop addons.";

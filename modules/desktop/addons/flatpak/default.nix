@@ -2,14 +2,11 @@
   config,
   lib,
   inputs,
-  defaults,
   ...
 }:
 with lib;
 with lib.shelf; let
   cfg = config.shelf.desktop.addons.flatpak;
-
-  colorSchemeVariant = defaults.colorSchemeVariant;
 in {
   options.shelf.desktop.addons.flatpak = {
     enable = mkBoolOpt false "Whether to enable flatpak.";
@@ -46,14 +43,15 @@ in {
       ];
       overrides = {
         "app.zen_browser.zen" = {
-          Context = {
-            filesystems = [
-              "~/.zen"
-            ];
-          };
           Environment = {
             __NV_PRIME_RENDER_OFFLOAD = 1;
             __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+          };
+        };
+        "dev.zed.Zed" = {
+          Environment = {
+            __NV_PRIME_RENDER_OFFLOAD = 1;
+            __VK_LAYER_NV_optimus = "NVIDIA_only";
           };
         };
         "org.deluge_torrent.deluge" = {

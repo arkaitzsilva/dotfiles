@@ -9,17 +9,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprnix.url = "github:hyprwm/hyprnix";
+    hyprland = {
+      url = "github:hyprwm/hyprland/v0.53.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     declarative-flatpak.url = "github:in-a-dil-emma/declarative-flatpak/latest";
 
     awww = {
       url = "git+https://codeberg.org/LGFae/awww";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    stasis = {
-      url = "github:saltnpepper97/stasis";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

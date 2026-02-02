@@ -36,8 +36,8 @@ stasis:
   
   dpms:
     timeout 60
-    command vars.dpms_off
-    resume-command vars.dpms_on
+    command dpms_off
+    resume-command dpms_on
   end
   
   suspend:
@@ -62,8 +62,8 @@ stasis:
     
     dpms:
       timeout 120
-      command vars.dpms_off
-      resume-command vars.dpms_on
+      command dpms_off
+      resume-command dpms_on
     end
     
     lock_screen:
@@ -92,8 +92,8 @@ stasis:
     
     dpms:
       timeout 60
-      command vars.dpms_off
-      resume-command vars.dpms_on
+      command dpms_off
+      resume-command dpms_on
     end
     
     lock_screen:

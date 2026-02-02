@@ -10,13 +10,6 @@ with lib; with lib.shelf; let
   cfg = config.shelf.desktop.hyprland;
 
   hyprlandPkg = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-
-  hypr-plugin-dir = pkgs.symlinkJoin {
-    name = "hyrpland-plugins";
-    paths = with inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}; [
-      hyprfocus
-    ];
-  };
 in {
   options.shelf.desktop.hyprland = {
     enable = mkBoolOpt false "Whether to enable Hyprland WM, with desktop addons.";
@@ -33,10 +26,6 @@ in {
       hyprlandPkg
     ];
   
-    shelf.home.sessionVariables = {
-      HYPR_PLUGIN_DIR = hypr-plugin-dir;
-    };
-
     shelf.home.packages = with pkgs; [
       xwayland
       wl-clipboard

@@ -32,7 +32,6 @@ in {
       };
       packages = [
         "flathub:app/com.brave.Browser/x86_64/stable"
-        "flathub:app/org.mozilla.firefox/x86_64/stable"
         "flathub:app/org.torproject.torbrowser-launcher/x86_64/stable"
         "flathub:app/app.zen_browser.zen/x86_64/stable"
         "flathub:app/dev.zed.Zed/x86_64/stable"
@@ -50,6 +49,7 @@ in {
         };
         "dev.zed.Zed" = {
           Environment = {
+            ZED_FLATPAK_NO_ESCAPE = 1;
             __NV_PRIME_RENDER_OFFLOAD = 1;
             __VK_LAYER_NV_optimus = "NVIDIA_only";
           };

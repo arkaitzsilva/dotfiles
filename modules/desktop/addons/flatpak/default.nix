@@ -31,16 +31,26 @@ in {
         flathub = "https://flathub.org/repo/flathub.flatpakrepo";
       };
       packages = [
-        "flathub:app/com.brave.Browser/x86_64/stable"
         "flathub:app/org.torproject.torbrowser-launcher/x86_64/stable"
         "flathub:app/app.zen_browser.zen/x86_64/stable"
         "flathub:app/dev.zed.Zed/x86_64/stable"
-        "flathub:app/org.deluge_torrent.deluge/x86_64/stable"
+        "flathub:app/org.qbittorrent.qBittorrent/x86_64/stable"
         "flathub:app/org.inkscape.Inkscape/x86_64/stable"
-        "flathub:app/org.gimp.GIMP/x86_64/stable"
         "flathub:app/com.obsproject.Studio/x86_64/stable"
+        "flathub:runtime/org.kde.KStyle.Kvantum/x86_64/6.9"
+        "flathub:runtime/org.kde.KStyle.Kvantum/x86_64/6.10"
       ];
       overrides = {
+        "global" = {
+          Context = {
+            filesystems = [
+              "xdg-config/Kvantum:ro"
+            ];
+          };
+          Environment = {
+            QT_STYLE_OVERRIDE = "kvantum";
+          };
+        };
         "app.zen_browser.zen" = {
           Environment = {
             __NV_PRIME_RENDER_OFFLOAD = 1;
@@ -54,7 +64,7 @@ in {
             __VK_LAYER_NV_optimus = "NVIDIA_only";
           };
         };
-        "org.deluge_torrent.deluge" = {
+        "org.qbittorrent.qBittorrent" = {
           Context = {
             filesystems = [
               "~/Torrent"

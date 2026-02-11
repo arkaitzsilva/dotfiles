@@ -9,13 +9,6 @@ with lib;
 with lib.shelf;
 
 let
-  lyPkg = pkgs.ly.overrideAttrs (old: {
-    postInstall = (old.postInstall or "") + ''
-      mkdir -p $out/etc/ly/lang
-      cp -v res/lang/*.ini $out/etc/ly/lang/
-    '';
-  });
-
   cfg = config.shelf.desktop.addons.ly;
 in
 {
@@ -34,22 +27,12 @@ in
     };
     
     environment.etc = {
-      "ly/lang".source = "${lyPkg}/etc/ly/lang";
-      "ly/custom-sessions/hyprland-uwsm.desktop".text = ''
-        [Desktop Entry]
-        Name=Hyprland (uwsm-managed)
-        Comment=An intelligent dynamic tiling Wayland compositor
-        Exec=uwsm start -e -D Hyprland hyprland.desktop
-        TryExec=uwsm
-        DesktopNames=Hyprland
-        Type=Application
-      '';
+      "ly/lang".source = "${pkgs.ly}/etc/ly/lang";
     };
   
     services.displayManager = {
       ly = {
         enable = true;
-        package = lyPkg;
         settings = {
           save = true;
           allow_empty_password = false;
@@ -62,8 +45,6 @@ in
           brightness_up_cmd = "${pkgs.brightnessctl}/bin/brightnessctl -q -n s 10%+";
           lang = "es";
           hide_version_string = true;
-          waylandsessions = "";
-          custom_sessions = "/etc/ly/custom-sessions";
           xsessions = "";
         };
         x11Support = false;

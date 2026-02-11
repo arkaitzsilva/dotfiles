@@ -27,7 +27,7 @@ in {
     ];
   
     shelf.home.packages = with pkgs; [
-      xwayland
+      # xwayland
       wl-clipboard
       cliphist
       brightnessctl
@@ -36,12 +36,12 @@ in {
 
     shelf.desktop.addons = {
       ly = enabled;
-      auto-cpufreq = enabled;
       stasis = enabled;
       awww = enabled;
       xdg-desktop-portal = enabled;
       flatpak = enabled;
-      gtk = enabled;
+      hyprqt6engine = enabled;
+      theme = enabled;
     };
 
     shelf.cli = {

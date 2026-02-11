@@ -14,6 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprqt6engine = {
+      url = "github:hyprwm/hyprqt6engine";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     declarative-flatpak.url = "github:in-a-dil-emma/declarative-flatpak/latest";
 
     awww = {
@@ -21,8 +26,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    gtk-themes = {
-      url = "github:arkaitzsilva/gtk-themes";
+    kvantum-themes = {
+      url = "github:arkaitzsilva/kvantum-themes";
       inputs.nixpkgs.follows = "nixpkgs";  
     };
 
@@ -37,23 +42,35 @@
     };
   };
 
-  outputs = {nixpkgs, ...} @ inputs: let
-    mkLib = nixpkgs:
-      nixpkgs.lib.extend
-        (self: super: { shelf = import ./lib { lib = self; }; } // inputs.home-manager.lib);
+  outputs = {nixpkgs, ...} @ inputs:
+    let
+      mkLib = nixpkgs:
+        nixpkgs.lib.extend
+          (self: super: {
+            shelf = import ./lib { lib = self; };
+          } // inputs.home-manager.lib);
 
-    addNewHost = hostName:
-      with inputs;
-        let
-          defaults = import ./defaults.nix { inherit hostName; };
-        in
-          nixpkgs.lib.nixosSystem {
-            system = defaults.system;
-            modules = [
-              ./modules
-              # The host specific configuration
-              (./. + "/hosts/${hostName}/")
-            ];
+      overlayFiles =
+        builtins.attrNames
+          (builtins.readDir ./overlays);
+
+      overlays =
+        map (name: import (./overlays + "/${name}"))
+          overlayFiles;
+
+      addNewHost = hostName:
+        with inputs;
+          let
+            defaults = import ./defaults.nix { inherit hostName; };
+          in
+            nixpkgs.lib.nixosSystem {
+              system = defaults.system;
+              modules = [
+                { nixpkgs.overlays = overlays; }
+                ./modules
+                # The host specific configuration
+                (./. + "/hosts/${hostName}/")
+              ];
             
             # Pass the variables to other modules
             specialArgs = {

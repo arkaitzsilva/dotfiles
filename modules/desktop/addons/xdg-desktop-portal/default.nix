@@ -2,25 +2,14 @@
   config,
   pkgs,
   lib,
+  inputs,
+  defaults,
   ...
 }:
 with lib; with lib.shelf; let
   cfg = config.shelf.desktop.addons.xdg-desktop-portal;
-
-  # Build xdg-desktop-portal-gtk disabling gnome wallpaper feature preventing gnome-desktop/gt4 dependencies installation
-  gtkPortalPkg = pkgs.xdg-desktop-portal-gtk.overrideAttrs (old: {
-    buildInputs = with pkgs; [
-      glib
-      gtk3
-      xdg-desktop-portal
-      gsettings-desktop-schemas
-    ];
-
-    # Disable xdg-desktop-portal-gtk gnome features
-    mesonFlags = (old.mesonFlags or []) ++ [
-      "-Dwallpaper=disabled"
-    ];
-  });
+  
+  xdphPkg = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 in {
   options.shelf.desktop.addons.xdg-desktop-portal = {
     enable = mkBoolOpt false "Whether to enable xdg-desktop-portal.";
@@ -30,19 +19,26 @@ in {
     xdg.portal = {
       enable = true;
       extraPortals = with pkgs; [
-        gtkPortalPkg
-        xdg-desktop-portal-wlr
+        xdphPkg
+        xdg-desktop-portal-luminous
+        lxqt.xdg-desktop-portal-lxqt
       ];
 
       config.hyprland = {
-        default = [ "gtk" ];
-        "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
-        "org.freedesktop.impl.portal.RemoteDesktop" = [ "wlr" ];
+        default = [
+          "hyprland"
+          "liminous"
+        ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "lxqt" ];
       };
     };
 
-    shelf.home.packages = with pkgs; [
-      slurp
-    ];
+    systemd.user.services."xdg-desktop-portal-lxqt".serviceConfig = {
+      Environment = ''
+        QT_QPA_PLATFORMTHEME=${defaults.qtPlatformTheme}
+      '';
+    };
+
+    shelf.home.configFile."xdg-desktop-portal-luminous/config.toml".source = "${defaults.configFolder}/xdg-desktop-portal-luminous/color-scheme-variants/${defaults.colorSchemeVariant}.toml";
   };
 }

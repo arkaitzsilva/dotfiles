@@ -1,3 +1,4 @@
 # Search installed package
 nix-store --query --requisites /run/current-system | grep keyword
+nix-store --query --referrers derivation-path
 nix why-depends /run/current-system derivation-path

@@ -9,7 +9,7 @@
 with lib; with lib.shelf; let
   cfg = config.shelf.desktop.addons.xdg-desktop-portal;
   
-  xdphPkg = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  # xdphPkg = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 in {
   options.shelf.desktop.addons.xdg-desktop-portal = {
     enable = mkBoolOpt false "Whether to enable xdg-desktop-portal.";
@@ -19,23 +19,26 @@ in {
     xdg.portal = {
       enable = true;
       extraPortals = with pkgs; [
-        xdphPkg
+        # xdphPkg
         xdg-desktop-portal-luminous
-        lxqt.xdg-desktop-portal-lxqt
+        xdg-desktop-portal-termfilechooser
       ];
 
       config.hyprland = {
-        default = [
-          "hyprland"
-          "liminous"
-        ];
-        "org.freedesktop.impl.portal.FileChooser" = [ "lxqt" ];
+        default = [ "luminous" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
       };
     };
 
-    systemd.user.services."xdg-desktop-portal-lxqt".serviceConfig = {
-      Environment = ''
-        QT_QPA_PLATFORMTHEME=${defaults.qtPlatformTheme}
+    shelf.home.configFile."xdg-desktop-portal-termfilechooser/config" = {
+      force = true;
+      text = ''
+        [filechooser]
+        cmd=${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
+        default_dir=$XDG_DOWNLOAD_DIR
+        env=TERMCMD='foot --app-id xdg-desktop-portal-termfilechooser --title "Terminal File Chooser"'
+        open_mode = suggested
+        save_mode = last
       '';
     };
 

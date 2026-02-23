@@ -1,4 +1,8 @@
 # Search installed package
-nix-store --query --requisites /run/current-system | grep keyword
-nix-store --query --referrers derivation-path
-nix why-depends /run/current-system derivation-path
+nix-store --query --requisites /run/current-system | grep KEYWORD # Search for a package in the current system
+nix-store --query -tree DERIVATION-PATH # Runtime dependencies
+nix path-info -rSh DERIVATION-PATH # Closure size
+
+nix why-depends /run/current-system DERIVATION-PATH
+nix flake update --update-input INPUT
+sudo nix-store --gc --print-live | grep KEYWORD

@@ -1,10 +1,10 @@
 # Remove unnecessary geoclue & flatpak dependencies
 final: prev: {
   xdg-desktop-portal =
-    prev.xdg-desktop-portal.overrideAttrs(finalAttrs: prevAttrs: {
-      buildInputs = builtins.filter (p: p != prev.geoclue2 && p != prev.flatpak) (prevAttrs.buildInputs or []);
+    prev.xdg-desktop-portal.overrideAttrs (oldAttrs: {
+      buildInputs = builtins.filter (p: p != prev.geoclue2 && p != prev.flatpak) (oldAttrs.buildInputs or []);
  
-      mesonFlags = (prevAttrs.mesonFlags or []) ++ [
+      mesonFlags = (oldAttrs.mesonFlags or []) ++ [
         "-Dgeoclue=disabled"
         "-Dtests=disabled"
         "-Dinstalled-tests=false"

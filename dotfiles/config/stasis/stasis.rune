@@ -23,7 +23,7 @@ stasis:
   
   # Applications that prevent idle when active
   inhibit_apps [
-    r"deluge*"
+    r"(?i).*qbittorrent.*"
   ]
   
   # Desktop-only idle actions (applies to all devices)

@@ -1,13 +1,13 @@
 # Enable GPU support
 final: prev: {
-  btop = prev.btop.overrideAttrs(finalAttrs: prevAttrs: {
-    cmakeFlags = (prevAttrs.cmakeFlags or []) ++ [
+  btop = prev.btop.overrideAttrs (oldAttrs: {
+    cmakeFlags = (oldAttrs.cmakeFlags or []) ++ [
       (prev.lib.cmakeBool "BTOP_GPU" true)
       (prev.lib.cmakeBool "BTOP_STATIC" false)
     ];
 
     nativeBuildInputs =
-      (prevAttrs.nativeBuildInputs or [])
+      (oldAttrs.nativeBuildInputs or [])
       ++ [ prev.autoAddDriverRunpath ];
   });
 }

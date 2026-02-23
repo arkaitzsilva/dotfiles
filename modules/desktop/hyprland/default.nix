@@ -27,7 +27,6 @@ in {
     ];
   
     shelf.home.packages = with pkgs; [
-      # xwayland
       wl-clipboard
       cliphist
       brightnessctl
@@ -40,7 +39,8 @@ in {
       awww = enabled;
       xdg-desktop-portal = enabled;
       flatpak = enabled;
-      hyprqt6engine = enabled;
+      # hyprqt6engine = if defaults.qtPlatformTheme == "hyprqt6engine" then enabled else disabled;
+      # kvantum = if defaults.qtStyle == "kvantum" then enabled else disabled;
       theme = enabled;
     };
 

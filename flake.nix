@@ -68,8 +68,7 @@
               modules = [
                 { nixpkgs.overlays = overlays; }
                 ./modules
-                # The host specific configuration
-                (./. + "/hosts/${hostName}/")
+                (./. + "/hosts/${hostName}/") # The host specific configuration
               ];
             
             # Pass the variables to other modules

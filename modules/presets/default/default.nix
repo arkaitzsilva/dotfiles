@@ -3,7 +3,6 @@
   pkgs,
   lib,
   hostName,
-  defaults,
   ...
 }:
 with lib;

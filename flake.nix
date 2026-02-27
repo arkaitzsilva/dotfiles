@@ -19,6 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprnix = {
+      url = "github:hyprwm/hyprnix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     declarative-flatpak.url = "github:in-a-dil-emma/declarative-flatpak/latest";
 
     awww = {

@@ -15,6 +15,8 @@ in {
   config = mkIf cfg.enable {
     shelf.home.packages = with pkgs; [
       # TODO zathura
+      _7zz
+      unrar
     ];
   };
 }

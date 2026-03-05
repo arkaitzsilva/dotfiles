@@ -3,7 +3,6 @@
   lib,
   pkgs,
   modulesPath,
-  defaults,
   ...
 }:
 
@@ -45,8 +44,6 @@
         fontSize = 32;
       };
     };
-
-    # kernelPackages = pkgs.linuxPackages_6_14;
 
     kernelModules = [
       "kvm-intel"

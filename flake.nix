@@ -9,18 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      url = "github:hyprwm/hyprland/v0.53.1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprqt6engine = {
-      url = "github:hyprwm/hyprqt6engine";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprnix = {
-      url = "github:hyprwm/hyprnix";
+    niri = {
+      url = "github:niri-wm/niri/v25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -31,8 +21,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    kvantum-themes = {
-      url = "github:arkaitzsilva/kvantum-themes";
+    gtk-themes = {
+      url = "github:arkaitzsilva/gtk-themes";
       inputs.nixpkgs.follows = "nixpkgs";  
     };
 

@@ -2,3 +2,4 @@ color_scheme = "dark" # no-preference/light/dark
 accent_color = "#88c0d0" # Hexadecimal code
 contrast = "normal" # normal/higher
 reduced_motion = "no-preference" # no-preference/reduced
+screenshot_permission_check = false

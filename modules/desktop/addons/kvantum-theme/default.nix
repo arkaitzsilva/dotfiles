@@ -8,14 +8,14 @@
 }:
 with lib;
 with lib.shelf; let
-  cfg = config.shelf.desktop.addons.kvantum;
+  cfg = config.shelf.desktop.addons.kvantum-theme;
 
   colorSchemeVariant = defaults.colorSchemeVariant;
 
   kvThemeName = if colorSchemeVariant == "nord-dark" then "KvNxNordDark" else "Kvantum";
   kvThemePkg = inputs.kvantum-themes.packages.${pkgs.stdenv.hostPlatform.system}.kvantum-theme-nx-nord.KvNxNordDark;
 in {
-  options.shelf.desktop.addons.kvantum = with types; {
+  options.shelf.desktop.addons.kvantum-theme = with types; {
     enable = mkBoolOpt false "Whether to enable kvantum qt style.";
   };
 

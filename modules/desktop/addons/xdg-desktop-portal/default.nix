@@ -2,14 +2,11 @@
   config,
   pkgs,
   lib,
-  inputs,
   defaults,
   ...
 }:
 with lib; with lib.shelf; let
   cfg = config.shelf.desktop.addons.xdg-desktop-portal;
-  
-  # xdphPkg = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 in {
   options.shelf.desktop.addons.xdg-desktop-portal = {
     enable = mkBoolOpt false "Whether to enable xdg-desktop-portal.";
@@ -19,12 +16,11 @@ in {
     xdg.portal = {
       enable = true;
       extraPortals = with pkgs; [
-        # xdphPkg
         xdg-desktop-portal-luminous
         xdg-desktop-portal-termfilechooser
       ];
 
-      config.hyprland = {
+      config.niri = {
         default = [ "luminous" ];
         "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
       };

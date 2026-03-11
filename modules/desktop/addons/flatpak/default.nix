@@ -38,6 +38,8 @@ in {
         "flathub:app/org.qbittorrent.qBittorrent/x86_64/stable"
         "flathub:app/org.inkscape.Inkscape/x86_64/stable"
         "flathub:app/com.obsproject.Studio/x86_64/stable"
+        "flathub:app/org.kde.kwrite/x86_64/stable"
+        "flathub:runtime/org.gtk.Gtk3theme.Breeze/x86_64/3.22"
         "flathub:runtime/org.kde.KStyle.Kvantum/x86_64/6.9"
         "flathub:runtime/org.kde.KStyle.Kvantum/x86_64/6.10"
       ];
@@ -46,10 +48,13 @@ in {
           Context = {
             filesystems = [
               "xdg-config/Kvantum:ro"
+              "xdg-data/color-schemes:ro"
             ];
           };
           Environment = {
-            QT_QPA_PLATFORMTHEME = "kde";
+            GTK_THEME = "Breeze:dark";
+            QT_QPA_PLATFORMTHEME = "xdgdesktopportal";
+            QT_STYLE_OVERRIDE = "kvantum";
           };
         };
         "app.zen_browser.zen" = {
@@ -62,8 +67,7 @@ in {
           Environment = {
             ZED_FLATPAK_NO_ESCAPE = 1;
             __NV_PRIME_RENDER_OFFLOAD = 1;
-            __VK_LAYER_NV_optimus = "NVIDIA_only";
-            VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/nvidia_icd.json";
+            VK_ICD_FILENAMES = "/usr/share/vulkan/icd.d/nvidia_icd.json";
           };
         };
         "org.qbittorrent.qBittorrent" = {

@@ -1,0 +1,4 @@
+QT_QPA_PLATFORMTHEME=xdgdesktopportal # To use xdg-desktop-portal to determine the file chooser used by KDE apps. The "kde" platform theme is configurable with xdg-config/kdeglobals, but the KDE file chooser is the only option for selecting files; the file chooser provided by xdg-desktop-portal is ignored by Qt/KDE apps.
+QT_STYLE_OVERRIDE=kvantum # To use Kvantum to style Qt/KDE apps. To use Kvantum themes, it's necessary to grant access to xdg-config/Kvantum:ro. Don't forget to install the org.kde.KStyle.Kvantum flatpak runtime.
+
+# Flatpak KDE apps don't use the Kvantum color scheme by default. To enable it, you need to manually edit the rc file of each KDE app and add the [IUSettings] section with the value ColorScheme=*

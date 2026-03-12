@@ -9,13 +9,13 @@ with lib;
 with lib.shelf; let
   cfg = config.shelf.desktop.addons.theme;
 
-  #iconThemePkg = inputs.icon-themes.packages.${pkgs.stdenv.hostPlatform.system}.icon-theme-luv.Luv-Dark;
+  iconThemePkg = inputs.icon-themes.packages.${pkgs.stdenv.hostPlatform.system}.icon-theme-luv.luv-dark;
   cursorThemePkg = inputs.cursor-themes.packages.${pkgs.stdenv.hostPlatform.system}.cursor-theme-nx.Nx-Snow;
 
   aggregated = if config.shelf.desktop.addons.flatpak.enable then pkgs.buildEnv {
     name = "system-icons";
     paths = [
-      #iconThemePkg
+      iconThemePkg
       cursorThemePkg
     ];
     pathsToLink = [
@@ -36,7 +36,7 @@ in {
     ];
 
     shelf.home.packages = [
-      #iconThemePkg
+      iconThemePkg
       cursorThemePkg
     ];
   };

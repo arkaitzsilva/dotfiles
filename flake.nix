@@ -21,7 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    gtk-themes = {
+    kvantum-themes = {
       url = "github:arkaitzsilva/gtk-themes";
       inputs.nixpkgs.follows = "nixpkgs";  
     };

@@ -27,9 +27,6 @@ let
     templateFolder = ./dotfiles/templates;
     dataFolder = ./dotfiles/local/share;
 
-    qtPlatformTheme = "hyprqt6engine";
-    qtStyle = "kvantum";
-
     colorSchemeVariant = "nord-dark";
     colorVariant = "dark";
 

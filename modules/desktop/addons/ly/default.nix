@@ -21,11 +21,6 @@ in
       brightnessctl
     ];
 
-    # Workarount to start Hyprland (uwsm-managed) with Ly on NixOS
-    systemd.services."display-manager".environment = {
-      XDG_CURRENT_DESKTOP = "X-NIXOS-SYSTEMD-AWARE";
-    };
-    
     environment.etc = {
       "ly/lang".source = "${pkgs.ly}/etc/ly/lang";
     };

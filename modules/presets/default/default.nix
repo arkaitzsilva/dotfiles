@@ -27,7 +27,7 @@ in {
     };
 
     shelf.desktop = {
-      niri = enabled;
+      hyprland = enabled;
     };
 
     shelf.presets = {

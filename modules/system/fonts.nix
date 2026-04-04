@@ -6,11 +6,11 @@
 }:
 with lib;
 with lib.shelf; let
-  aggregated = if config.shelf.desktop.addons.flatpak.enable then pkgs.buildEnv {
-    name = "system-fonts";
-    paths = config.fonts.packages;
-    pathsToLink = [ "/share/fonts" ];
-  } else null;
+  #aggregated = if config.shelf.desktop.addons.flatpak.enable then pkgs.buildEnv {
+  #  name = "system-fonts";
+  #  paths = config.fonts.packages;
+  #  pathsToLink = [ "/share/fonts" ];
+  #} else null;
 in {  
   options.fonts.defaultFontPkg = mkOption {
     type = types.package;
@@ -21,12 +21,12 @@ in {
   config = {
     fonts.defaultFontPkg = pkgs.noto-fonts;
 
-    fileSystems = lib.mkMerge [
-      (if config.shelf.desktop.addons.flatpak.enable then
-        { "/usr/share/fonts" = lib.shelf.mkRoSymBind "${aggregated}/share/fonts"; }
-      else
-        {})
-    ];
+    #fileSystems = lib.mkMerge [
+    #  (if config.shelf.desktop.addons.flatpak.enable then
+    #    { "/usr/share/fonts" = lib.shelf.mkRoSymBind "${aggregated}/share/fonts"; }
+    #  else
+    #    {})
+    #];
 
     fonts = {
       packages = with pkgs; [

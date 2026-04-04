@@ -52,12 +52,17 @@ in {
             ];
           };
           Environment = {
-            GTK_THEME = "Breeze:dark";
+            # GTK_THEME = "Breeze:dark";
             QT_QPA_PLATFORMTHEME = "xdgdesktopportal";
             QT_STYLE_OVERRIDE = "kvantum";
           };
         };
         "app.zen_browser.zen" = {
+          Context = {
+            filesystems = [
+              "~/.zen"
+            ];
+          };
           Environment = {
             __NV_PRIME_RENDER_OFFLOAD = 1;
             __GLX_VENDOR_LIBRARY_NAME = "nvidia";

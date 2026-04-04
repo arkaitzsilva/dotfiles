@@ -17,9 +17,9 @@ in {
     services.udisks2.enable = true;
 
     shelf.home.packages = with pkgs; [
-      file
-      resvg
-      ffmpeg-headless
+      file # General files preview
+      resvg # SVG preview
+      ffmpeg-headless # Video preview
       fzf
       
       trash-cli # recycle-bin

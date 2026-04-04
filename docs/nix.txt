@@ -6,3 +6,5 @@ nix path-info -rSh DERIVATION-PATH # Closure size
 nix why-depends /run/current-system DERIVATION-PATH
 nix flake update --update-input INPUT
 sudo nix-store --gc --print-live | grep KEYWORD
+
+nix flake lock --update-input INPUTNAME # Update specific input

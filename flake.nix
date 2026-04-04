@@ -9,8 +9,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = {
-      url = "github:niri-wm/niri/v25.11";
+    hyprnix = {
+      url = "github:hyprwm/hyprnix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Remove when hyprqt6engine is integrated into hyprnix
+    hyprqt6engine = {
+      url = "github:hyprwm/hyprqt6engine";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -18,6 +24,11 @@
 
     awww = {
       url = "git+https://codeberg.org/LGFae/awww";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell?ref=refs/tags/v0.2.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

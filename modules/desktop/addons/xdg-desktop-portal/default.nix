@@ -24,6 +24,11 @@ in {
         default = [ "luminous" ];
         "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
       };
+
+      config.hyprland = {
+        default = [ "luminous" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+      };
     };
 
     shelf.home.configFile."xdg-desktop-portal-termfilechooser/config" = {

@@ -22,11 +22,6 @@
 
     declarative-flatpak.url = "github:in-a-dil-emma/declarative-flatpak/latest";
 
-    awww = {
-      url = "git+https://codeberg.org/LGFae/awww";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell?ref=refs/tags/v0.2.1";
       inputs.nixpkgs.follows = "nixpkgs";

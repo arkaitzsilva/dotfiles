@@ -3,7 +3,6 @@
   pkgs,
   lib,
   defaults,
-  inputs,
   ...
 }:
 with lib;
@@ -16,7 +15,7 @@ in {
 
   config = mkIf cfg.enable {
     shelf.home.packages = with pkgs; [
-      inputs.awww.packages.${stdenv.hostPlatform.system}.awww
+      awww
     ];
 
     shelf.home.dataFile."backgrounds".source = "${defaults.dataFolder}/backgrounds/${defaults.wallpaperResolution}";

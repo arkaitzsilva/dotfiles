@@ -64,6 +64,7 @@ in {
 
     shelf.home.configFile."hypr/hyprland.conf".source = "${defaults.configFolder}/hypr/hyprland.conf";
     shelf.home.configFile."hypr/keybindings.conf".source = "${defaults.configFolder}/hypr/keybindings.conf";
+    shelf.home.configFile."hypr/animations.conf".source = "${defaults.configFolder}/hypr/animations.conf";
     shelf.home.configFile."hypr/monitors.conf".source = "${defaults.configFolder}/hypr/devices/monitors_${defaults.hostName}.conf";
     shelf.home.configFile."hypr/theme.conf".source = "${defaults.configFolder}/hypr/color-scheme-variants/${defaults.colorSchemeVariant}.conf";
   };
